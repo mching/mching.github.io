@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>R</title>
+  <meta property="og:title" content="R" />
+  <meta name="twitter:title" content="R" />
+  <meta name="author" content="Mike Ching"/>
+  <link href='../../img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/minihead.jpg" />
+  <meta name="twitter:image" content="/img/minihead.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@mikec2a" />
+  <meta name="twitter:creator" content="@mikec2a" />
+  <meta property="og:url" content="/categories/r/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dripping Data" />
+
+  <meta name="generator" content="Hugo 0.24.1" />
+  <link rel="canonical" href="../../categories/r/" />
+  <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="Dripping Data">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../css/pygment_highlights.css" />
+  <link rel="stylesheet" href="../../css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../">Dripping Data</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="LinkedIn" href="https://www.linkedin.com/in/michael-ching-033a5029">LinkedIn</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Twitter" href="https://twitter.com/mikec2a">Twitter</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dripping Data" href="../../">
+            <img class="avatar-img" src="../../img/minihead.jpg" alt="Dripping Data" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  <header class="header-section ">
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>#R</h1>
+              <hr class="small">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    
+  <div class="container" role="main">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="../../2017/06/19/goodreads-analysis/">
+                <h2 class="post-title">Goodreads Analysis</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on June 19, 2017
+              </p>
+              <div class="post-entry">
+                
+                  I just finished my 2017 Reading Challenge on Goodreads. My goal was to read 15 books this year. Poking around the site I discovered that I could export my data. I decided to have a look to see what my reading habits looked like, and since I was doing this for me, I decided to look at my wife’s data too.
+Dataset library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union library(tidyr) library(ggplot2) library(lubridate) ## ## Attaching package: &#39;lubridate&#39; ## The following object is masked from &#39;package:base&#39;: ## ## date library(hrbrthemes) books &lt;- read.
+                  <a href="../../2017/06/19/goodreads-analysis/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/visualization">visualization</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../2017/05/30/years-at-private-school-and-academic-achievement/">
+                <h2 class="post-title">Association between Years at a Private School and Academic Achievement</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on May 30, 2017
+              </p>
+              <div class="post-entry">
+                
+                  The kids brought home their yearbooks this past week, and it was time to settle a question that I have had for a long time. Do kids who enter their private school at kindergarten do better or worse than the kids who enter later?
+Methods At this school there are two honor rolls (Headmaster’s List and Honor Roll). To get Headmaster’s List, a student must achieve a 3.5 grade point average with no grade below a B-.
+                  <a href="../../2017/05/30/years-at-private-school-and-academic-achievement/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/education">education</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../2017/05/26/king-tides-gis/">
+                <h2 class="post-title">King Tides Citizen Science Project</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on May 26, 2017
+              </p>
+              <div class="post-entry">
+                
+                  I read in the newspaper that the University of Hawaii was recruiting “citizen scientists” to help document the impact of this week’s “king tides” on our coastline. I uploaded some photos to the website but also found that we could download the dataset. I took this as an opportunity to learn something about geographic information systems (GIS) and R, and the end result was a pretty nice map of all the places that were photographed this week.
+                  <a href="../../2017/05/26/king-tides-gis/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/gis">GIS</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../2017/05/21/saves-vs-strikeouts/">
+                <h2 class="post-title">Pitchers with More Saves than Strikeouts</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on May 21, 2017
+              </p>
+              <div class="post-entry">
+                
+                  On my favorite fantasy baseball podcast, the host mentioned the phenomenon of pitchers who had more saves than strikeouts. This seemed like it would be fairly uncommon since it seems that many closers are power pitchers (e.g., Aroldis Chapman). I decided to investigate further using the Lahman database.
+Methods I used the Lahman database again, which is perfect for answering this kind of questions. It has a Pitching table that contains season long stats for every pitcher from 1871 to 2015 (as of this post).
+                  <a href="../../2017/05/21/saves-vs-strikeouts/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/baseball">baseball</a>&nbsp;
+                  
+                    #<a href="../../tags/sports">sports</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../2017/05/11/iced-coffee/">
+                <h2 class="post-title">Economical Iced Coffee</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on May 11, 2017
+              </p>
+              <div class="post-entry">
+                
+                  My wife and I like iced coffee but drinking it at Starbucks is expensive. I&rsquo;ve been making it myself at home and it&rsquo;s a reasonable facsimile at what I think is a much lower price. I decided to run the calculations to see how much we&rsquo;re saving.
+Grounds I tried a bunch of different coffees to see what would work the best: whole bean Kirkland (Costco) brand, whole bean Kona coffee, ground Lion coffee (a local brand), ground Folgers, and ground Kirkland.
+                  <a href="../../2017/05/11/iced-coffee/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/calculation">calculation</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../2017/04/22/bank-shot/">
+                <h2 class="post-title">Bank Shot Win Analysis</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on April 22, 2017
+              </p>
+              <div class="post-entry">
+                
+                  There’s a carnival game at the Iolani Fair called Bank Shot. You have to roll a ball on a ramp into a hole and win a prize. Get it in the green hole and you win tickets, and if you get it in the red hole, you win a big inflatable prize. I wondered what was the rate of hitting the red and green holes.
+Here’s a picture of the game layout.
+                  <a href="../../2017/04/22/bank-shot/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/games">games</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../2017/04/20/alf-consent-calendar/">
+                <h2 class="post-title">AAP Annual Leadership Forum Consent Calendar Resolutions Less Likely to Make Top 10</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on April 20, 2017
+              </p>
+              <div class="post-entry">
+                
+                  Last month I went to the American Academy of Pediatrics’ Annual Leadership Forum. This is a meeting of local chapter leaders from across the country where we make resolutions for the AAP to act on. Some resolutions were passed quickly as a group because they were not controversial. This process is called the “consent calendar”. The other resolutions were debated, sometimes at much length, before being voted on individually. At the end of the meeting we came up with the top 10 resolutions that we wanted the AAP to work on this year.
+                  <a href="../../2017/04/20/alf-consent-calendar/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/aap">AAP</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../2017/04/18/saves-and-runs-scored/">
+                <h2 class="post-title">Effect of Runs and Other Factors on Team Saves in Major League Baseball</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on April 18, 2017
+              </p>
+              <div class="post-entry">
+                
+                  From listening to my favorite fantasy baseball podcast it seems that there is a belief that teams that score lots of runs are not likely to produce saves. The idea seems to be that such teams would blow out their competitors and so have less opportunity for games to be saved. While it made sense, I wondered what the data said.
+library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(Lahman) data(&quot;Teams&quot;) Teams &lt;- tbl_df(Teams) Exploration of Saves over Time Saves did not become an official statistic until 1969 (source).
+                  <a href="../../2017/04/18/saves-and-runs-scored/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/baseball">baseball</a>&nbsp;
+                  
+                    #<a href="../../tags/sports">sports</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../2017/04/09/bean-sprout-respiration/">
+                <h2 class="post-title">Graphing Bean Sprout Respiration with the Hadleyverse</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on April 9, 2017
+              </p>
+              <div class="post-entry">
+                
+                  My wife’s high school biology students did a lab recently and had difficulty graphing the pooled data. One student allegedly took 2 hours to figure out how to do this in Excel. This seemed like it would be a nice exercise to try in the Hadleyverse. To replicate this plot, I had to take her students’ data in wide form, tidy it up, calculate means for each group and time, and then plot these.
+                  <a href="../../2017/04/09/bean-sprout-respiration/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/biology">biology</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../2017/03/31/baseball-team-season-saves/">
+                <h2 class="post-title">Baseball Team Season Save Leaders with the Lowest Totals since 2000</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on March 31, 2017
+              </p>
+              <div class="post-entry">
+                
+                  I was listening to my fantasy baseball podcast last week, and the conversation turned to the Phillies closer situation. One host suggested that the Phillies might not have any pitcher with more than 10 saves this season. The other host thought that this would be unlikely. They looked quickly at the data and found that this has happened a few times since 2000. I wondered if there was a way to look this up using the Lahman database in R.
+                  <a href="../../2017/03/31/baseball-team-season-saves/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/baseball">baseball</a>&nbsp;
+                  
+                    #<a href="../../tags/sports">sports</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+        </div>
+        
+          <ul class="pager main-pager">
+            
+            
+              <li class="next">
+                <a href="../../categories/r/page/2">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/mching" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/mikec2a" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/michael-ching-033a5029" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="../../index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Mike Ching
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../">Dripping Data</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.24.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+

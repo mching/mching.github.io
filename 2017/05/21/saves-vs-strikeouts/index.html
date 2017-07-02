@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Pitchers with More Saves than Strikeouts</title>
+  <meta property="og:title" content="Pitchers with More Saves than Strikeouts" />
+  <meta name="twitter:title" content="Pitchers with More Saves than Strikeouts" />
+  <meta name="description" content="On my favorite fantasy baseball podcast, the host mentioned the phenomenon of pitchers who had more saves than strikeouts. This seemed like it would be fairly uncommon since it seems that many closers are power pitchers (e.g., Aroldis Chapman). I decided to investigate further using the Lahman database.
+Methods I used the Lahman database again, which is perfect for answering this kind of questions. It has a Pitching table that contains season long stats for every pitcher from 1871 to 2015 (as of this post).">
+  <meta property="og:description" content="On my favorite fantasy baseball podcast, the host mentioned the phenomenon of pitchers who had more saves than strikeouts. This seemed like it would be fairly uncommon since it seems that many closers are power pitchers (e.g., Aroldis Chapman). I decided to investigate further using the Lahman database.
+Methods I used the Lahman database again, which is perfect for answering this kind of questions. It has a Pitching table that contains season long stats for every pitcher from 1871 to 2015 (as of this post).">
+  <meta name="twitter:description" content="On my favorite fantasy baseball podcast, the host mentioned the phenomenon of pitchers who had more saves than strikeouts. This seemed like it would be fairly uncommon since it seems that many closers …">
+  <meta name="author" content="Mike Ching"/>
+  <link href='../../../../img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/minihead.jpg" />
+  <meta name="twitter:image" content="/img/minihead.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@mikec2a" />
+  <meta name="twitter:creator" content="@mikec2a" />
+  <meta property="og:url" content="/2017/05/21/saves-vs-strikeouts/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dripping Data" />
+
+  <meta name="generator" content="Hugo 0.24.1" />
+  <link rel="canonical" href="../../../../2017/05/21/saves-vs-strikeouts/" />
+  <link rel="alternate" href="../../../../index.xml" type="application/rss+xml" title="Dripping Data">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../../css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../../css/pygment_highlights.css" />
+  <link rel="stylesheet" href="../../../../css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../../">Dripping Data</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../../about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="LinkedIn" href="https://www.linkedin.com/in/michael-ching-033a5029">LinkedIn</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Twitter" href="https://twitter.com/mikec2a">Twitter</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dripping Data" href="../../../../">
+            <img class="avatar-img" src="../../../../img/minihead.jpg" alt="Dripping Data" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Pitchers with More Saves than Strikeouts</h1>
+                
+                
+                  <span class="post-meta">
+  Posted on May 21, 2017
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>On my favorite fantasy baseball podcast, the host mentioned the phenomenon of pitchers who had more saves than strikeouts. This seemed like it would be fairly uncommon since it seems that many closers are power pitchers (e.g., Aroldis Chapman). I decided to investigate further using the Lahman database.</p>
+<div id="methods" class="section level1">
+<h1>Methods</h1>
+<p>I used the Lahman database again, which is perfect for answering this kind of questions. It has a Pitching table that contains season long stats for every pitcher from 1871 to 2015 (as of this post).</p>
+<pre class="r"><code>library(Lahman)
+library(tidyverse)</code></pre>
+<pre><code>## Loading tidyverse: ggplot2
+## Loading tidyverse: tibble
+## Loading tidyverse: tidyr
+## Loading tidyverse: readr
+## Loading tidyverse: purrr
+## Loading tidyverse: dplyr</code></pre>
+<pre><code>## Conflicts with tidy packages ----------------------------------------------</code></pre>
+<pre><code>## filter(): dplyr, stats
+## lag():    dplyr, stats</code></pre>
+<pre class="r"><code>data(Pitching)
+data(Master)
+x &lt;- tbl_df(Pitching)</code></pre>
+<p>It was a simple enough query using the <code>tidyverse</code>. I decided to only look at the last 40 years since the modern closer is a relatively recent concept.</p>
+<div id="results" class="section level2">
+<h2>Results</h2>
+<p>The list of pitchers with more saves than strikeouts encompassed 23 players, of whom four had only 2 saves in that particular season. Todd Jones had more saves than strikeouts 3 years in a row. The biggest discrepancy was Jim Johnson in 2012 who had 51 saves with only 41 strikeouts.</p>
+<p>This may be an increasingly rare phenomenon. In the last 6 years, there has only been one year where a pitcher had more saves than strikeouts.</p>
+<pre class="r"><code>x %&gt;% select(playerID, yearID, teamID, IPouts, SV, SO) %&gt;% 
+  filter(SV&gt;SO, yearID&gt;1977) %&gt;% 
+  mutate(IP = round(IPouts/3, 1)) %&gt;%
+  inner_join(Master) %&gt;% 
+  select(yearID, nameFirst, nameLast, teamID, IP, SO, SV) %&gt;%
+  as.data.frame()</code></pre>
+<pre><code>## Joining, by = &quot;playerID&quot;</code></pre>
+<pre><code>##    yearID nameFirst    nameLast teamID    IP SO SV
+## 1    1980       Don   Stanhouse    LAN  25.0  5  7
+## 2    1982      Dave     Gumpert    DET   2.0  0  1
+## 3    1983       Don      Carman    PHI   1.0  0  1
+## 4    1984       Dan Quisenberry    KCA 129.3 41 44
+## 5    1987      Gene      Garber    KCA  14.3  3  8
+## 6    1987    Dickie       Noles    DET   2.0  0  2
+## 7    1990      Rich      Garces    MIN   5.7  1  2
+## 8    1991      Dave       Smith    CHN  33.0 16 17
+## 9    2000       Bob     Wickman    CLE  26.7 11 14
+## 10   2002      Mike    Williams    PIT  61.3 43 46
+## 11   2003      Mike    Williams    PIT  37.3 20 25
+## 12   2004     Danny      Graves    CIN  68.3 40 41
+## 13   2004     Danny        Kolb    MIL  57.3 21 39
+## 14   2004      Jose        Mesa    PIT  69.3 37 43
+## 15   2005     Danny      Graves    CIN  18.3  8 10
+## 16   2005    Dustin   Hermanson    CHA  57.3 33 34
+## 17   2005    Braden      Looper    NYN  59.3 27 28
+## 18   2005       Bob     Wickman    CLE  62.0 41 45
+## 19   2006      Todd       Jones    DET  64.0 28 37
+## 20   2007      Todd       Jones    DET  61.3 33 38
+## 21   2008      Todd       Jones    DET  41.7 14 18
+## 22   2009     Brian     Fuentes    LAA  55.0 46 48
+## 23   2012       Jim     Johnson    BAL  68.7 41 51</code></pre>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>It isn’t common to have more saves than strikeouts. This has happened about 23 times in the last 40 years, or about once every other year.</p>
+</div>
+</div>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="../../../../2017/05/11/iced-coffee/" data-toggle="tooltip" data-placement="top" title="Economical Iced Coffee">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="../../../../2017/05/26/king-tides-gis/" data-toggle="tooltip" data-placement="top" title="King Tides Citizen Science Project">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/mching" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/mikec2a" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/michael-ching-033a5029" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="../../../../index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Mike Ching
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../../">Dripping Data</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.24.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../../js/main.js"></script>
+<script src="../../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../../js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+

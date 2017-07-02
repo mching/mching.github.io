@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Pidgey Evolution: Effects on Combat Power and Hit Points</title>
+  <meta property="og:title" content="Pidgey Evolution: Effects on Combat Power and Hit Points" />
+  <meta name="twitter:title" content="Pidgey Evolution: Effects on Combat Power and Hit Points" />
+  <meta name="description" content="I was evolving some Pokemon in Pokemon Go today and wondered how much the Pokemon’s attributes change after evolution. The attributes of interest were combat power (CP) and hit points (HP). I focused my analysis from Pidgeys because I had the most data points for this species.
+I collected data from one day’s evolution, available for viewing here.
+x &lt;- read.csv(&quot;../datasets/evolution.csv&quot;) x &lt;- tbl_df(x) pidgeys &lt;- filter(x, pokemon == &quot;Pidgey&quot;) pidgeys ## # A tibble: 12 × 7 ## pokemon CP_pre HP_pre kg_pre CP_post HP_post kg_post ## &lt;fctr&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; ## 1 Pidgey 270 NA NA 533 NA NA ## 2 Pidgey 267 NA NA 515 NA NA ## 3 Pidgey 259 NA NA 526 NA NA ## 4 Pidgey 212 NA NA 413 NA NA ## 5 Pidgey 209 43 2.">
+  <meta property="og:description" content="I was evolving some Pokemon in Pokemon Go today and wondered how much the Pokemon’s attributes change after evolution. The attributes of interest were combat power (CP) and hit points (HP). I focused my analysis from Pidgeys because I had the most data points for this species.
+I collected data from one day’s evolution, available for viewing here.
+x &lt;- read.csv(&quot;../datasets/evolution.csv&quot;) x &lt;- tbl_df(x) pidgeys &lt;- filter(x, pokemon == &quot;Pidgey&quot;) pidgeys ## # A tibble: 12 × 7 ## pokemon CP_pre HP_pre kg_pre CP_post HP_post kg_post ## &lt;fctr&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; ## 1 Pidgey 270 NA NA 533 NA NA ## 2 Pidgey 267 NA NA 515 NA NA ## 3 Pidgey 259 NA NA 526 NA NA ## 4 Pidgey 212 NA NA 413 NA NA ## 5 Pidgey 209 43 2.">
+  <meta name="twitter:description" content="I was evolving some Pokemon in Pokemon Go today and wondered how much the Pokemon’s attributes change after evolution. The attributes of interest were combat power (CP) and hit points (HP). I focused …">
+  <meta name="author" content="Mike Ching"/>
+  <link href='../../../../img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/minihead.jpg" />
+  <meta name="twitter:image" content="/img/minihead.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@mikec2a" />
+  <meta name="twitter:creator" content="@mikec2a" />
+  <meta property="og:url" content="/2016/12/14/pidgey-evolution/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dripping Data" />
+
+  <meta name="generator" content="Hugo 0.24.1" />
+  <link rel="canonical" href="../../../../2016/12/14/pidgey-evolution/" />
+  <link rel="alternate" href="../../../../index.xml" type="application/rss+xml" title="Dripping Data">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../../css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../../css/pygment_highlights.css" />
+  <link rel="stylesheet" href="../../../../css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../../">Dripping Data</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../../about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="LinkedIn" href="https://www.linkedin.com/in/michael-ching-033a5029">LinkedIn</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Twitter" href="https://twitter.com/mikec2a">Twitter</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dripping Data" href="../../../../">
+            <img class="avatar-img" src="../../../../img/minihead.jpg" alt="Dripping Data" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Pidgey Evolution: Effects on Combat Power and Hit Points</h1>
+                
+                
+                  <span class="post-meta">
+  Posted on December 14, 2016
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>I was evolving some Pokemon in Pokemon Go today and wondered how much the Pokemon’s attributes change after evolution. The attributes of interest were combat power (CP) and hit points (HP). I focused my analysis from Pidgeys because I had the most data points for this species.</p>
+<p>I collected data from one day’s evolution, available for viewing <a href="https://docs.google.com/spreadsheets/d/1kzYLqVn0-sA0ffGscNco9QkkC_0bce22S7pafiUs0uE/edit?usp=sharing">here</a>.</p>
+<pre class="r"><code>x &lt;- read.csv(&quot;../datasets/evolution.csv&quot;)
+x &lt;- tbl_df(x)
+pidgeys &lt;- filter(x, pokemon == &quot;Pidgey&quot;)
+pidgeys</code></pre>
+<pre><code>## # A tibble: 12 × 7
+##    pokemon CP_pre HP_pre kg_pre CP_post HP_post kg_post
+##     &lt;fctr&gt;  &lt;int&gt;  &lt;int&gt;  &lt;dbl&gt;   &lt;int&gt;   &lt;int&gt;   &lt;dbl&gt;
+## 1   Pidgey    270     NA     NA     533      NA      NA
+## 2   Pidgey    267     NA     NA     515      NA      NA
+## 3   Pidgey    259     NA     NA     526      NA      NA
+## 4   Pidgey    212     NA     NA     413      NA      NA
+## 5   Pidgey    209     43   2.20     403      66   36.70
+## 6   Pidgey    203     41   1.18     395      64   19.75
+## 7   Pidgey    201     43   1.70     392      66   28.38
+## 8   Pidgey    198     41   2.26     396      65   37.72
+## 9   Pidgey    191     NA     NA     370      NA      NA
+## 10  Pidgey    163     42   1.08     322      63   18.07
+## 11  Pidgey    154     35   1.35     295      55   22.47
+## 12  Pidgey    152     35   2.50     293      54   41.63</code></pre>
+<div id="question-1-what-is-the-relationship-between-cp-before-and-cp-after-evolution" class="section level2">
+<h2>Question 1: What is the relationship between CP before and CP after evolution?</h2>
+<p>To explore what happened to CP before and after evolution, I plotted these on a graph.</p>
+<pre class="r"><code>library(ggplot2)
+ggplot(pidgeys, aes(x = CP_pre, y = CP_post)) + geom_point(shape = 1) + 
+  ggtitle(&quot;CP pre and post evolution&quot;)</code></pre>
+<p><img src="../../../../post/2016-12-14-Pokemon-Evolution_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>The relationship was roughly linear with apparently random variations from the line.</p>
+<p>I modeled the relationship using simple linear regression.</p>
+<pre class="r"><code>pidgey_CP_model &lt;- lm(CP_post ~ CP_pre, data = pidgeys)
+summary(pidgey_CP_model)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = CP_post ~ CP_pre, data = pidgeys)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -11.796  -2.865  -1.633   1.562  15.409 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -14.03520   11.58352  -1.212    0.253    
+## CP_pre        2.02558    0.05509  36.770 5.27e-12 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 7.484 on 10 degrees of freedom
+## Multiple R-squared:  0.9927, Adjusted R-squared:  0.9919 
+## F-statistic:  1352 on 1 and 10 DF,  p-value: 5.266e-12</code></pre>
+<p>Based on the data, the estimated multipler was 2.026 with a standard deviation of 0.055. The model explained roughly 99% of the variation in CP after evolution. Here is the model in equation form.</p>
+<p><span class="math display">\[ CP_{post} = 2.02558 \times CP_{pre} - 14.0352 + \epsilon\]</span></p>
+<p>Those numbers were close enough to 2 and -14 to speculate that the Pokemon Go programmers used whole numbers in determining how much CP you get afterwards.</p>
+<p>There is a <a href="http://pokemongohub.net/pokemon-go-max-cp-per-level-chart/">maximum CP for Pokemon</a>, but this might suggest that there is also a minimum CP. If we assume that the programmers would not want the evolved form to have a lower CP than the original form, we could solve for the theoretical minimum CP of a Pidgey.</p>
+<p>We set the <span class="math inline">\(CP_{post}\)</span> to be equal to the <span class="math inline">\(CP_{pre}\)</span> in the equation and solve for <span class="math inline">\(CP_{pre}\)</span>. Ignoring <span class="math inline">\(\epsilon\)</span> for simplicity we get:</p>
+<p><span class="math display">\[ CP_{pre} = 2.02558 \times CP_{pre} - 14.0352\]</span> <span class="math display">\[ -1.02558 \times CP_{pre} =  - 14.0352\]</span> <span class="math display">\[ CP_{pre} = 13.68513\]</span> Since collecting the original data, I have caught more Pidgeys with lower CP (minimum 21). I will update the analysis once I’ve done their evolutions.</p>
+</div>
+<div id="question-2-how-does-evolution-affect-hp" class="section level2">
+<h2>Question 2: How does evolution affect HP?</h2>
+<p>To view the relationship between pre and post HP, I plotted HP before and after evolution. I did not have as many data points on this attribute.</p>
+<pre class="r"><code>ggplot(pidgeys, aes(x = HP_pre, y = HP_post)) + geom_point(shape = 1) + 
+  ggtitle(&quot;HP pre and post evolution&quot;)</code></pre>
+<pre><code>## Warning: Removed 5 rows containing missing values (geom_point).</code></pre>
+<p><img src="../../../../post/2016-12-14-Pokemon-Evolution_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>There was also a roughly linear relationship but it did not appear to be as linear as the CP before and after.</p>
+<pre class="r"><code>pidgey_HP_model &lt;- lm(HP_post ~ HP_pre, data = pidgeys)
+summary(pidgey_HP_model)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = HP_post ~ HP_pre, data = pidgeys)
+## 
+## Residuals:
+##       5       6       7       8      10      11      12 
+## -0.1544  0.7104 -0.1544  1.7104 -1.7220  0.3050 -0.6950 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   4.5598     5.5276   0.825 0.446970    
+## HP_pre        1.4324     0.1377  10.400 0.000142 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.185 on 5 degrees of freedom
+##   (5 observations deleted due to missingness)
+## Multiple R-squared:  0.9558, Adjusted R-squared:  0.947 
+## F-statistic: 108.2 on 1 and 5 DF,  p-value: 0.0001416</code></pre>
+<p>From these observations it looks like the model is:</p>
+<p><span class="math display">\[HP_{post} = 1.4324 \times HP_{pre} + 4.5598 + \epsilon\]</span></p>
+<p>As I wrote above for the CP analysis, I have collected more Pidgeys now and will update this analysis once I have evolved them.</p>
+</div>
+<div id="discussion" class="section level2">
+<h2>Discussion</h2>
+<p>There are some other people who have done similar analyses on the relationship between pre and post evolution CP. There are even calculators that provide estimates of the post evolution CP. Here’s <a href="https://pogotoolkit.com/#selectedPokemon=016&amp;combatPower=100">one example</a>.</p>
+<p>I was not able to find HP evolution analysis, so expanding this analysis could be of novel interest.</p>
+<p>Here’s a data set that could be used for cross validation: <a href="https://www.openintro.org/stat/data/?data=pokemon" class="uri">https://www.openintro.org/stat/data/?data=pokemon</a></p>
+</div>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="../../../../2016/12/09/simple-secret-santa-picker/" data-toggle="tooltip" data-placement="top" title="Simple Secret Santa Picker">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="../../../../2016/12/29/electric-vehicle-parking-at-hnl/" data-toggle="tooltip" data-placement="top" title="Electric Vehicle Parking at Honolulu International Airport">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/mching" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/mikec2a" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/michael-ching-033a5029" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="../../../../index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Mike Ching
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../../">Dripping Data</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.24.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../../js/main.js"></script>
+<script src="../../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../../js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+

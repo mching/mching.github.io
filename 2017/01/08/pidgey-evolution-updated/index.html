@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Pidgey Evolution: Effects on Combat Power and Hit Points (Updated)</title>
+  <meta property="og:title" content="Pidgey Evolution: Effects on Combat Power and Hit Points (Updated)" />
+  <meta name="twitter:title" content="Pidgey Evolution: Effects on Combat Power and Hit Points (Updated)" />
+  <meta name="description" content="I was evolving some Pokemon in Pokemon Go and wondered how much the Pokemon’s attributes change after evolution. The attributes of interest were combat power (CP) and hit points (HP). I focused my analysis from Pidgeys because I had the most data points for this species.
+I collected data from a couple of days’ evolution, available for viewing here. Both times I was using a Lucky Egg.
+x &lt;- read.csv(&quot;../datasets/evolution2.csv&quot;) x &lt;- tbl_df(x) pidgeys &lt;- filter(x, pokemon == &quot;Pidgey&quot;) pidgeys ## # A tibble: 55 × 7 ## pokemon CP_pre HP_pre kg_pre CP_post HP_post kg_post ## &lt;fctr&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; ## 1 Pidgey 270 NA NA 533 NA NA ## 2 Pidgey 267 NA NA 515 NA NA ## 3 Pidgey 259 NA NA 526 NA NA ## 4 Pidgey 212 NA NA 413 NA NA ## 5 Pidgey 209 43 2.">
+  <meta property="og:description" content="I was evolving some Pokemon in Pokemon Go and wondered how much the Pokemon’s attributes change after evolution. The attributes of interest were combat power (CP) and hit points (HP). I focused my analysis from Pidgeys because I had the most data points for this species.
+I collected data from a couple of days’ evolution, available for viewing here. Both times I was using a Lucky Egg.
+x &lt;- read.csv(&quot;../datasets/evolution2.csv&quot;) x &lt;- tbl_df(x) pidgeys &lt;- filter(x, pokemon == &quot;Pidgey&quot;) pidgeys ## # A tibble: 55 × 7 ## pokemon CP_pre HP_pre kg_pre CP_post HP_post kg_post ## &lt;fctr&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; ## 1 Pidgey 270 NA NA 533 NA NA ## 2 Pidgey 267 NA NA 515 NA NA ## 3 Pidgey 259 NA NA 526 NA NA ## 4 Pidgey 212 NA NA 413 NA NA ## 5 Pidgey 209 43 2.">
+  <meta name="twitter:description" content="I was evolving some Pokemon in Pokemon Go and wondered how much the Pokemon’s attributes change after evolution. The attributes of interest were combat power (CP) and hit points (HP). I focused my …">
+  <meta name="author" content="Mike Ching"/>
+  <link href='../../../../img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/minihead.jpg" />
+  <meta name="twitter:image" content="/img/minihead.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@mikec2a" />
+  <meta name="twitter:creator" content="@mikec2a" />
+  <meta property="og:url" content="/2017/01/08/pidgey-evolution-updated/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dripping Data" />
+
+  <meta name="generator" content="Hugo 0.24.1" />
+  <link rel="canonical" href="../../../../2017/01/08/pidgey-evolution-updated/" />
+  <link rel="alternate" href="../../../../index.xml" type="application/rss+xml" title="Dripping Data">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../../css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../../css/pygment_highlights.css" />
+  <link rel="stylesheet" href="../../../../css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../../">Dripping Data</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../../about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="LinkedIn" href="https://www.linkedin.com/in/michael-ching-033a5029">LinkedIn</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Twitter" href="https://twitter.com/mikec2a">Twitter</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dripping Data" href="../../../../">
+            <img class="avatar-img" src="../../../../img/minihead.jpg" alt="Dripping Data" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Pidgey Evolution: Effects on Combat Power and Hit Points (Updated)</h1>
+                
+                
+                  <span class="post-meta">
+  Posted on January 8, 2017
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>I was evolving some Pokemon in Pokemon Go and wondered how much the Pokemon’s attributes change after evolution. The attributes of interest were combat power (CP) and hit points (HP). I focused my analysis from Pidgeys because I had the most data points for this species.</p>
+<p>I collected data from a couple of days’ evolution, available for viewing <a href="https://docs.google.com/spreadsheets/d/1kzYLqVn0-sA0ffGscNco9QkkC_0bce22S7pafiUs0uE/edit?usp=sharing">here</a>. Both times I was using a Lucky Egg.</p>
+<pre class="r"><code>x &lt;- read.csv(&quot;../datasets/evolution2.csv&quot;)
+x &lt;- tbl_df(x)
+pidgeys &lt;- filter(x, pokemon == &quot;Pidgey&quot;)
+pidgeys</code></pre>
+<pre><code>## # A tibble: 55 × 7
+##    pokemon CP_pre HP_pre kg_pre CP_post HP_post kg_post
+##     &lt;fctr&gt;  &lt;int&gt;  &lt;int&gt;  &lt;dbl&gt;   &lt;int&gt;   &lt;int&gt;   &lt;dbl&gt;
+## 1   Pidgey    270     NA     NA     533      NA      NA
+## 2   Pidgey    267     NA     NA     515      NA      NA
+## 3   Pidgey    259     NA     NA     526      NA      NA
+## 4   Pidgey    212     NA     NA     413      NA      NA
+## 5   Pidgey    209     43   2.20     403      66   36.70
+## 6   Pidgey    203     41   1.18     395      64   19.75
+## 7   Pidgey    201     43   1.70     392      66   28.38
+## 8   Pidgey    198     41   2.26     396      65   37.72
+## 9   Pidgey    191     NA     NA     370      NA      NA
+## 10  Pidgey    163     42   1.08     322      63   18.07
+## # ... with 45 more rows</code></pre>
+<div id="question-1-what-is-the-relationship-between-cp-before-and-cp-after-evolution" class="section level2">
+<h2>Question 1: What is the relationship between CP before and CP after evolution?</h2>
+<p>To explore what happened to CP before and after evolution, I plotted these on a graph.</p>
+<pre class="r"><code>ggplot(pidgeys, aes(x = CP_pre, y = CP_post)) + geom_point(shape = 1) + 
+  ggtitle(&quot;CP pre and post evolution&quot;)</code></pre>
+<p><img src="../../../../post/2017-01-08-Pokemon-Evolution_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>The relationship was roughly linear. I modeled the relationship using simple linear regression.</p>
+<pre class="r"><code>pidgey_CP_model &lt;- lm(CP_post ~ CP_pre, data = pidgeys)
+summary(pidgey_CP_model)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = CP_post ~ CP_pre, data = pidgeys)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -15.8820  -3.3266  -0.9626   3.2191  19.6111 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 0.780734   1.573649   0.496    0.622    
+## CP_pre      1.952155   0.008776 222.438   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 6.153 on 53 degrees of freedom
+## Multiple R-squared:  0.9989, Adjusted R-squared:  0.9989 
+## F-statistic: 4.948e+04 on 1 and 53 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Based on the data, the estimated multipler was 1.95 with a standard deviation of 0.009. The model explained roughly 99.9% of the variation in CP after evolution. Here is the model in equation form.</p>
+<p><span class="math display">\[ CP_{post} = 1.925 \times CP_{pre} + 0.781 + \epsilon\]</span></p>
+</div>
+<div id="question-2-how-does-evolution-affect-hp" class="section level2">
+<h2>Question 2: How does evolution affect HP?</h2>
+<p>To view the relationship between pre and post HP, I plotted HP before and after evolution.</p>
+<pre class="r"><code>ggplot(pidgeys, aes(x = HP_pre, y = HP_post)) + geom_point(shape = 1) + 
+  ggtitle(&quot;HP pre and post evolution&quot;)</code></pre>
+<pre><code>## Warning: Removed 5 rows containing missing values (geom_point).</code></pre>
+<p><img src="../../../../post/2017-01-08-Pokemon-Evolution_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>There was also a roughly linear relationship but it did not appear to be as tightly linear as the CP before and after.</p>
+<pre class="r"><code>pidgey_HP_model &lt;- lm(HP_post ~ HP_pre, data = pidgeys)
+summary(pidgey_HP_model)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = HP_post ~ HP_pre, data = pidgeys)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.2680 -0.6441 -0.0057  0.8595  2.5623 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -0.12035    0.51552  -0.233    0.816    
+## HP_pre       1.53883    0.01414 108.806   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.245 on 48 degrees of freedom
+##   (5 observations deleted due to missingness)
+## Multiple R-squared:  0.996,  Adjusted R-squared:  0.9959 
+## F-statistic: 1.184e+04 on 1 and 48 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>From these observations it looks like the model is:</p>
+<p><span class="math display">\[HP_{post} = 1.539 \times HP_{pre} -0.120 + \epsilon\]</span></p>
+<p>This model explained &gt;99% of the variance in HP after evolution.</p>
+</div>
+<div id="question-3-what-is-the-relationship-between-cp-and-hp" class="section level2">
+<h2>Question 3: What is the relationship between CP and HP?</h2>
+<p>I plotted the relationship between CP and HP for Pidgeys.</p>
+<pre class="r"><code>ggplot(pidgeys, aes(x = CP_pre, y = HP_pre)) + geom_point(shape = 1) + 
+  ggtitle(&quot;Pidgey CP and HP Relationship&quot;)</code></pre>
+<pre><code>## Warning: Removed 5 rows containing missing values (geom_point).</code></pre>
+<p><img src="../../../../post/2017-01-08-Pokemon-Evolution_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>This did not look like a linear relationship at all. I tried to fit several models. First we tried the linear one as a baseline. This was actually pretty good, although the diagnostics don’t look great.</p>
+<pre class="r"><code>pidgey_CP_HP_model &lt;- lm(HP_pre ~ CP_pre, data = pidgeys)
+summary(pidgey_CP_HP_model)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = HP_pre ~ CP_pre, data = pidgeys)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -7.105 -1.619  0.620  1.872  5.252 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 15.821364   0.764216   20.70   &lt;2e-16 ***
+## CP_pre       0.128385   0.004448   28.86   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.965 on 48 degrees of freedom
+##   (5 observations deleted due to missingness)
+## Multiple R-squared:  0.9455, Adjusted R-squared:  0.9444 
+## F-statistic: 832.9 on 1 and 48 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code>plot(pidgey_CP_HP_model)</code></pre>
+<p><img src="../../../../post/2017-01-08-Pokemon-Evolution_files/figure-html/unnamed-chunk-8-1.png" width="672" /><img src="../../../../post/2017-01-08-Pokemon-Evolution_files/figure-html/unnamed-chunk-8-2.png" width="672" /><img src="../../../../post/2017-01-08-Pokemon-Evolution_files/figure-html/unnamed-chunk-8-3.png" width="672" /><img src="../../../../post/2017-01-08-Pokemon-Evolution_files/figure-html/unnamed-chunk-8-4.png" width="672" /></p>
+<p>I next tried a logarithmic model. The diagnostics on this weren’t great either. The R squared was actually even worse than the linear model.</p>
+<pre class="r"><code>pidgey_logCP_HP_model &lt;- lm(HP_pre ~ log(CP_pre), data = pidgeys)
+summary(pidgey_logCP_HP_model)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = HP_pre ~ log(CP_pre), data = pidgeys)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -4.224 -2.286 -1.111  2.047 10.300 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -32.8371     2.8319  -11.60  1.6e-15 ***
+## log(CP_pre)  14.3065     0.5944   24.07  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.514 on 48 degrees of freedom
+##   (5 observations deleted due to missingness)
+## Multiple R-squared:  0.9235, Adjusted R-squared:  0.9219 
+## F-statistic: 579.2 on 1 and 48 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code>plot(pidgey_logCP_HP_model)</code></pre>
+<p><img src="../../../../post/2017-01-08-Pokemon-Evolution_files/figure-html/unnamed-chunk-9-1.png" width="672" /><img src="../../../../post/2017-01-08-Pokemon-Evolution_files/figure-html/unnamed-chunk-9-2.png" width="672" /><img src="../../../../post/2017-01-08-Pokemon-Evolution_files/figure-html/unnamed-chunk-9-3.png" width="672" /><img src="../../../../post/2017-01-08-Pokemon-Evolution_files/figure-html/unnamed-chunk-9-4.png" width="672" /></p>
+<p>I then tried a square root model. The R squared was much better, and the diagnostics looked better.</p>
+<pre class="r"><code>pidgey_sqrtCP_HP_model &lt;- lm(HP_pre ~ I(CP_pre^(0.5)), data = pidgeys)
+summary(pidgey_sqrtCP_HP_model)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = HP_pre ~ I(CP_pre^(0.5)), data = pidgeys)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -3.424 -1.178 -0.116  1.035  3.611 
+## 
+## Coefficients:
+##                 Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)     -0.01716    0.66486  -0.026     0.98    
+## I(CP_pre^(0.5))  3.04014    0.05548  54.799   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.593 on 48 degrees of freedom
+##   (5 observations deleted due to missingness)
+## Multiple R-squared:  0.9843, Adjusted R-squared:  0.9839 
+## F-statistic:  3003 on 1 and 48 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code>plot(pidgey_sqrtCP_HP_model)</code></pre>
+<p><img src="../../../../post/2017-01-08-Pokemon-Evolution_files/figure-html/unnamed-chunk-10-1.png" width="672" /><img src="../../../../post/2017-01-08-Pokemon-Evolution_files/figure-html/unnamed-chunk-10-2.png" width="672" /><img src="../../../../post/2017-01-08-Pokemon-Evolution_files/figure-html/unnamed-chunk-10-3.png" width="672" /><img src="../../../../post/2017-01-08-Pokemon-Evolution_files/figure-html/unnamed-chunk-10-4.png" width="672" /></p>
+<p>Here’s the model in equation form:</p>
+<p><span class="math display">\[HP = 3.04 \times \sqrt{CP} - 0.017 + \epsilon\]</span> Those numbers were so close to round numbers that we could say:</p>
+<p><span class="math display">\[HP \approx 3 \times \sqrt{CP}\]</span></p>
+</div>
+<div id="discussion" class="section level2">
+<h2>Discussion</h2>
+<p>There appears to be a linear relationship between pre and post evolution CP and pre and post evolution HP. The relationship between CP and HP appears to be exponential.</p>
+<p>There are some other people who have done similar analyses on the relationship between pre and post evolution CP. There are even calculators that provide estimates of the post evolution CP. Here’s <a href="https://pogotoolkit.com/#selectedPokemon=016&amp;combatPower=100">one example</a>.</p>
+<p>The original version of this paper had a negative intercept in the CP evolution model. This model’s intercept is not significantly different from 0. The implication of the original negative intercept was that one might have a Pigeotto that had lower CP than the original Pidgey. With the updated model, this is no longer possible.</p>
+<p>I was not able to find other HP evolution analysis online. It appears that at least for Pidgeys, there is a simple linear relationship between pre and post evolution HP.</p>
+<p>Here’s a data set that could be used for cross validation: <a href="https://www.openintro.org/stat/data/?data=pokemon" class="uri">https://www.openintro.org/stat/data/?data=pokemon</a></p>
+</div>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="../../../../2016/12/30/birthday-problem-at-work/" data-toggle="tooltip" data-placement="top" title="Birthday Problem at Work">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="../../../../2017/03/31/baseball-team-season-saves/" data-toggle="tooltip" data-placement="top" title="Baseball Team Season Save Leaders with the Lowest Totals since 2000">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/mching" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/mikec2a" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/michael-ching-033a5029" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="../../../../index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Mike Ching
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../../">Dripping Data</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.24.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../../js/main.js"></script>
+<script src="../../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../../js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+

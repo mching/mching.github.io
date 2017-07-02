@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Electric Vehicle Parking at Honolulu International Airport</title>
+  <meta property="og:title" content="Electric Vehicle Parking at Honolulu International Airport" />
+  <meta name="twitter:title" content="Electric Vehicle Parking at Honolulu International Airport" />
+  <meta name="description" content="In Hawaii, electric cars park for free at state owned parking lots. This is a big benefit when we travel since the airport parking lot is normally $18 per day. I wondered how much money the state loses on the electric car parking at the airport. Because I travel to Maui every week for work, I was able to collect some data to try to answer this question.
+Methods I made video recordings of parked cars while driving through the Honolulu International Airport interisland parking structure between November 29, 2016 and December 28, 2016.">
+  <meta property="og:description" content="In Hawaii, electric cars park for free at state owned parking lots. This is a big benefit when we travel since the airport parking lot is normally $18 per day. I wondered how much money the state loses on the electric car parking at the airport. Because I travel to Maui every week for work, I was able to collect some data to try to answer this question.
+Methods I made video recordings of parked cars while driving through the Honolulu International Airport interisland parking structure between November 29, 2016 and December 28, 2016.">
+  <meta name="twitter:description" content="In Hawaii, electric cars park for free at state owned parking lots. This is a big benefit when we travel since the airport parking lot is normally $18 per day. I wondered how much money the state …">
+  <meta name="author" content="Mike Ching"/>
+  <link href='../../../../img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/minihead.jpg" />
+  <meta name="twitter:image" content="/img/minihead.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@mikec2a" />
+  <meta name="twitter:creator" content="@mikec2a" />
+  <meta property="og:url" content="/2016/12/29/electric-vehicle-parking-at-hnl/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dripping Data" />
+
+  <meta name="generator" content="Hugo 0.24.1" />
+  <link rel="canonical" href="../../../../2016/12/29/electric-vehicle-parking-at-hnl/" />
+  <link rel="alternate" href="../../../../index.xml" type="application/rss+xml" title="Dripping Data">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../../css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../../css/pygment_highlights.css" />
+  <link rel="stylesheet" href="../../../../css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../../">Dripping Data</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../../about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="LinkedIn" href="https://www.linkedin.com/in/michael-ching-033a5029">LinkedIn</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Twitter" href="https://twitter.com/mikec2a">Twitter</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dripping Data" href="../../../../">
+            <img class="avatar-img" src="../../../../img/minihead.jpg" alt="Dripping Data" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Electric Vehicle Parking at Honolulu International Airport</h1>
+                
+                
+                  <span class="post-meta">
+  Posted on December 29, 2016
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>In Hawaii, electric cars park for free at state owned parking lots. This is a big benefit when we travel since the airport parking lot is normally $18 per day. I wondered how much money the state loses on the electric car parking at the airport. Because I travel to Maui every week for work, I was able to collect some data to try to answer this question.</p>
+<div id="methods" class="section level2">
+<h2>Methods</h2>
+<p>I made video recordings of parked cars while driving through the Honolulu International Airport interisland parking structure between November 29, 2016 and December 28, 2016. I recorded the number of electric cars and total number of cars by watching the video and coding the vehicles. The data are available for viewing <a href="https://docs.google.com/spreadsheets/d/1_k6RM5mQr2QJw2fuoNn_V8xkckfq59Nqh-xfWuOHA-Y/edit?usp=sharing">here</a>.</p>
+<p>I estimated the overall prevalence of electric car parking and compared this to the prevalence of electric cars in Hawaii using an exact binomial test. I also noted a trend in the data possibly caused by winter vacation, and I analyzed the difference in rates before and during winter vacation using a chi square test.</p>
+</div>
+<div id="results" class="section level2">
+<h2>Results</h2>
+<pre class="r"><code>library(binom)
+library(epiR)</code></pre>
+<div id="overall-frequency-of-electric-cars-at-the-airport" class="section level3">
+<h3>Overall Frequency of Electric Cars at the Airport</h3>
+<p>I observed 36 electric cars out of a total of 751 cars. This yielded a prevalence rate of 0.048. The 95% confidence interval was 0.034 to 0.066.</p>
+<pre class="r"><code>binom.confint(36, 751, methods = &quot;exact&quot;)</code></pre>
+<pre><code>##   method  x   n       mean      lower      upper
+## 1  exact 36 751 0.04793609 0.03379636 0.06574896</code></pre>
+<p>The electric car prevalence of 4.8% was significantly different than the reported number of electric cars registered in this state as of November 2016, approximately 0.29% of vehicles (p &lt; 0.001) (<a href="https://energy.hawaii.gov/wp-content/uploads/2011/08/FF_Nov2016.pdf">source</a>). The ratio is 17 times the frequency of electric cars parked at the airport compared to the frequency of electric cars in the state.</p>
+<pre class="r"><code>binom.test(36, 751, p = 0.0029)</code></pre>
+<pre><code>## 
+##  Exact binomial test
+## 
+## data:  36 and 751
+## number of successes = 36, number of trials = 751, p-value &lt;
+## 2.2e-16
+## alternative hypothesis: true probability of success is not equal to 0.0029
+## 95 percent confidence interval:
+##  0.03379636 0.06574896
+## sample estimates:
+## probability of success 
+##             0.04793609</code></pre>
+</div>
+<div id="winter-vacation-vs.pre-winter-vacation-rates" class="section level3">
+<h3>Winter Vacation vs. Pre-winter Vacation Rates</h3>
+<p>Because of the hypothesis that there were more electric cars parked over winter break, I compared the rates during the two weeks of winter break to the 3 weeks before. On 12/20/16 and 12/27/16, 22 out of 254 (0.087) cars were electric. The 3 weeks prior, I observed 14/497 (0.028) electric cars. This discrepancy was statistically significant. The prevalence ratio was 3.07 (p &lt; 0.001, 95% confidence interval 1.60-5.91) comparing winter break to the weeks before break.</p>
+<pre class="r"><code>epi.2by2(matrix(c(22, 14, 232, 483), nrow = 2), method = &quot;cross.sectional&quot;)</code></pre>
+<pre><code>##              Outcome +    Outcome -      Total        Prevalence *
+## Exposed +           22          232        254                8.66
+## Exposed -           14          483        497                2.82
+## Total               36          715        751                4.79
+##                  Odds
+## Exposed +      0.0948
+## Exposed -      0.0290
+## Total          0.0503
+## 
+## Point estimates and 95 % CIs:
+## -------------------------------------------------------------------
+## Prevalence ratio                             3.07 (1.60, 5.91)
+## Odds ratio                                   3.27 (1.64, 6.51)
+## Attrib prevalence *                          5.84 (2.09, 9.60)
+## Attrib prevalence in population *            1.98 (-0.13, 4.09)
+## Attrib fraction in exposed (%)              67.48 (37.53, 83.07)
+## Attrib fraction in population (%)           41.24 (12.24, 60.65)
+## -------------------------------------------------------------------
+##  X2 test statistic: 12.581 p-value: &lt; 0.001
+##  Wald confidence limits
+##  * Outcomes per 100 population units</code></pre>
+</div>
+</div>
+<div id="discussion" class="section level2">
+<h2>Discussion</h2>
+<div id="overall-electric-car-frequency" class="section level3">
+<h3>Overall Electric Car Frequency</h3>
+<p>One possible explanation for the increased frequency of electric cars at the airport is that people who are traveling have money to spend on electric cars. If you polled all travelers, I would suspect that the rate of electric car ownership is well above 0.29%.</p>
+<p>Another factor is the incentive to drive and park at the airport if you have an electric car. Driving yourself and and parking for free would be more convenient than asking a friend or family member to drop you off and pick you up. This also probably increases the rate of electric cars at the airport.</p>
+</div>
+<div id="different-frequency-in-winter-break" class="section level3">
+<h3>Different Frequency in Winter Break</h3>
+<p>There seemed to be more electric cars over the winter break, and this was borne out by the statistically significant prevalence ratio. The reason for this could be that there are more people doing leisure travel over the break. I generally drive my hybrid car to the airport for work since my employer pays for the fee. When we travel for leisure, I take the electric car to save the $18/day.</p>
+</div>
+<div id="estimated-cost-of-electric-cars-parked-at-airport" class="section level3">
+<h3>Estimated Cost of Electric Cars Parked at Airport</h3>
+<p>It is difficult to say how much money the state is losing on electric cars being parked at the airport because having an electric car probably makes it more likely that you would park at the airport. Some of the electric car owners who are parked at the airport would have gotten dropped off and not paid for parking if they did not have electric cars.</p>
+<p>If we assume that 80% of the electric car owners would have parked at the airport anyway, we can see that the state loses (36 * 0.8) / (751 - 36 * 0.8) * $18, or $71.78 per 100 cars parked at the airport per day.</p>
+<p>There are 1570 stalls in the overseas garage, 1787 in the interisland garage, and 1800 in the international garage, for a total of 5157 parking spots (parking data from <a href="http://hawaii.gov/hnl/airport-parking/lot-d-main-terminal">here</a> and <a href="http://hawaii.gov/hnl/airport-parking/lot-m-interisland-terminal">here</a>). If we assume that on a busy weekend 90% of these are full (4641 spots), and 4.8% of them are filled by electric cars, we would have 222 electric cars at the airport. These cars would cost the state $4004.74 per day.</p>
+<p>These calculations rely heavily on the assumptions I made about the sensitivity of people driving electric cars to paying the parking fee at the airport. If we change the number to only 10% of electric car owners who would still park and pay if they did not have electric cars, we would find that the state would lose only $8.67 per 100 cars parked at the airport per day.</p>
+</div>
+<div id="future-opportunities" class="section level3">
+<h3>Future Opportunities</h3>
+<p>One unanswered question is how much does electric car ownership cause people to choose to park at public (free) parking lots vs. private parking lots. There are no comparable private parking lots at the airport but there are similar private and public lots downtown. Having parked at city lots downtown, I would guess that the frequency is at least what I observed at the airport and possibly more because of the high cost of parking downtown. However, I don’t have actual data to look at this, and honestly, the underlying question of how sensitive people are to parking prices has probably been answered.</p>
+</div>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>The percentage of cars parked at the airport that are electric is greater than the percentage of electric cars in the state. This effect seems to be greater over the winter holiday.</p>
+</div>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="../../../../2016/12/14/pidgey-evolution/" data-toggle="tooltip" data-placement="top" title="Pidgey Evolution: Effects on Combat Power and Hit Points">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="../../../../2016/12/30/birthday-problem-at-work/" data-toggle="tooltip" data-placement="top" title="Birthday Problem at Work">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/mching" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/mikec2a" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/michael-ching-033a5029" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="../../../../index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Mike Ching
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../../">Dripping Data</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.24.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../../js/main.js"></script>
+<script src="../../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../../js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+

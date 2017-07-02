@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Graphing Bean Sprout Respiration with the Hadleyverse</title>
+  <meta property="og:title" content="Graphing Bean Sprout Respiration with the Hadleyverse" />
+  <meta name="twitter:title" content="Graphing Bean Sprout Respiration with the Hadleyverse" />
+  <meta name="description" content="My wife’s high school biology students did a lab recently and had difficulty graphing the pooled data. One student allegedly took 2 hours to figure out how to do this in Excel. This seemed like it would be a nice exercise to try in the Hadleyverse. To replicate this plot, I had to take her students’ data in wide form, tidy it up, calculate means for each group and time, and then plot these.">
+  <meta property="og:description" content="My wife’s high school biology students did a lab recently and had difficulty graphing the pooled data. One student allegedly took 2 hours to figure out how to do this in Excel. This seemed like it would be a nice exercise to try in the Hadleyverse. To replicate this plot, I had to take her students’ data in wide form, tidy it up, calculate means for each group and time, and then plot these.">
+  <meta name="twitter:description" content="My wife’s high school biology students did a lab recently and had difficulty graphing the pooled data. One student allegedly took 2 hours to figure out how to do this in Excel. This seemed like it …">
+  <meta name="author" content="Mike Ching"/>
+  <link href='../../../../img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/minihead.jpg" />
+  <meta name="twitter:image" content="/img/minihead.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@mikec2a" />
+  <meta name="twitter:creator" content="@mikec2a" />
+  <meta property="og:url" content="/2017/04/09/bean-sprout-respiration/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dripping Data" />
+
+  <meta name="generator" content="Hugo 0.24.1" />
+  <link rel="canonical" href="../../../../2017/04/09/bean-sprout-respiration/" />
+  <link rel="alternate" href="../../../../index.xml" type="application/rss+xml" title="Dripping Data">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../../css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../../css/pygment_highlights.css" />
+  <link rel="stylesheet" href="../../../../css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../../">Dripping Data</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../../about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="LinkedIn" href="https://www.linkedin.com/in/michael-ching-033a5029">LinkedIn</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Twitter" href="https://twitter.com/mikec2a">Twitter</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dripping Data" href="../../../../">
+            <img class="avatar-img" src="../../../../img/minihead.jpg" alt="Dripping Data" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Graphing Bean Sprout Respiration with the Hadleyverse</h1>
+                
+                
+                  <span class="post-meta">
+  Posted on April 9, 2017
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>My wife’s high school biology students did a lab recently and had difficulty graphing the pooled data. One student allegedly took 2 hours to figure out how to do this in Excel. This seemed like it would be a nice exercise to try in the <a href="http://adolfoalvarez.cl/the-hitchhikers-guide-to-the-hadleyverse/">Hadleyverse</a>. To replicate this plot, I had to take her students’ <a href="https://docs.google.com/spreadsheets/d/1OTymer6lutVLNgZMhOq_LamKwXJpl41nAYSJ7MOC9f0/edit?usp=sharing">data in wide form</a>, tidy it up, calculate means for each group and time, and then plot these.</p>
+<div id="experiment-setup" class="section level2">
+<h2>Experiment Setup</h2>
+<p>The students had bean sprouts in a closed test tube. The tube was connected by an air-filled tube to a horizontal capillary tube with water inside. As the sprouts underwent cellular respiration, the water level in the capillary moved. The distance moved allegedly correlates with the amount of respiration that the sprouts underwent. The students compared the rate of respiration in “Young” and “Old” mung bean sprouts.</p>
+</div>
+<div id="analysis-plan" class="section level2">
+<h2>Analysis Plan</h2>
+<p>I used the <code>dplyr</code>, <code>tidyr</code>, and <code>ggplot2</code> packages for this analysis.</p>
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>library(tidyr)
+library(ggplot2)</code></pre>
+<div id="tidying-data" class="section level3">
+<h3>Tidying Data</h3>
+<p>I imported the data and gathered them into long form.</p>
+<pre class="r"><code>sprouts &lt;- read.csv(&quot;../datasets/respiration.csv&quot;)
+sprouts &lt;- tbl_df(sprouts)
+sprouts &lt;- gather(sprouts, &quot;minutes&quot;, &quot;distance&quot;, 4:7)
+sprouts$minutes &lt;- recode(sprouts$minutes, &quot;X5.min&quot; = 5, &quot;X10.min&quot; = 10,
+       &quot;X15.min&quot; = 15, &quot;X20.min&quot; = 20)
+sprouts</code></pre>
+<pre><code>## # A tibble: 680 × 6
+##    Teacher Period  Table    Age minutes distance
+##     &lt;fctr&gt;  &lt;int&gt; &lt;fctr&gt; &lt;fctr&gt;   &lt;dbl&gt;    &lt;dbl&gt;
+## 1    Ching      1      a  Young       5       18
+## 2    Ching      1      b  Young       5      150
+## 3    Ching      1      c  Young       5       85
+## 4    Ching      1      d  Young       5      114
+## 5    Ching      1      e  Young       5       NA
+## 6    Ching      2      a  Young       5       88
+## 7    Ching      2      b  Young       5       59
+## 8    Ching      2      c  Young       5       71
+## 9    Ching      2      d  Young       5       69
+## 10   Ching      2      e  Young       5       NA
+## # ... with 670 more rows</code></pre>
+</div>
+<div id="calculating-summary-statistics" class="section level3">
+<h3>Calculating Summary Statistics</h3>
+<p>I calculated means and standard errors by time and age.</p>
+<pre class="r"><code>plot_data &lt;- sprouts %&gt;% group_by(minutes, Age) %&gt;% 
+  summarize(avg_dist = mean(distance, na.rm = T), 
+            se_dist = sd(distance, na.rm = T)/sqrt(sum(!is.na(distance))))
+
+plot_data</code></pre>
+<pre><code>## Source: local data frame [8 x 4]
+## Groups: minutes [?]
+## 
+##   minutes    Age  avg_dist   se_dist
+##     &lt;dbl&gt; &lt;fctr&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+## 1       5    Old  38.51948  2.524241
+## 2       5  Young  73.00000  5.172839
+## 3      10    Old  74.76923  4.802707
+## 4      10  Young 140.24324  8.619536
+## 5      15    Old 109.75641  6.897758
+## 6      15  Young 201.18919 12.290029
+## 7      20    Old 143.44595  9.555449
+## 8      20  Young 255.94286 14.874994</code></pre>
+</div>
+<div id="data-visualization" class="section level3">
+<h3>Data Visualization</h3>
+<p>I plotted the mean and standard errors using <code>ggplot2</code>.</p>
+<pre class="r"><code>pd &lt;- position_dodge(0)
+ggplot(plot_data, aes(x=minutes, y = avg_dist, color = Age, group = Age)) +
+  geom_errorbar(aes(ymin=avg_dist-se_dist, ymax=avg_dist+se_dist), 
+                width=.1, position=pd) + 
+  geom_point(position=pd) +
+  ylab(&quot;distance (mm)&quot;) +
+  ggtitle(&quot;Mean (s.e.) Respiration of Young and Old Bean Sprouts&quot;) +
+  expand_limits(x = 0, y = 0) # to show the origin </code></pre>
+<p><img src="../../../../post/2017-04-09-Bean-respiration_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>The result was a strikingly linear relationship between distance and time for both age groups.</p>
+</div>
+<div id="model-of-age-effect-on-respiration-rate" class="section level3">
+<h3>Model of Age Effect on Respiration Rate</h3>
+<p>To fit a model to these, I used linear regression. I modeled this using an interaction of time and age.</p>
+<pre class="r"><code>model1 &lt;- lm(distance ~ minutes + Age + minutes * Age, data = sprouts)
+summary(model1)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = distance ~ minutes + Age + minutes * Age, data = sprouts)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -182.183  -32.157   -8.183   20.874  216.890 
+## 
+## Coefficients:
+##                  Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)        4.1723     8.2336   0.507    0.613    
+## minutes            6.9969     0.6049  11.567  &lt; 2e-16 ***
+## AgeYoung          10.8904    14.4759   0.752    0.452    
+## minutes:AgeYoung   5.2091     1.0648   4.892 1.39e-06 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 58.86 on 449 degrees of freedom
+##   (227 observations deleted due to missingness)
+## Multiple R-squared:  0.5216, Adjusted R-squared:  0.5184 
+## F-statistic: 163.2 on 3 and 449 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>The model came out pretty nice! Here it is in algebraic form where <span class="math inline">\(a\)</span> is age (young corresponds to a = 1 and old corresponds to a = 0) and <span class="math inline">\(t\)</span> is time elapsed in minutes:</p>
+<p><span class="math display">\[distance = 4.2 + 7t + 10.9a + 5.2ta\]</span></p>
+<p>When Age = 0 (old sprouts), the equation changes to:</p>
+<p><span class="math display">\[distance_{old \space sprouts} = 4.2 + 7t \]</span></p>
+<p>When Age = 1 (young sprouts), the equation changes to:</p>
+<p><span class="math display">\[distance_{young \space sprouts} = 15.1 + 12.2t\]</span></p>
+<p>The model only explained about 50% of the variance as seen when we overlay the regression lines over the raw data.</p>
+<pre class="r"><code>ggplot(sprouts, aes(x=minutes, y=distance, color=Age)) +
+  geom_point(shape = 1, position=position_jitter(width=.5,height=0)) +
+  geom_smooth(method=lm,   # Add linear regression lines
+                se=FALSE) +
+  ggtitle(&quot;Respiration of Young and Old Bean Sprouts&quot;)</code></pre>
+<pre><code>## Warning: Removed 227 rows containing non-finite values (stat_smooth).</code></pre>
+<pre><code>## Warning: Removed 227 rows containing missing values (geom_point).</code></pre>
+<p><img src="../../../../post/2017-04-09-Bean-respiration_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+</div>
+<div id="discussion" class="section level2">
+<h2>Discussion</h2>
+<p>The Hadleyverse method for analyzing this dataset worked out very well with some nice techniques for converting the data from wide to long form and nice data visualizations.</p>
+<p>I probably should have forced the linear regression models to have intercepts at 0 because it doesn’t make sense for sprouts to have had any respiration at time 0.</p>
+<p>I should acknowledge that much of the code for the visualizations was based on the R cookbook for <code>ggplot2</code>.</p>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>Old bean sprouts have lower respiration than young bean sprouts although there is significant variability in the data.</p>
+</div>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="../../../../2017/03/31/baseball-team-season-saves/" data-toggle="tooltip" data-placement="top" title="Baseball Team Season Save Leaders with the Lowest Totals since 2000">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="../../../../2017/04/18/saves-and-runs-scored/" data-toggle="tooltip" data-placement="top" title="Effect of Runs and Other Factors on Team Saves in Major League Baseball">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/mching" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/mikec2a" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/michael-ching-033a5029" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="../../../../index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Mike Ching
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../../">Dripping Data</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.24.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../../js/main.js"></script>
+<script src="../../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../../js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+
