@@ -22,6 +22,16 @@ Methods I turned as usual to the Lahman database and the tidyverse packages.</de
     </item>
     
     <item>
+      <title>Text Analysis of Security Now</title>
+      <link>/2017/07/01/securitynow-text-analysis/</link>
+      <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/07/01/securitynow-text-analysis/</guid>
+      <description>I wanted to try my hand at some text mining using the tidytext package, and I was wondering what I could look at. I love the podcast Security Now! by Steve Gibson and Leo Laporte, and I’ve always wondered if there was a way to build a good index of their podcast.
+I used the tidyverse packages and tidytext by David Robinson. He and Julia Silge wrote the book from which most of these methods came from.</description>
+    </item>
+    
+    <item>
       <title>Goodreads Analysis</title>
       <link>/2017/06/19/goodreads-analysis/</link>
       <pubDate>Mon, 19 Jun 2017 00:00:00 +0000</pubDate>
