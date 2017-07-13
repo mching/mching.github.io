@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Electriccar on Dripping Data</title>
+    <link>/tags/electriccar/</link>
+    <description>Recent content in Electriccar on Dripping Data</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Jul 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/electriccar/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Interisland vs. Overseas Electric Car Parking</title>
+      <link>/2017/07/12/interisland-vs-overseas-electric-car/</link>
+      <pubDate>Wed, 12 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/07/12/interisland-vs-overseas-electric-car/</guid>
+      <description>The last time I went to the mainland I noticed that it seemed like there were a lot more electric cars parked in the overseas terminal parking lot than the interisland one. I wondered if it was a fluke or if there was a real difference. I collected some data to investigate!
+Methods I had two trips back to back, my weekly interisland trip for work and my annual district meeting for my professional society.</description>
+    </item>
+    
+  </channel>
+</rss>
