@@ -28,6 +28,11 @@
   </url>
   
   <url>
+    <loc>/2017/07/02/hugo-conversion/</loc>
+    <lastmod>2017-07-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2017/07/01/securitynow-text-analysis/</loc>
     <lastmod>2017-07-01T00:00:00+00:00</lastmod>
   </url>
@@ -269,6 +274,12 @@
   <url>
     <loc>/tags/health/</loc>
     <lastmod>2016-08-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/hugo/</loc>
+    <lastmod>2017-07-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

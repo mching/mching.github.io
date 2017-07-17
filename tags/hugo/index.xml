@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Dripping Data</title>
+    <link>/tags/hugo/</link>
+    <description>Recent content in Hugo on Dripping Data</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 02 Jul 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Converting from Jekyll to Hugo</title>
+      <link>/2017/07/02/hugo-conversion/</link>
+      <pubDate>Sun, 02 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/07/02/hugo-conversion/</guid>
+      <description>I’ve decided to convert this website from Github Pages/Jekyll to Hugo. Th inspiration for this came when I saw the website that Roger Peng put up for his live data analysis screencasts, and there was a big Hugo logo on the bottom. After learning more about this and discovering the blogdown package by Yihue Xie that is based on Hugo, I decided to take the leap in converting my Jekyll Github Pages site to Hugo (hosted on Github Pages).</description>
+    </item>
+    
+  </channel>
+</rss>
