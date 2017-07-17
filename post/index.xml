@@ -6,10 +6,30 @@
     <description>Recent content in Posts on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Jul 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Exploring Disabled List Data from Major League Baseball</title>
+      <link>/2017/07/17/dl-data-exploration/</link>
+      <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/07/17/dl-data-exploration/</guid>
+      <description>I was interested in the duration of certain injuries for baseball players. It’s difficult to get data on this although I discovered a series of Google Sheets that documented disabled list (DL) stays over the years. I combined these sheets and cleaned these up manually. I entered these into R and crunched the data.
+Methods I downloaded the data from Google and used the tidyverse to look at them.
+library(dplyr) ## Warning: Installed Rcpp (0.</description>
+    </item>
+    
+    <item>
+      <title>Text Analysis of Security Now: tf-idf</title>
+      <link>/2017/07/16/securitynow-text-analysis-tf-idf/</link>
+      <pubDate>Sun, 16 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/07/16/securitynow-text-analysis-tf-idf/</guid>
+      <description>In the Security Now podcast, the hosts Steve Gibson and Leo Laporte often cite episodes that explain certain basic topics. They can never remember which episode covered a certain topic (e.g., how TLS works). As a follow-up to my previous post about text mining with the tidytext package, I decided to use see if I could make it easier to create an index for the series using term frequency and inverse document frequency analysis (tf-idf).</description>
+    </item>
     
     <item>
       <title>Interisland vs. Overseas Electric Car Parking</title>
@@ -19,6 +39,15 @@
       <guid>/2017/07/12/interisland-vs-overseas-electric-car/</guid>
       <description>The last time I went to the mainland I noticed that it seemed like there were a lot more electric cars parked in the overseas terminal parking lot than the interisland one. I wondered if it was a fluke or if there was a real difference. I collected some data to investigate!
 Methods I had two trips back to back, my weekly interisland trip for work and my annual district meeting for my professional society.</description>
+    </item>
+    
+    <item>
+      <title>Using Bookdown to create a Security Now Ebook</title>
+      <link>/2017/07/10/securitynow-ebook/</link>
+      <pubDate>Mon, 10 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/07/10/securitynow-ebook/</guid>
+      <description>Recently I have been exploring the blogdown package to redo my website using Hugo, and it resurrected an old idea that I had. Security Now, one of my favorite podcasts, has transcriptions of each episode, and I thought it would be neat to put them into an e-book and read the old episodes that way. I tried using Calibre, but while it did work, I wasn’t able to figure out how to format it nicely.</description>
     </item>
     
     <item>

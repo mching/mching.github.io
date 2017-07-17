@@ -32,7 +32,7 @@
     <item>
       <title>Baseball</title>
       <link>/tags/baseball/</link>
-      <pubDate>Mon, 03 Jul 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/baseball/</guid>
       <description></description>
@@ -44,6 +44,15 @@
       <pubDate>Sun, 09 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/biology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bookdown</title>
+      <link>/tags/bookdown/</link>
+      <pubDate>Mon, 10 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/bookdown/</guid>
       <description></description>
     </item>
     
@@ -174,6 +183,15 @@
     </item>
     
     <item>
+      <title>Securitynow</title>
+      <link>/tags/securitynow/</link>
+      <pubDate>Mon, 10 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/securitynow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Simulation</title>
       <link>/tags/simulation/</link>
       <pubDate>Wed, 30 Nov 2016 00:00:00 +0000</pubDate>
@@ -185,7 +203,7 @@
     <item>
       <title>Sports</title>
       <link>/tags/sports/</link>
-      <pubDate>Sun, 21 May 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/sports/</guid>
       <description></description>
@@ -194,7 +212,7 @@
     <item>
       <title>Textmining</title>
       <link>/tags/textmining/</link>
-      <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 16 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/textmining/</guid>
       <description></description>
