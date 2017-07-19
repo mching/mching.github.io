@@ -69,7 +69,7 @@ library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following
       
       <guid>/2016/10/03/football-shutouts/</guid>
       <description>Introduction The purpose of this document is to explore the most yards in a shutout loss for a college football team. It was inspired after the University of Hawai`i gave up 462 yards in shutting out San Jose State on November 15, 2014. I wanted to see if I could use the dplyr package to explore this question.
-library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union  Data Source To obtain a source of data, I downloaded a database of football game statistics from 2000-2013, from http://www.</description>
+library(dplyr) ## Warning: Installed Rcpp (0.12.12) different from Rcpp used to build dplyr (0.</description>
     </item>
     
   </channel>
