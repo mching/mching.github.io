@@ -6,10 +6,19 @@
     <description>Recent content in Probability on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Dec 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/probability/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Birthday Problem Part 2</title>
+      <link>/2017/08/09/birthday-part-2/</link>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/08/09/birthday-part-2/</guid>
+      <description>My family went on a cruise this month for 10 days, and in the dining room, it seemed that the waiters sang Happy Birthday to someone every night. The room was pretty full of people, but it struck me that some people might be lying to get the waiters to sing to them. This called for an analysis. What was the probability of a roomful of people having birthdays on each of 10 days in a row?</description>
+    </item>
     
     <item>
       <title>Birthday Problem at Work</title>

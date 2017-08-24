@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2017/08/09/birthday-part-2/</loc>
+    <lastmod>2017-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2017/07/17/dl-data-exploration/</loc>
     <lastmod>2017-07-17T00:00:00+00:00</lastmod>
   </url>
@@ -231,7 +236,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2017-07-17T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -297,7 +302,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2017-07-17T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -309,13 +314,13 @@
   
   <url>
     <loc>/tags/probability/</loc>
-    <lastmod>2016-12-30T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/r/</loc>
-    <lastmod>2017-07-17T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -333,7 +338,7 @@
   
   <url>
     <loc>/tags/simulation/</loc>
-    <lastmod>2016-11-30T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -6,10 +6,19 @@
     <description>Recent content in R on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Birthday Problem Part 2</title>
+      <link>/2017/08/09/birthday-part-2/</link>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/08/09/birthday-part-2/</guid>
+      <description>My family went on a cruise this month for 10 days, and in the dining room, it seemed that the waiters sang Happy Birthday to someone every night. The room was pretty full of people, but it struck me that some people might be lying to get the waiters to sing to them. This called for an analysis. What was the probability of a roomful of people having birthdays on each of 10 days in a row?</description>
+    </item>
     
     <item>
       <title>Exploring Disabled List Data from Major League Baseball</title>
@@ -18,7 +27,8 @@
       
       <guid>/2017/07/17/dl-data-exploration/</guid>
       <description>I was interested in the duration of certain injuries for baseball players. It’s difficult to get data on this although I discovered a series of Google Sheets that documented disabled list (DL) stays over the years. I combined these sheets and cleaned these up manually. I entered these into R and crunched the data.
-Methods I downloaded the data from Google and used the tidyverse tools to look at them.</description>
+Methods I downloaded the data from Google and used the tidyverse to look at them.
+library(dplyr) ## Warning: Installed Rcpp (0.</description>
     </item>
     
     <item>
@@ -65,7 +75,7 @@ Methods I turned as usual to the Lahman database and the tidyverse packages.</de
       <pubDate>Sun, 02 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/07/02/hugo-conversion/</guid>
-      <description>I’ve decided to convert this website from Github Pages/Jekyll to Hugo. Th inspiration for this came when I saw the website that Roger Peng put up for his live data analysis screencasts, and there was a big Hugo logo on the bottom. After learning more about this and discovering the blogdown package by Yihue Xie that is based on Hugo, I decided to take the leap in converting my Jekyll Github Pages site to Hugo (hosted on Github Pages).</description>
+      <description>I’ve decided to convert this website from Github Pages/Jekyll to Hugo. Th inspiration for this came when I saw the website that Roger Peng put up for his live data analysis screencasts, and there was a big Hugo logo on the bottom. After learning more about this and discovering the blogdown package by Yihui Xie that is based on Hugo, I decided to take the leap in converting my Jekyll Github Pages site to Hugo (hosted on Github Pages).</description>
     </item>
     
     <item>
