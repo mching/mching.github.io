@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2017/09/09/blogdown_and_uh/</loc>
+    <lastmod>2017-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2017/08/09/birthday-part-2/</loc>
     <lastmod>2017-08-09T00:00:00+00:00</lastmod>
   </url>
@@ -236,7 +241,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2017-08-09T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -302,7 +307,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2017-08-09T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -320,7 +325,7 @@
   
   <url>
     <loc>/categories/r/</loc>
-    <lastmod>2017-08-09T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -363,6 +368,12 @@
   <url>
     <loc>/tags/visualization/</loc>
     <lastmod>2017-06-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/website/</loc>
+    <lastmod>2017-09-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
