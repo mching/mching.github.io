@@ -6,10 +6,30 @@
     <description>Recent content on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 04 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Turkey Data from 2017: A Bigger Bird</title>
+      <link>/2017/12/04/turkey-temp-2017/</link>
+      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/12/04/turkey-temp-2017/</guid>
+      <description>Another Thanksgiving has gone by and another set of turkey roasting data is available.
+This year’s turkey was quite a bit bigger than last year’s one (20 vs 14 lbs) because we usually roast one and buy another. The place we buy from wasn’t selling hot turkeys, so we decided to just make one big one. Other than the size, we used the same method as last year (see last year’s post).</description>
+    </item>
+    
+    <item>
+      <title>VEX Scores and Google Sheets</title>
+      <link>/2017/11/30/vex-scores/</link>
+      <pubDate>Thu, 30 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/11/30/vex-scores/</guid>
+      <description>My son is in a robotics competition this year. He has to score points by driving a robot around a course and making it pick up and place things. I thought it might be nice to chart his progress.
+The real learning issue for today is using the googlesheets package to work with the data. I often enter data using this site and it would save me a lot of time to get the data directly from Google Sheets rather than downloading it as a csv.</description>
+    </item>
     
     <item>
       <title>Estimated Prius Gas Mileage</title>
@@ -48,8 +68,7 @@ new_site(theme = &amp;quot;aerohub/hugo-identity-theme&amp;quot;)) After playing
       
       <guid>/2017/07/17/dl-data-exploration/</guid>
       <description>I was interested in the duration of certain injuries for baseball players. It’s difficult to get data on this although I discovered a series of Google Sheets that documented disabled list (DL) stays over the years. I combined these sheets and cleaned these up manually. I entered these into R and crunched the data.
-Methods I downloaded the data from Google and used the tidyverse to look at them.
-library(dplyr) ## Warning: Installed Rcpp (0.</description>
+Methods I downloaded the data from Google and used the tidyverse tools to look at them.</description>
     </item>
     
     <item>

@@ -5,9 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Sports</title>
-  <meta property="og:title" content="Sports" />
-  <meta name="twitter:title" content="Sports" />
+  <title>Cooking</title>
+  <meta property="og:title" content="Cooking" />
+  <meta name="twitter:title" content="Cooking" />
   <meta name="author" content="Mike Ching"/>
   <link href='../../img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="/img/minihead.jpg" />
@@ -15,12 +15,12 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@mikec2a" />
   <meta name="twitter:creator" content="@mikec2a" />
-  <meta property="og:url" content="/tags/sports/" />
+  <meta property="og:url" content="/tags/cooking/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Dripping Data" />
 
   <meta name="generator" content="Hugo 0.30.2" />
-  <link rel="canonical" href="../../tags/sports/" />
+  <link rel="canonical" href="../../tags/cooking/" />
   <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="Dripping Data">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -153,7 +153,7 @@
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="page-heading">
-              <h1>#Sports</h1>
+              <h1>#Cooking</h1>
               <hr class="small">
             </div>
           </div>
@@ -170,181 +170,29 @@
         <div class="posts-list">
           
             <article class="post-preview">
-              <a href="../../2017/07/17/dl-data-exploration/">
-                <h2 class="post-title">Exploring Disabled List Data from Major League Baseball</h2>
+              <a href="../../2017/12/04/turkey-temp-2017/">
+                <h2 class="post-title">Turkey Data from 2017: A Bigger Bird</h2>
     
                 
               </a>
     
               <p class="post-meta">
-                Posted on July 17, 2017
+                Posted on December 4, 2017
               </p>
               <div class="post-entry">
                 
-                  I was interested in the duration of certain injuries for baseball players. It’s difficult to get data on this although I discovered a series of Google Sheets that documented disabled list (DL) stays over the years. I combined these sheets and cleaned these up manually. I entered these into R and crunched the data.
-Methods I downloaded the data from Google and used the tidyverse tools to look at them.
-                  <a href="../../2017/07/17/dl-data-exploration/" class="post-read-more">[Read More]</a>
+                  Another Thanksgiving has gone by and another set of turkey roasting data is available.
+This year’s turkey was quite a bit bigger than last year’s one (20 vs 14 lbs) because we usually roast one and buy another. The place we buy from wasn’t selling hot turkeys, so we decided to just make one big one. Other than the size, we used the same method as last year (see last year’s post).
+                  <a href="../../2017/12/04/turkey-temp-2017/" class="post-read-more">[Read More]</a>
                 
               </div>
     
               
                 <span class="post-meta">
                   
-                    #<a href="../../tags/baseball">baseball</a>&nbsp;
+                    #<a href="../../tags/cooking">cooking</a>&nbsp;
                   
-                    #<a href="../../tags/sports">sports</a>&nbsp;
-                  
-                </span>
-              
-    
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../2017/05/21/saves-vs-strikeouts/">
-                <h2 class="post-title">Pitchers with More Saves than Strikeouts</h2>
-    
-                
-              </a>
-    
-              <p class="post-meta">
-                Posted on May 21, 2017
-              </p>
-              <div class="post-entry">
-                
-                  On my favorite fantasy baseball podcast, the host mentioned the phenomenon of pitchers who had more saves than strikeouts. This seemed like it would be fairly uncommon since it seems that many closers are power pitchers (e.g., Aroldis Chapman). I decided to investigate further using the Lahman database.
-Methods I used the Lahman database again, which is perfect for answering this kind of questions. It has a Pitching table that contains season long stats for every pitcher from 1871 to 2015 (as of this post).
-                  <a href="../../2017/05/21/saves-vs-strikeouts/" class="post-read-more">[Read More]</a>
-                
-              </div>
-    
-              
-                <span class="post-meta">
-                  
-                    #<a href="../../tags/baseball">baseball</a>&nbsp;
-                  
-                    #<a href="../../tags/sports">sports</a>&nbsp;
-                  
-                </span>
-              
-    
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../2017/04/18/saves-and-runs-scored/">
-                <h2 class="post-title">Effect of Runs and Other Factors on Team Saves in Major League Baseball</h2>
-    
-                
-              </a>
-    
-              <p class="post-meta">
-                Posted on April 18, 2017
-              </p>
-              <div class="post-entry">
-                
-                  From listening to my favorite fantasy baseball podcast it seems that there is a belief that teams that score lots of runs are not likely to produce saves. The idea seems to be that such teams would blow out their competitors and so have less opportunity for games to be saved. While it made sense, I wondered what the data said.
-library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(Lahman) data(&quot;Teams&quot;) Teams &lt;- tbl_df(Teams) Exploration of Saves over Time Saves did not become an official statistic until 1969 (source).
-                  <a href="../../2017/04/18/saves-and-runs-scored/" class="post-read-more">[Read More]</a>
-                
-              </div>
-    
-              
-                <span class="post-meta">
-                  
-                    #<a href="../../tags/baseball">baseball</a>&nbsp;
-                  
-                    #<a href="../../tags/sports">sports</a>&nbsp;
-                  
-                </span>
-              
-    
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../2017/03/31/baseball-team-season-saves/">
-                <h2 class="post-title">Baseball Team Season Save Leaders with the Lowest Totals since 2000</h2>
-    
-                
-              </a>
-    
-              <p class="post-meta">
-                Posted on March 31, 2017
-              </p>
-              <div class="post-entry">
-                
-                  I was listening to my fantasy baseball podcast last week, and the conversation turned to the Phillies closer situation. One host suggested that the Phillies might not have any pitcher with more than 10 saves this season. The other host thought that this would be unlikely. They looked quickly at the data and found that this has happened a few times since 2000. I wondered if there was a way to look this up using the Lahman database in R.
-                  <a href="../../2017/03/31/baseball-team-season-saves/" class="post-read-more">[Read More]</a>
-                
-              </div>
-    
-              
-                <span class="post-meta">
-                  
-                    #<a href="../../tags/baseball">baseball</a>&nbsp;
-                  
-                    #<a href="../../tags/sports">sports</a>&nbsp;
-                  
-                </span>
-              
-    
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../2016/11/30/unlucky-fantasy-football/">
-                <h2 class="post-title">An Unlucky Fantasy Football Season Is Over</h2>
-    
-                
-              </a>
-    
-              <p class="post-meta">
-                Posted on November 30, 2016
-              </p>
-              <div class="post-entry">
-                
-                  The regular fantasy football season just finished, and as usual, my team underperformed. I had the 3rd most points in the league and finished 7 out of 8 teams with a record of 4-8. I wondered what were the chances of such a bad record. This called for a simulation!
-Methods I transcribed all the scores for each game into a spreadsheet and loaded it into R.
-library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union dat &lt;- read.
-                  <a href="../../2016/11/30/unlucky-fantasy-football/" class="post-read-more">[Read More]</a>
-                
-              </div>
-    
-              
-                <span class="post-meta">
-                  
-                    #<a href="../../tags/football">football</a>&nbsp;
-                  
-                    #<a href="../../tags/simulation">simulation</a>&nbsp;
-                  
-                    #<a href="../../tags/sports">sports</a>&nbsp;
-                  
-                </span>
-              
-    
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../2016/10/03/football-shutouts/">
-                <h2 class="post-title">Most Yards of Offense by a College Football Team in a Shutout Loss</h2>
-    
-                
-              </a>
-    
-              <p class="post-meta">
-                Posted on October 3, 2016
-              </p>
-              <div class="post-entry">
-                
-                  Introduction The purpose of this document is to explore the most yards in a shutout loss for a college football team. It was inspired after the University of Hawai`i gave up 462 yards in shutting out San Jose State on November 15, 2014. I wanted to see if I could use the dplyr package to explore this question.
-library(dplyr) ## Warning: Installed Rcpp (0.12.12) different from Rcpp used to build dplyr (0.
-                  <a href="../../2016/10/03/football-shutouts/" class="post-read-more">[Read More]</a>
-                
-              </div>
-    
-              
-                <span class="post-meta">
-                  
-                    #<a href="../../tags/football">football</a>&nbsp;
-                  
-                    #<a href="../../tags/sports">sports</a>&nbsp;
+                    #<a href="../../tags/turkey">turkey</a>&nbsp;
                   
                 </span>
               

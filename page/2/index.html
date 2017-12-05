@@ -190,6 +190,63 @@
           
           
             <article class="post-preview">
+              <a href="../../2017/07/02/hugo-conversion/">
+                <h2 class="post-title">Converting from Jekyll to Hugo</h2>
+                
+              </a>
+
+              <span class="post-meta">
+  Posted on July 2, 2017
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  I’ve decided to convert this website from Github Pages/Jekyll to Hugo. Th inspiration for this came when I saw the website that Roger Peng put up for his live data analysis screencasts, and there was a big Hugo logo on the bottom. After learning more about this and discovering the blogdown package by Yihui Xie that is based on Hugo, I decided to take the leap in converting my Jekyll Github Pages site to Hugo (hosted on Github Pages).
+                  <a href="../../2017/07/02/hugo-conversion/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/hugo">hugo</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../2017/07/01/securitynow-text-analysis/">
+                <h2 class="post-title">Text Analysis of Security Now</h2>
+                
+              </a>
+
+              <span class="post-meta">
+  Posted on July 1, 2017
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  I wanted to try my hand at some text mining using the tidytext package, and I was wondering what I could look at. I love the podcast Security Now! by Steve Gibson and Leo Laporte, and I’ve always wondered if there was a way to build a good index of their podcast.
+I used the tidyverse packages and tidytext by David Robinson. He and Julia Silge wrote the book from which most of these methods came from.
+                  <a href="../../2017/07/01/securitynow-text-analysis/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/textmining">textmining</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="../../2017/06/19/goodreads-analysis/">
                 <h2 class="post-title">Goodreads Analysis</h2>
                 
@@ -409,64 +466,6 @@ Here’s a picture of the game layout.
                   From listening to my favorite fantasy baseball podcast it seems that there is a belief that teams that score lots of runs are not likely to produce saves. The idea seems to be that such teams would blow out their competitors and so have less opportunity for games to be saved. While it made sense, I wondered what the data said.
 library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(Lahman) data(&quot;Teams&quot;) Teams &lt;- tbl_df(Teams) Exploration of Saves over Time Saves did not become an official statistic until 1969 (source).
                   <a href="../../2017/04/18/saves-and-runs-scored/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-                <span class="post-meta">
-                
-                  #<a href="../../tags/baseball">baseball</a>&nbsp;
-                
-                  #<a href="../../tags/sports">sports</a>&nbsp;
-                
-                </span>
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../2017/04/09/bean-sprout-respiration/">
-                <h2 class="post-title">Graphing Bean Sprout Respiration with the Hadleyverse</h2>
-                
-              </a>
-
-              <span class="post-meta">
-  Posted on April 9, 2017
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  My wife’s high school biology students did a lab recently and had difficulty graphing the pooled data. One student allegedly took 2 hours to figure out how to do this in Excel. This seemed like it would be a nice exercise to try in the Hadleyverse. To replicate this plot, I had to take her students’ data in wide form, tidy it up, calculate means for each group and time, and then plot these.
-                  <a href="../../2017/04/09/bean-sprout-respiration/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-                <span class="post-meta">
-                
-                  #<a href="../../tags/biology">biology</a>&nbsp;
-                
-                </span>
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../2017/03/31/baseball-team-season-saves/">
-                <h2 class="post-title">Baseball Team Season Save Leaders with the Lowest Totals since 2000</h2>
-                
-              </a>
-
-              <span class="post-meta">
-  Posted on March 31, 2017
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  I was listening to my fantasy baseball podcast last week, and the conversation turned to the Phillies closer situation. One host suggested that the Phillies might not have any pitcher with more than 10 saves this season. The other host thought that this would be unlikely. They looked quickly at the data and found that this has happened a few times since 2000. I wondered if there was a way to look this up using the Lahman database in R.
-                  <a href="../../2017/03/31/baseball-team-season-saves/" class="post-read-more">[Read More]</a>
                 
               </div>
 
