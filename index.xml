@@ -6,10 +6,21 @@
     <description>Recent content on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Estimated Prius Gas Mileage (December 2017 Update)</title>
+      <link>/2017/12/19/estimated-prius-gas-mileage/</link>
+      <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/12/19/estimated-prius-gas-mileage/</guid>
+      <description>(Updated to add googlesheets methodology and new data points)
+I’ve seen some posts online suggesting that the miles per gallon estimates that your car provides are not accurate. I collected a few observations to see if this was true for my car.
+Methods Each time I filled up the gas tank, I collected the number of gallons that were dispensed until the first automatic shutoff. I wrote down the estimated mpg, the trip odometer reading since the last fill-up, and the overall odometer reading.</description>
+    </item>
     
     <item>
       <title>Fax Problem at Work</title>
