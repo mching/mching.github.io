@@ -19,7 +19,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Dripping Data" />
 
-  <meta name="generator" content="Hugo 0.30.2" />
+  <meta name="generator" content="Hugo 0.41" />
   <link rel="canonical" href="../../../../categories/r/" />
   <link rel="alternate" href="../../../../index.xml" type="application/rss+xml" title="Dripping Data">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
@@ -170,6 +170,183 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="../../../../2017/01/08/pidgey-evolution-updated/">
+                <h2 class="post-title">Pidgey Evolution: Effects on Combat Power and Hit Points (Updated)</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on January 8, 2017
+              </p>
+              <div class="post-entry">
+                
+                  I was evolving some Pokemon in Pokemon Go and wondered how much the Pokemon’s attributes change after evolution. The attributes of interest were combat power (CP) and hit points (HP). I focused my analysis from Pidgeys because I had the most data points for this species.
+I collected data from a couple of days’ evolution, available for viewing here. Both times I was using a Lucky Egg.
+x &lt;- read.csv(&quot;../datasets/evolution2.csv&quot;) x &lt;- tbl_df(x) pidgeys &lt;- filter(x, pokemon == &quot;Pidgey&quot;) pidgeys ## # A tibble: 55 × 7 ## pokemon CP_pre HP_pre kg_pre CP_post HP_post kg_post ## &lt;fctr&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; ## 1 Pidgey 270 NA NA 533 NA NA ## 2 Pidgey 267 NA NA 515 NA NA ## 3 Pidgey 259 NA NA 526 NA NA ## 4 Pidgey 212 NA NA 413 NA NA ## 5 Pidgey 209 43 2.
+                  <a href="../../../../2017/01/08/pidgey-evolution-updated/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../../../tags/pokemon">pokemon</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../../2016/12/30/birthday-problem-at-work/">
+                <h2 class="post-title">Birthday Problem at Work</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on December 30, 2016
+              </p>
+              <div class="post-entry">
+                
+                  My coworker keeps a list of our coworkers’ birthdays so she can plan a monthly celebration. There are 36 of us in the office, and it turns out that none of us have the same birthday. My coworker wondered what was the chance of that happening.
+As it turns out, the birthday problem is a classic probability question. Given a certain number of people, what is the probability that two of them have the same birthday?
+                  <a href="../../../../2016/12/30/birthday-problem-at-work/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../../../tags/probability">probability</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../../2016/12/29/electric-vehicle-parking-at-hnl/">
+                <h2 class="post-title">Electric Vehicle Parking at Honolulu International Airport</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on December 29, 2016
+              </p>
+              <div class="post-entry">
+                
+                  In Hawaii, electric cars park for free at state owned parking lots. This is a big benefit when we travel since the airport parking lot is normally $18 per day. I wondered how much money the state loses on the electric car parking at the airport. Because I travel to Maui every week for work, I was able to collect some data to try to answer this question.
+Methods I made video recordings of parked cars while driving through the Honolulu International Airport interisland parking structure between November 29, 2016 and December 28, 2016.
+                  <a href="../../../../2016/12/29/electric-vehicle-parking-at-hnl/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../../../tags/cars">cars</a>&nbsp;
+                  
+                    #<a href="../../../../tags/parking">parking</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../../2016/12/14/pidgey-evolution/">
+                <h2 class="post-title">Pidgey Evolution: Effects on Combat Power and Hit Points</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on December 14, 2016
+              </p>
+              <div class="post-entry">
+                
+                  I was evolving some Pokemon in Pokemon Go today and wondered how much the Pokemon’s attributes change after evolution. The attributes of interest were combat power (CP) and hit points (HP). I focused my analysis from Pidgeys because I had the most data points for this species.
+I collected data from one day’s evolution, available for viewing here.
+x &lt;- read.csv(&quot;../datasets/evolution.csv&quot;) x &lt;- tbl_df(x) pidgeys &lt;- filter(x, pokemon == &quot;Pidgey&quot;) pidgeys ## # A tibble: 12 × 7 ## pokemon CP_pre HP_pre kg_pre CP_post HP_post kg_post ## &lt;fctr&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; ## 1 Pidgey 270 NA NA 533 NA NA ## 2 Pidgey 267 NA NA 515 NA NA ## 3 Pidgey 259 NA NA 526 NA NA ## 4 Pidgey 212 NA NA 413 NA NA ## 5 Pidgey 209 43 2.
+                  <a href="../../../../2016/12/14/pidgey-evolution/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../../../tags/pokemon">pokemon</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../../2016/12/09/simple-secret-santa-picker/">
+                <h2 class="post-title">Simple Secret Santa Picker</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on December 9, 2016
+              </p>
+              <div class="post-entry">
+                
+                  A post about automating Secret Santa assignments popped up in my Facebook feed the other day. This being the Christmas season, I took a look. It seemed a bit complex, and I wondered if I could make it more efficient.
+The original function took in a list of people (e.g., Ann, Bill, Chris). Using a nested while-for loop, it randomly picked a name (Bill), and matched it to the first person in the list (Ann:Bill).
+                  <a href="../../../../2016/12/09/simple-secret-santa-picker/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../../../tags/random">random</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../../2016/11/30/unlucky-fantasy-football/">
+                <h2 class="post-title">An Unlucky Fantasy Football Season Is Over</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on November 30, 2016
+              </p>
+              <div class="post-entry">
+                
+                  The regular fantasy football season just finished, and as usual, my team underperformed. I had the 3rd most points in the league and finished 7 out of 8 teams with a record of 4-8. I wondered what were the chances of such a bad record. This called for a simulation!
+Methods I transcribed all the scores for each game into a spreadsheet and loaded it into R.
+library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union dat &lt;- read.
+                  <a href="../../../../2016/11/30/unlucky-fantasy-football/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../../../tags/football">football</a>&nbsp;
+                  
+                    #<a href="../../../../tags/simulation">simulation</a>&nbsp;
+                  
+                    #<a href="../../../../tags/sports">sports</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+            <article class="post-preview">
               <a href="../../../../2016/11/25/turkey-graph/">
                 <h2 class="post-title">Convection vs. Conventional Electric Oven Speed in Roasting Turkey</h2>
     
@@ -283,160 +460,6 @@ library(dplyr) ## Warning: Installed Rcpp (0.12.12) different from Rcpp used to 
     
             </article>
           
-            <article class="post-preview">
-              <a href="../../../../2016/09/11/electric-car-economy/">
-                <h2 class="post-title">Gas vs. Electric Car Operating Prices in Honolulu</h2>
-    
-                
-              </a>
-    
-              <p class="post-meta">
-                Posted on September 11, 2016
-              </p>
-              <div class="post-entry">
-                
-                  Our family has an electric car (Nissan Leaf) and a hybrid (Toyota Prius), and we often have to choose which one we will take out on the weekend. I wondered which one was cheaper to operate and which one was better for the environment.
-Wallet Impact The Leaf travels about 4.8 miles per kilowatt hour (kwh), and the Prius gets about 55 miles per gallon (mpg). Our electricity costs about $0.
-                  <a href="../../../../2016/09/11/electric-car-economy/" class="post-read-more">[Read More]</a>
-                
-              </div>
-    
-              
-                <span class="post-meta">
-                  
-                    #<a href="../../../../tags/cars">cars</a>&nbsp;
-                  
-                </span>
-              
-    
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../../2016/08/14/late-patients/">
-                <h2 class="post-title">How Late Can My Patient Be</h2>
-    
-                
-              </a>
-    
-              <p class="post-meta">
-                Posted on August 14, 2016
-              </p>
-              <div class="post-entry">
-                
-                  When a patient doesn’t come to their developmental behavioral pediatrics appointment, it’s bad for my employer, but it’s an unexpected boon for me. Most of my patients seem to come early and only a few arrive later than 5-10 minutes past their appointment time. I wanted to know when I could start to give up on them and start doing something else. When would it be likely that a patient will no-show?
-                  <a href="../../../../2016/08/14/late-patients/" class="post-read-more">[Read More]</a>
-                
-              </div>
-    
-              
-                <span class="post-meta">
-                  
-                    #<a href="../../../../tags/health">health</a>&nbsp;
-                  
-                </span>
-              
-    
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../../2016/08/05/dinousaur-speed/">
-                <h2 class="post-title">Work for Dinosaur Speed Geocache</h2>
-    
-                
-              </a>
-    
-              <p class="post-meta">
-                Posted on August 5, 2016
-              </p>
-              <div class="post-entry">
-                
-                  This is the work for the geocache we did today. The geocache description instructed us to measure the stride length and footprint length of some dinosaur tracks at the Dinosaur Ridge hike outside of Denver, Colorado. The kids and I looked at both the thinner Ornithomimus tracks and the thicker Iguanodontid tracks. Here’s the work, done in R:
-First, set up a table of the data. The units for stride length and footprint length are meters.
-                  <a href="../../../../2016/08/05/dinousaur-speed/" class="post-read-more">[Read More]</a>
-                
-              </div>
-    
-              
-    
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../../2016/07/22/flashcard-deck-size-prediction/">
-                <h2 class="post-title">Predicting Flashcard Deck Size Using Linear Regression</h2>
-    
-                
-              </a>
-    
-              <p class="post-meta">
-                Posted on July 22, 2016
-              </p>
-              <div class="post-entry">
-                
-                  I’m studying for my pediatric recertification board exam right now, and to help me remember things, I’m making flashcards as I read an exam study book. Lately, I’ve been wondering how many flashcards I will have by the time I reach the end of the book.
-I average about 15 pages a day and about 45 flashcards a day, or 3 flashcards per day. The book itself is 849 pages long, with the real content starting on page 43.
-                  <a href="../../../../2016/07/22/flashcard-deck-size-prediction/" class="post-read-more">[Read More]</a>
-                
-              </div>
-    
-              
-                <span class="post-meta">
-                  
-                    #<a href="../../../../tags/prediction">prediction</a>&nbsp;
-                  
-                </span>
-              
-    
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../../2016/07/14/reverse-parking/">
-                <h2 class="post-title">Reverse-In Parking in Hawaii and California</h2>
-    
-                
-              </a>
-    
-              <p class="post-meta">
-                Posted on July 14, 2016
-              </p>
-              <div class="post-entry">
-                
-                  Introduction One of my mainland-born friends is annoyed that Hawaii drivers like to reverse their cars into parking stalls much more than the mainland. My wife, who is also from the mainland, agreed with him enthusiastically. Whether this is appropriate parking behavior or not, I had never noticed it before, so I figured it was something I could test with some observations. I had a trip coming up to the mainland, and I was able to collect some data to test whether the Hawaii drivers were really so different than their California counterparts.
-                  <a href="../../../../2016/07/14/reverse-parking/" class="post-read-more">[Read More]</a>
-                
-              </div>
-    
-              
-                <span class="post-meta">
-                  
-                    #<a href="../../../../tags/parking">parking</a>&nbsp;
-                  
-                </span>
-              
-    
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../../2016/06/13/sorting-photo-directories-with-r-and-exiftool/">
-                <h2 class="post-title">Sorting photo directories with R and exiftool</h2>
-    
-                
-              </a>
-    
-              <p class="post-meta">
-                Posted on June 13, 2016
-              </p>
-              <div class="post-entry">
-                
-                  We were fans of Google&rsquo;s Picasa photo organization software, but when it was discontinued, I decided that I would like to transfer all my digital photos onto an external drive and then into Adobe Lightroom. To do so, however, my &ldquo;research&rdquo; told me that it would be best to group them into catalogs based on year, mainly because I have on the order of 10^5 photos.
-I had my pictures organized into about 300-400 directories by event.
-                  <a href="../../../../2016/06/13/sorting-photo-directories-with-r-and-exiftool/" class="post-read-more">[Read More]</a>
-                
-              </div>
-    
-              
-    
-            </article>
-          
         </div>
         
           <ul class="pager main-pager">
@@ -500,7 +523,7 @@ I had my pictures organized into about 300-400 directories by event.
         <p class="credits copyright text-muted">
           Mike Ching
           &nbsp;&bull;&nbsp;
-          2017
+          2018
 
           
             &nbsp;&bull;&nbsp;
@@ -509,7 +532,7 @@ I had my pictures organized into about 300-400 directories by event.
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.30.2</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.41</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

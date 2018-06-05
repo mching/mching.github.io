@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Aap</title>
       <link>/tags/aap/</link>
-      <pubDate>Thu, 20 Apr 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/aap/</guid>
       <description></description>
@@ -111,6 +111,15 @@
     </item>
     
     <item>
+      <title>Exercise</title>
+      <link>/tags/exercise/</link>
+      <pubDate>Sun, 03 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/exercise/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Fantasy</title>
       <link>/tags/fantasy/</link>
       <pubDate>Mon, 03 Jul 2017 00:00:00 +0000</pubDate>
@@ -122,7 +131,7 @@
     <item>
       <title>Football</title>
       <link>/tags/football/</link>
-      <pubDate>Wed, 30 Nov 2016 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 20 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/football/</guid>
       <description></description>
@@ -257,7 +266,7 @@
     <item>
       <title>Sports</title>
       <link>/tags/sports/</link>
-      <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 20 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/sports/</guid>
       <description></description>
@@ -291,11 +300,29 @@
     </item>
     
     <item>
+      <title>Voting</title>
+      <link>/tags/voting/</link>
+      <pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/voting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Website</title>
       <link>/tags/website/</link>
       <pubDate>Sat, 09 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/website/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Weights</title>
+      <link>/tags/weights/</link>
+      <pubDate>Sun, 03 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/weights/</guid>
       <description></description>
     </item>
     

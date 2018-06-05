@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Weight Training Data</title>
+  <meta property="og:title" content="Weight Training Data" />
+  <meta name="twitter:title" content="Weight Training Data" />
+  <meta name="description" content="I lifted weights regularly for two years but stopped recently because I decided to run more instead. I tracked my weight lifting using an app called Strong, and since it seemed that I had reached my peak of weight lifting I figured I would look back on my exercise over this time.
+library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(lubridate) ## ## Attaching package: &#39;lubridate&#39; ## The following object is masked from &#39;package:base&#39;: ## ## date dat &lt;- read.">
+  <meta property="og:description" content="I lifted weights regularly for two years but stopped recently because I decided to run more instead. I tracked my weight lifting using an app called Strong, and since it seemed that I had reached my peak of weight lifting I figured I would look back on my exercise over this time.
+library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(lubridate) ## ## Attaching package: &#39;lubridate&#39; ## The following object is masked from &#39;package:base&#39;: ## ## date dat &lt;- read.">
+  <meta name="twitter:description" content="I lifted weights regularly for two years but stopped recently because I decided to run more instead. I tracked my weight lifting using an app called Strong, and since it seemed that I had reached my …">
+  <meta name="author" content="Mike Ching"/>
+  <link href='../../../../img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/IMG_6557.jpg" />
+  <meta name="twitter:image" content="/img/IMG_6557.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@mikec2a" />
+  <meta name="twitter:creator" content="@mikec2a" />
+  <meta property="og:url" content="/2018/06/03/weight-training-data/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dripping Data" />
+
+  <meta name="generator" content="Hugo 0.41" />
+  <link rel="canonical" href="../../../../2018/06/03/weight-training-data/" />
+  <link rel="alternate" href="../../../../index.xml" type="application/rss+xml" title="Dripping Data">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../../css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../../css/pygment_highlights.css" />
+  <link rel="stylesheet" href="../../../../css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../../">Dripping Data</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../../about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="LinkedIn" href="https://www.linkedin.com/in/michael-ching-033a5029">LinkedIn</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Twitter" href="https://twitter.com/mikec2a">Twitter</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dripping Data" href="../../../../">
+            <img class="avatar-img" src="../../../../img/IMG_6557.jpg" alt="Dripping Data" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Weight Training Data</h1>
+                
+                
+                  <span class="post-meta">
+  Posted on June 3, 2018
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>I lifted weights regularly for two years but stopped recently because I decided to run more instead. I tracked my weight lifting using an app called Strong, and since it seemed that I had reached my peak of weight lifting I figured I would look back on my exercise over this time.</p>
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>library(ggplot2)
+library(lubridate)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;lubridate&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:base&#39;:
+## 
+##     date</code></pre>
+<pre class="r"><code>dat &lt;- read.csv(&quot;../datasets/strong.csv&quot;)
+dat &lt;- tbl_df(dat)
+dat</code></pre>
+<pre><code>## # A tibble: 4,334 x 9
+##    Date    Workout.Name Exercise.Name  Set.Order    lb  Reps    mi Seconds
+##    &lt;fct&gt;   &lt;fct&gt;        &lt;fct&gt;              &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;   &lt;int&gt;
+##  1 2016-0… Basic 2      Bench Press (…         0    65    10     0       0
+##  2 2016-0… Basic 2      Bench Press (…         1    80    10     0       0
+##  3 2016-0… Basic 2      Lat Pulldown …         0    80    10     0       0
+##  4 2016-0… Basic 2      Lat Pulldown …         1    80    10     0       0
+##  5 2016-0… Basic 2      Shoulder Pres…         0    35    10     0       0
+##  6 2016-0… Basic 2      Shoulder Pres…         1    35    10     0       0
+##  7 2016-0… Basic 2      Bicep Curl (M…         0    25    10     0       0
+##  8 2016-0… Basic 2      Bicep Curl (M…         1    30    10     0       0
+##  9 2016-0… Basic 2      Tricep Extens…         0    45    10     0       0
+## 10 2016-0… Basic 2      Tricep Extens…         1    45    10     0       0
+## # ... with 4,324 more rows, and 1 more variable: Notes &lt;fct&gt;</code></pre>
+<p>From a high level look at the data, I have a table with each row being a set of an exercise. It’s pretty amazing to think that I did 4334 sets of various exercises over these two years.</p>
+<div id="data-cleaning" class="section level1">
+<h1>Data Cleaning</h1>
+<p>Looking at the data there were some basic cleaning issues. One was that the Date format was read in as a factor and I needed to change it into a format that can be manipulated. The other was that there were some variables that weren’t needed like the workout name (corresponding to a preset workout), mi (miles?), and Seconds. I didn’t use these often or consistently so there’s not much to be gained there.</p>
+<pre class="r"><code>dat$Date &lt;- ymd_hms(dat$Date)
+dat &lt;- dat %&gt;% select(Date, Exercise.Name, Set.Order, lb, Reps) </code></pre>
+<p>Now I was ready to answer some basic questions.</p>
+<div id="how-many-days-did-i-lift-and-how-long-does-the-data-cover" class="section level2">
+<h2>How many days did I lift and how long does the data cover</h2>
+<pre class="r"><code>max(dat$Date) - min(dat$Date)</code></pre>
+<pre><code>## Time difference of 816.8135 days</code></pre>
+<pre class="r"><code>length(unique(dat$Date))</code></pre>
+<pre><code>## [1] 218</code></pre>
+<p>I completed 218 workouts over the span of 816 days. Recently I have been lifting very rarely.</p>
+<pre class="r"><code>dat %&gt;%  
+  mutate(Month_obs = month(Date), Year_obs = year(Date)) %&gt;%
+  group_by(Year_obs, Month_obs) %&gt;%
+  summarize(sets = n()) %&gt;%
+  mutate(Yr_mo = as.Date(paste0(Year_obs, &quot;-&quot;, Month_obs, &quot;-01&quot;))) %&gt;% 
+  ggplot(aes(x = Yr_mo, y = sets)) + geom_point() + 
+  geom_smooth(method = &quot;loess&quot;) +
+  ggtitle(&quot;Number of Sets per Month&quot;)</code></pre>
+<p><img src="../../../../post/2018-06-03-weight-training-data_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<pre class="r"><code>month(dat$Date[1])</code></pre>
+<pre><code>## [1] 3</code></pre>
+</div>
+<div id="what-exercises-did-i-do" class="section level2">
+<h2>What exercises did I do</h2>
+<pre class="r"><code>dat %&gt;% group_by(Exercise.Name) %&gt;% summarize(sets = n()) %&gt;%
+  arrange(desc(sets))</code></pre>
+<pre><code>## # A tibble: 36 x 2
+##    Exercise.Name                     sets
+##    &lt;fct&gt;                            &lt;int&gt;
+##  1 Lat Pulldown (Custom)              502
+##  2 Triceps (cable)                    428
+##  3 Bench Press (Machine)              341
+##  4 Bicep Curl (Dumbbell)              321
+##  5 Shoulder Press (Machine)           297
+##  6 Seated Military Press (Dumbbell)   286
+##  7 Low Row cable                      267
+##  8 Crunch                             266
+##  9 Seated Row (Custom)                240
+## 10 Bicep Curl (Machine)               228
+## # ... with 26 more rows</code></pre>
+<p>That seemed about right. I did about 3 sets usually, and I did some exercises just about every time (Lat Pulldown for example).</p>
+</div>
+<div id="what-kind-of-reps-was-i-doing-per-set" class="section level2">
+<h2>What kind of reps was I doing per set</h2>
+<p>I examined the number of reps I did per set.</p>
+<pre class="r"><code>summary(dat$Reps)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##       0       8      10      12      12     100</code></pre>
+<pre class="r"><code>ggplot(dat, aes(x = Reps)) + geom_histogram(binwidth = 2)</code></pre>
+<p><img src="../../../../post/2018-06-03-weight-training-data_files/figure-html/unnamed-chunk-8-1.png" width="672" /> There is a second peak at 50 from crunches, but I was surprised that I did one set of 100. What was that all about? Looks like I haven’t been doing much crunches lately.</p>
+<pre class="r"><code>dat %&gt;% filter(Reps &gt; 50) %&gt;% arrange(desc(Reps))</code></pre>
+<pre><code>## # A tibble: 12 x 5
+##    Date                Exercise.Name Set.Order    lb  Reps
+##    &lt;dttm&gt;              &lt;fct&gt;             &lt;int&gt; &lt;dbl&gt; &lt;int&gt;
+##  1 2016-05-24 01:28:30 Crunch                1     0   100
+##  2 2016-05-24 01:28:30 Crunch                0     0    70
+##  3 2016-05-24 01:28:30 Crunch                2     0    70
+##  4 2017-01-21 12:31:30 Crunch                0     0    70
+##  5 2017-06-24 11:50:17 Crunch                0     0    70
+##  6 2016-05-07 11:57:18 Crunch                1     0    60
+##  7 2017-01-08 20:55:35 Crunch                2     0    60
+##  8 2017-03-18 13:05:42 Crunch                0     0    60
+##  9 2017-03-27 12:13:00 Crunch                1     0    60
+## 10 2016-05-07 11:57:18 Crunch                0     0    58
+## 11 2017-05-24 11:59:51 Crunch                0     0    53
+## 12 2016-04-23 12:21:15 Crunch                0     0    52</code></pre>
+<p>Taking out the crunches, most of my sets were 8-12. I also needed to take out Planks and Decline Crunches</p>
+<pre class="r"><code>dat %&gt;% filter(Exercise.Name != &quot;Crunch&quot;) %&gt;% 
+  filter(Exercise.Name != &quot;Plank (Custom)&quot;) %&gt;%
+  filter(Exercise.Name != &quot;Decline Crunch&quot;) %&gt;%
+  ggplot(aes(x = Reps)) + geom_histogram(binwidth = 2)</code></pre>
+<p><img src="../../../../post/2018-06-03-weight-training-data_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+<div id="how-did-the-weight-change-over-time" class="section level2">
+<h2>How did the weight change over time</h2>
+<p>I got stronger then not so strong as the workouts spaced out. How to show this? One way was to look at an exercise over time. Bench press machine was a good one since I did this over a long period of time.</p>
+<pre class="r"><code>dat %&gt;% filter(Exercise.Name == &quot;Bench Press (Machine)&quot;) %&gt;%
+  group_by(Date) %&gt;% summarize(maxwt = max(lb)) %&gt;%
+  ggplot(aes(x = Date, y = maxwt)) + geom_point() + geom_smooth()</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39;</code></pre>
+<p><img src="../../../../post/2018-06-03-weight-training-data_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>Maybe that’s not a great example.</p>
+<pre class="r"><code>dat %&gt;% filter(Exercise.Name == &quot;Bicep Curl (Dumbbell)&quot;) %&gt;%
+  group_by(Date) %&gt;% summarize(maxwt = max(lb)) %&gt;%
+  ggplot(aes(x = Date, y = maxwt)) + geom_point() + geom_smooth()</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39;</code></pre>
+<p><img src="../../../../post/2018-06-03-weight-training-data_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+</div>
+</div>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="../../../../2018/03/18/alf-voting/" data-toggle="tooltip" data-placement="top" title="Annual Leadership Forum Voting">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="../../../../2018/06/03/runkeeper-data/" data-toggle="tooltip" data-placement="top" title="Runkeeper Data">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/mching" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/mikec2a" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/michael-ching-033a5029" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="../../../../index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Mike Ching
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../../">Dripping Data</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.41</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../../js/main.js"></script>
+<script src="../../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../../js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+

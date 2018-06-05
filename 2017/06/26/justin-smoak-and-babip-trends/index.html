@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Justin Smoak and BABIP Trends</title>
+  <meta property="og:title" content="Justin Smoak and BABIP Trends" />
+  <meta name="twitter:title" content="Justin Smoak and BABIP Trends" />
+  <meta name="description" content="The podcast I listen to said something like, “I bet Justin Smoak must have one of the lowest BABIPs of anyone to this point in his career.” I thought it might be a good chance to explore this nebulous BABIP a little, what are the historical league and career trends in BABIP. Maybe 3 sentences are needed.
+Or maybe a second paragraph. Or 2.
+library(Lahman) library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(hrbrthemes) BABIP is calculated as balls in play (hits minus home runs) divided by total at bats that caused these balls in play (at bats minus strikeouts minus home runs plus sacrifice flies).">
+  <meta property="og:description" content="The podcast I listen to said something like, “I bet Justin Smoak must have one of the lowest BABIPs of anyone to this point in his career.” I thought it might be a good chance to explore this nebulous BABIP a little, what are the historical league and career trends in BABIP. Maybe 3 sentences are needed.
+Or maybe a second paragraph. Or 2.
+library(Lahman) library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(hrbrthemes) BABIP is calculated as balls in play (hits minus home runs) divided by total at bats that caused these balls in play (at bats minus strikeouts minus home runs plus sacrifice flies).">
+  <meta name="twitter:description" content="The podcast I listen to said something like, “I bet Justin Smoak must have one of the lowest BABIPs of anyone to this point in his career.” I thought it might be a good chance to explore this nebulous …">
+  <meta name="author" content="Mike Ching"/>
+  <link href='../../../../img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/IMG_6557.jpg" />
+  <meta name="twitter:image" content="/img/IMG_6557.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@mikec2a" />
+  <meta name="twitter:creator" content="@mikec2a" />
+  <meta property="og:url" content="/2017/06/26/justin-smoak-and-babip-trends/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dripping Data" />
+
+  <meta name="generator" content="Hugo 0.41" />
+  <link rel="canonical" href="../../../../2017/06/26/justin-smoak-and-babip-trends/" />
+  <link rel="alternate" href="../../../../index.xml" type="application/rss+xml" title="Dripping Data">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../../css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../../css/pygment_highlights.css" />
+  <link rel="stylesheet" href="../../../../css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../../">Dripping Data</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../../about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="LinkedIn" href="https://www.linkedin.com/in/michael-ching-033a5029">LinkedIn</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Twitter" href="https://twitter.com/mikec2a">Twitter</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dripping Data" href="../../../../">
+            <img class="avatar-img" src="../../../../img/IMG_6557.jpg" alt="Dripping Data" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Justin Smoak and BABIP Trends</h1>
+                
+                
+                  <span class="post-meta">
+  Posted on June 26, 2017
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>The podcast I listen to said something like, “I bet Justin Smoak must have one of the lowest BABIPs of anyone to this point in his career.” I thought it might be a good chance to explore this nebulous BABIP a little, what are the historical league and career trends in BABIP. Maybe 3 sentences are needed.</p>
+<p>Or maybe a second paragraph. Or 2.</p>
+<pre class="r"><code>library(Lahman)
+library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>library(ggplot2)
+library(hrbrthemes)</code></pre>
+<p>BABIP is calculated as balls in play (hits minus home runs) divided by total at bats that caused these balls in play (at bats minus strikeouts minus home runs plus sacrifice flies). Note that walks aren’t included because they don’t count against AB and the ball wasn’t put in play.</p>
+<p><span class="math display">\[ BABP = {{H - HR} \over AB - K - HR + SF}\]</span></p>
+<p>As part of the exploration I discovered that there were some missing categories for years before 1954. I would assume these were sac flies since the others seem pretty straightforward.</p>
+<pre class="r"><code>data(&quot;Batting&quot;)
+Batting %&gt;% group_by(yearID) %&gt;% summarize(sum(H), sum(HR), sum(AB), sum(SO), sum(SF)) %&gt;% 
+  filter(yearID &gt; 1948 &amp; yearID &lt; 1958)</code></pre>
+<pre><code>## # A tibble: 9 × 6
+##   yearID `sum(H)` `sum(HR)` `sum(AB)` `sum(SO)` `sum(SF)`
+##    &lt;int&gt;    &lt;int&gt;     &lt;int&gt;     &lt;int&gt;     &lt;int&gt;     &lt;int&gt;
+## 1   1949    22168      1704     84380      8951        NA
+## 2   1950    22559      2073     84823      9554        NA
+## 3   1951    22191      1863     85065      9335        NA
+## 4   1952    21272      1701     84195     10380        NA
+## 5   1953    22459      2076     84997     10213        NA
+## 6   1954    21908      1937     83936     10215       795
+## 7   1955    21610      2224     83590     10803       698
+## 8   1956    21653      2294     83856     11505       644
+## 9   1957    21865      2202     84906     11948       687</code></pre>
+<p>I charted the league BABIP for all years since 1954 and came up with the figure below. It seems that BABIP has been going up a little and has recently been around .295-.300.</p>
+<pre class="r"><code>Batting %&gt;% group_by(yearID) %&gt;% 
+  # I think I needed all these na.rm because of pitchers who didn&#39;t have any ABs their whole career
+  summarize(BABIP = (sum(H, na.rm = T) - sum(HR, na.rm = T))/
+              (sum(AB, na.rm = T) - sum(SO, na.rm = T) - sum(HR, na.rm = T) + sum(SF, na.rm = T))) %&gt;% 
+  filter(yearID&gt;1953) %&gt;% 
+  ggplot(aes(x = yearID, y = BABIP)) + geom_point() + geom_smooth(method = &quot;loess&quot;) +
+  labs(title = &quot;Batting Average on Balls in Play, 1953-2015&quot;,
+       x = &quot;Year&quot;,
+       y = &quot;BABIP&quot;) +
+  theme_ipsum()</code></pre>
+<p><img src="../../../../post/2017-06-26-justin-smoak-and-babip-trends_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Let’s break down the announcer’s statement. What is Smoak’s BABIP? First I determined his playerID then calculated his games played and his BABIP.</p>
+<pre class="r"><code>data(&quot;Master&quot;)
+Master %&gt;% filter(nameLast == &quot;Smoak&quot;) %&gt;% select(playerID, birthYear, birthMonth, birthDay, nameFirst, nameLast)</code></pre>
+<pre><code>##    playerID birthYear birthMonth birthDay nameFirst nameLast
+## 1 smoakju01      1986         12        5    Justin    Smoak</code></pre>
+<p>Here are the by year BABIP numbers.</p>
+<pre class="r"><code>Batting %&gt;% filter(playerID == &quot;smoakju01&quot;) %&gt;% 
+  mutate(BABIP = (H - HR) / (AB - HR - SO + SF)) %&gt;%
+  select(yearID, AB, BABIP)</code></pre>
+<pre><code>##   yearID  AB     BABIP
+## 1   2010 235 0.2383721
+## 2   2010 113 0.2933333
+## 3   2011 427 0.2733119
+## 4   2012 483 0.2422535
+## 5   2013 454 0.2784810
+## 6   2014 248 0.2429379
+## 7   2015 296 0.2538860</code></pre>
+<p>And the total career to 2015.</p>
+<pre class="r"><code>Batting %&gt;% filter(playerID == &quot;smoakju01&quot;) %&gt;%
+  select(H, HR, AB, SO, SF) %&gt;% summarize_all(sum) %&gt;%   
+  mutate(BABIP = (H - HR) / (AB - HR - SO + SF))</code></pre>
+<pre><code>##     H HR   AB  SO SF     BABIP
+## 1 506 92 2256 578 13 0.2589118</code></pre>
+<p>This is quite a bit lower than the BABIP in those years (again around .300). Smoak is a first baseman but not a particularly portly one, so I’m not sure that it should be that low.</p>
+<p>Smoak has played for about 6 years. How do I filter players from around the same time who have played at least 6 years and calculate their BABIP to that first 6 years? Or maybe it might be easier by cumulative AB.</p>
+<pre class="r"><code>Batting %&gt;% filter(yearID &gt; 1953) %&gt;%
+  group_by(playerID) %&gt;%
+  mutate(totalAB = sum(AB), cumAB = cumsum(AB)) %&gt;%
+  filter(totalAB &gt;= 2256 &amp; cumAB &lt;3000) %&gt;% select(playerID, yearID, H, AB, HR, SO, SF, totalAB, cumAB) %&gt;%
+  group_by(playerID) %&gt;% summarize(totH = sum(H), totAB = sum(AB), totHR = sum(HR), totSO = sum(SO), totSF = sum(SF)) %&gt;% 
+  mutate(BABIP = (totH - totHR) / (totAB - totHR - totSO + totSF)) %&gt;% arrange(BABIP)</code></pre>
+<pre><code>## # A tibble: 1,302 × 7
+##     playerID  totH totAB totHR totSO totSF     BABIP
+##        &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;     &lt;dbl&gt;
+## 1  crandde01   636  2542   117   266    24 0.2377462
+## 2  hernaen01   522  2327     2   151     8 0.2383135
+## 3  grosswa01   676  2906   110   448    24 0.2386172
+## 4  duncada01   617  2885   109   677    18 0.2399622
+## 5   kingji01   699  2918   117   401    22 0.2402973
+## 6  nettlgr01   623  2560   105   326    15 0.2416045
+## 7  blefacu01   699  2947   112   444    25 0.2429636
+## 8  martibu01   618  2743    58   419    35 0.2433724
+## 9  mcgwima01   647  2656   178   592    37 0.2438898
+## 10 brinked01   551  2644    28   490    14 0.2443925
+## # ... with 1,292 more rows</code></pre>
+<pre class="r"><code># %&gt;%
+#   filter(playerID == &quot;aaronha01&quot;)</code></pre>
+<p>Other data: BABIP by position BABIP by year of career BABIP by age</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="../../../../2017/06/19/goodreads-analysis/" data-toggle="tooltip" data-placement="top" title="Goodreads Analysis">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="../../../../2017/07/01/securitynow-text-analysis/" data-toggle="tooltip" data-placement="top" title="Text Analysis of Security Now">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/mching" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/mikec2a" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/michael-ching-033a5029" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="../../../../index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Mike Ching
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../../">Dripping Data</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.41</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../../js/main.js"></script>
+<script src="../../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../../js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+

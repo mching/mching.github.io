@@ -3,6 +3,26 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2018/06/03/runkeeper-data/</loc>
+    <lastmod>2018-06-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2018/06/03/weight-training-data/</loc>
+    <lastmod>2018-06-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2018/03/18/alf-voting/</loc>
+    <lastmod>2018-03-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2017/12/20/hi-hs-football-allstars/</loc>
+    <lastmod>2017-12-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2017/12/19/estimated-prius-gas-mileage/</loc>
     <lastmod>2017-12-19T00:00:00+00:00</lastmod>
   </url>
@@ -73,6 +93,11 @@
   </url>
   
   <url>
+    <loc>/2017/06/26/justin-smoak-and-babip-trends/</loc>
+    <lastmod>2017-06-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2017/06/19/goodreads-analysis/</loc>
     <lastmod>2017-06-19T00:00:00+00:00</lastmod>
   </url>
@@ -85,6 +110,11 @@
   <url>
     <loc>/2017/05/30/years-at-private-school-and-academic-achievement/</loc>
     <lastmod>2017-05-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2017/05/26/king-tides-gis/</loc>
+    <lastmod>2017-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -219,7 +249,7 @@
   
   <url>
     <loc>/tags/aap/</loc>
-    <lastmod>2017-04-20T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -278,7 +308,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2017-12-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -295,6 +325,12 @@
   </url>
   
   <url>
+    <loc>/tags/exercise/</loc>
+    <lastmod>2018-06-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/fantasy/</loc>
     <lastmod>2017-07-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -302,7 +338,7 @@
   
   <url>
     <loc>/tags/football/</loc>
-    <lastmod>2016-11-30T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -350,7 +386,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2017-12-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -368,7 +404,7 @@
   
   <url>
     <loc>/categories/r/</loc>
-    <lastmod>2017-12-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -404,13 +440,13 @@
   
   <url>
     <loc>/tags/sports/</loc>
-    <lastmod>2017-07-17T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2017-04-20T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -433,8 +469,20 @@
   </url>
   
   <url>
+    <loc>/tags/voting/</loc>
+    <lastmod>2018-03-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/website/</loc>
     <lastmod>2017-09-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/weights/</loc>
+    <lastmod>2018-06-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

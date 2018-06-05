@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Hawaii High School Football All-Stars</title>
+  <meta property="og:title" content="Hawaii High School Football All-Stars" />
+  <meta name="twitter:title" content="Hawaii High School Football All-Stars" />
+  <meta name="description" content="The local newspaper released a dataset of high school all stars from 1972 to 2017, and I thought it might be interesting to analyze the information. Some interesting questions were what schools have the most all stars, at what positions, and how this has changed over the years. I suspect that Saint Louis, Kahuku, and Waianae will be the top teams but who knows? Maybe there’s a secret dynasty that I never heard of.">
+  <meta property="og:description" content="The local newspaper released a dataset of high school all stars from 1972 to 2017, and I thought it might be interesting to analyze the information. Some interesting questions were what schools have the most all stars, at what positions, and how this has changed over the years. I suspect that Saint Louis, Kahuku, and Waianae will be the top teams but who knows? Maybe there’s a secret dynasty that I never heard of.">
+  <meta name="twitter:description" content="The local newspaper released a dataset of high school all stars from 1972 to 2017, and I thought it might be interesting to analyze the information. Some interesting questions were what schools have …">
+  <meta name="author" content="Mike Ching"/>
+  <link href='../../../../img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/IMG_6557.jpg" />
+  <meta name="twitter:image" content="/img/IMG_6557.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@mikec2a" />
+  <meta name="twitter:creator" content="@mikec2a" />
+  <meta property="og:url" content="/2017/12/20/hi-hs-football-allstars/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dripping Data" />
+
+  <meta name="generator" content="Hugo 0.41" />
+  <link rel="canonical" href="../../../../2017/12/20/hi-hs-football-allstars/" />
+  <link rel="alternate" href="../../../../index.xml" type="application/rss+xml" title="Dripping Data">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../../css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../../css/pygment_highlights.css" />
+  <link rel="stylesheet" href="../../../../css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../../">Dripping Data</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../../about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="LinkedIn" href="https://www.linkedin.com/in/michael-ching-033a5029">LinkedIn</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Twitter" href="https://twitter.com/mikec2a">Twitter</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dripping Data" href="../../../../">
+            <img class="avatar-img" src="../../../../img/IMG_6557.jpg" alt="Dripping Data" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Hawaii High School Football All-Stars</h1>
+                
+                
+                  <span class="post-meta">
+  Posted on December 20, 2017
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>The local newspaper released a <a href="http://www.hawaiiprepworld.com/football/all-state-football-1972-present/">dataset of high school all stars</a> from 1972 to 2017, and I thought it might be interesting to analyze the information. Some interesting questions were what schools have the most all stars, at what positions, and how this has changed over the years. I suspect that Saint Louis, Kahuku, and Waianae will be the top teams but who knows? Maybe there’s a secret dynasty that I never heard of.</p>
+<p>First I loaded the packages I would need.</p>
+<pre class="r"><code>library(googlesheets)
+suppressPackageStartupMessages(library(dplyr))
+library(ggplot2)</code></pre>
+<p>I loaded the dataset from my Google Drive. I had a little issue with an error message but it turned out that there was a zombie R instance using the port and a quick <code>kill</code> was all that was needed. Method for that came from <a href="https://github.com/jennybc/googlesheets/issues/343">this post</a>.</p>
+<pre class="r"><code>my_sheets &lt;- gs_ls()
+fb &lt;- gs_title(&quot;HI_football_allstars&quot;)</code></pre>
+<pre><code>## Sheet successfully identified: &quot;HI_football_allstars&quot;</code></pre>
+<pre class="r"><code>x &lt;- gs_read(fb)</code></pre>
+<pre><code>## Accessing worksheet titled &#39;Sheet1&#39;.</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   year = col_integer(),
+##   position = col_character(),
+##   first = col_character(),
+##   last = col_character(),
+##   team = col_character(),
+##   poy = col_character(),
+##   paper = col_character()
+## )</code></pre>
+<p>First I looked at the variables and made the positions and paper names into factors.</p>
+<pre class="r"><code>glimpse(x)</code></pre>
+<pre><code>## Observations: 2,014
+## Variables: 7
+## $ year     &lt;int&gt; 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017,...
+## $ position &lt;chr&gt; &quot;RB&quot;, &quot;QB&quot;, &quot;REC&quot;, &quot;REC&quot;, &quot;REC&quot;, &quot;RB&quot;, &quot;OL&quot;, &quot;OL&quot;, &quot;O...
+## $ first    &lt;chr&gt; &quot;Enoch&quot;, &quot;Chevan&quot;, &quot;Mitchell&quot;, &quot;Jonah&quot;, &quot;Scott&quot;, &quot;Kah...
+## $ last     &lt;chr&gt; &quot;Nawahine&quot;, &quot;Cordeiro&quot;, &quot;Quinn&quot;, &quot;Panoke&quot;, &quot;McLeod&quot;, ...
+## $ team     &lt;chr&gt; &quot;Kahuku&quot;, &quot;Saint Louis&quot;, &quot;Saint Louis&quot;, &quot;Saint Louis&quot;...
+## $ poy      &lt;chr&gt; NA, &quot;OPOY&quot;, NA, NA, NA, NA, NA, NA, NA, NA, &quot;COY&quot;, NA...
+## $ paper    &lt;chr&gt; &quot;HSA&quot;, &quot;HSA&quot;, &quot;HSA&quot;, &quot;HSA&quot;, &quot;HSA&quot;, &quot;HSA&quot;, &quot;HSA&quot;, &quot;HSA...</code></pre>
+<pre class="r"><code>x$position &lt;- factor(x$position)
+x$paper &lt;- factor(x$paper)</code></pre>
+<p>Historically there were two newspapers in Honolulu, the Honolulu Star-Bulletin and the Honolulu Advertiser. These newspapers published separate all star lists until they merged in early 2010 and became the Honolulu Star-Advertiser.</p>
+<p>I calculated the size of the all star teams over the years.</p>
+<pre class="r"><code># players over years
+x %&gt;% mutate(one = 1) %&gt;% group_by(year, paper) %&gt;% summarize(nplayers = sum(one)) %&gt;%
+  ggplot(aes(x = year, y = nplayers, color = paper)) + geom_point()</code></pre>
+<pre><code>## Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
+<p><img src="../../../../post/2017-12-20-hawaii-high-school-football-allstars_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Looking at the data there’s one year that’s an outlier (and one NA observation). The 1975 list is odd in that there are 12 defensive linemen and 7 linebackers chosen for the team. I’d guess that means they published first and second team players in this list, but it’s not clear who would have been first team and who second team.</p>
+<pre class="r"><code>x %&gt;% filter(year == 1975)</code></pre>
+<pre><code>## # A tibble: 54 x 7
+##     year position first   last     team        poy   paper
+##    &lt;int&gt; &lt;fct&gt;    &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt; &lt;fct&gt;
+##  1  1975 coach    Cal     Chai     Kamehameha  &lt;NA&gt;  HA   
+##  2  1975 E        Casey   Kunitomo Kamehameha  &lt;NA&gt;  HA   
+##  3  1975 E        Jim     Gesser   Kaiser      &lt;NA&gt;  HA   
+##  4  1975 E        Ben     Apuna    Waipahu     &lt;NA&gt;  HA   
+##  5  1975 E        Derek   Yamada   Iolani      &lt;NA&gt;  HA   
+##  6  1975 E        Aaron   Lorenzo  Kamehameha  &lt;NA&gt;  HA   
+##  7  1975 E        Charles Pico     St. Anthony &lt;NA&gt;  HA   
+##  8  1975 E        David   Corbelli Hilo        &lt;NA&gt;  HA   
+##  9  1975 T        Dayle   Turner   Kamehameha  &lt;NA&gt;  HA   
+## 10  1975 T        Robert  Hema     Waianae     &lt;NA&gt;  HA   
+## # ... with 44 more rows</code></pre>
+<pre class="r"><code>x %&gt;% filter(year == 1975) %&gt;% group_by(position) %&gt;% summarize(n())</code></pre>
+<pre><code>## # A tibble: 10 x 2
+##    position `n()`
+##    &lt;fct&gt;    &lt;int&gt;
+##  1 C            2
+##  2 coach        1
+##  3 DB           6
+##  4 DL          12
+##  5 E            7
+##  6 G            4
+##  7 LB           7
+##  8 QB           2
+##  9 RB           8
+## 10 T            5</code></pre>
+<p>The NA year is just one row of all NA entries so I’ll just go ahead and drop it.</p>
+<pre class="r"><code>x %&gt;% filter(is.na(year))</code></pre>
+<pre><code>## # A tibble: 1 x 7
+##    year position first last  team  poy   paper
+##   &lt;int&gt; &lt;fct&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;fct&gt;
+## 1    NA &lt;NA&gt;     &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;  HSA</code></pre>
+<pre class="r"><code>which(is.na(x$year))</code></pre>
+<pre><code>## [1] 28</code></pre>
+<pre class="r"><code>x &lt;- x[-which(is.na(x$year)),]</code></pre>
+<div id="which-school-has-the-most-all-stars" class="section level2">
+<h2>Which School Has the Most All Stars</h2>
+<p>For a first pass I looked at the raw number of times each school was listed. This list included duplicates, for example when Mark Tuinei was selected as an all star by both the Star Bulletin and the Advertiser in 1977.</p>
+<pre class="r"><code># school with most players (not deduplicated)
+x %&gt;% group_by(team) %&gt;% 
+  summarize(nplayers = n()) %&gt;%   
+  arrange(desc(nplayers))</code></pre>
+<pre><code>## # A tibble: 45 x 2
+##    team        nplayers
+##    &lt;chr&gt;          &lt;int&gt;
+##  1 Saint Louis      422
+##  2 Kahuku           278
+##  3 Kamehameha       174
+##  4 Waianae          149
+##  5 Punahou          133
+##  6 Farrington       119
+##  7 Leilehua          93
+##  8 Iolani            89
+##  9 Pac-Five          63
+## 10 Castle            47
+## # ... with 35 more rows</code></pre>
+<p>After accounting for the duplicated players, Saint Louis had the most first team players, followed by Kahuku. The third place team (Kamehameha), had fewer than half the number that Saint Louis had.</p>
+<pre class="r"><code>x %&gt;% mutate(name = paste(first, last)) %&gt;% 
+  group_by(year) %&gt;%
+  distinct(name, .keep_all = T) %&gt;%   
+  group_by(team) %&gt;%
+  summarize(nplayers = n()) %&gt;% 
+  arrange(desc(nplayers))</code></pre>
+<pre><code>## # A tibble: 45 x 2
+##    team        nplayers
+##    &lt;chr&gt;          &lt;int&gt;
+##  1 Saint Louis      281
+##  2 Kahuku           197
+##  3 Kamehameha       129
+##  4 Punahou          108
+##  5 Waianae          104
+##  6 Farrington        89
+##  7 Iolani            71
+##  8 Leilehua          69
+##  9 Pac-Five          46
+## 10 Mililani          41
+## # ... with 35 more rows</code></pre>
+<p>Maybe a better way to look at it would be an ordered bar chart. Help for the code came from <a href="https://stackoverflow.com/questions/5208679/order-bars-in-ggplot2-bar-graph">here</a>.</p>
+<pre class="r"><code>x %&gt;% mutate(name = paste(first, last)) %&gt;% 
+  group_by(year) %&gt;%
+  distinct(name, .keep_all = T) %&gt;%   
+  group_by(team) %&gt;%
+  summarize(nplayers = n()) %&gt;%
+  arrange(-nplayers) %&gt;%
+  mutate(team = factor(team, team)) %&gt;% # to sort the teams
+  filter(nplayers &gt; 4) %&gt;%
+  ggplot(aes(x = team, y = nplayers)) + 
+  geom_bar(stat = &quot;identity&quot;) + 
+#  coord_flip() +
+  labs(title = &quot;Football Teams with the Most All State Players&quot;,
+       subtitle = &quot;1972-2017, minimum 5 all state players per team&quot;,
+       y = &quot;players&quot;) + 
+  theme(axis.text.x = element_text(angle=45, hjust = 1))</code></pre>
+<p><img src="../../../../post/2017-12-20-hawaii-high-school-football-allstars_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<pre class="r"><code>x %&gt;% mutate(name = paste(first, last)) %&gt;% 
+  group_by(year) %&gt;%
+  distinct(name, .keep_all = T) %&gt;%   
+  group_by(team) %&gt;%
+  summarize(nplayers = n()) %&gt;% 
+  ggplot(aes(x=nplayers)) +
+  geom_histogram(binwidth = 10) +
+  ggtitle(&quot;Distribution of Football All Stars by School, 1972-2017&quot;) +
+  labs(x = &quot;Number of All Stars&quot;, y = &quot;Number of Teams&quot;)</code></pre>
+<p><img src="../../../../post/2017-12-20-hawaii-high-school-football-allstars_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="how-have-team-strengths-changed-over-time" class="section level2">
+<h2>How Have Team Strengths Changed over Time?</h2>
+<p>Some schools were powerhouses back in the day but have not been producing all stars lately. Examples include Pac Five and Kaiser. I thought it would be neat to plot the number of all stars per year by team.</p>
+<pre class="r"><code># Get rank order of teams
+team_rank &lt;- x %&gt;% mutate(name = paste(first, last)) %&gt;% 
+  group_by(year) %&gt;%
+  distinct(name, .keep_all = T) %&gt;%   
+  group_by(team) %&gt;%
+  summarize(nplayers = n()) %&gt;%
+  arrange(-nplayers) %&gt;%
+  mutate(team = factor(team, team))
+
+# Find teams with at least 10 all stars
+min_ten &lt;- x %&gt;% mutate(name = paste(first, last)) %&gt;% 
+  group_by(year) %&gt;%
+  distinct(name, .keep_all = T) %&gt;%   
+  group_by(team) %&gt;%
+  summarize(nplayers = n()) %&gt;%
+  arrange(-nplayers) %&gt;%
+  mutate(team = factor(team, team)) %&gt;% # to sort the teams
+  filter(nplayers &gt; 9)
+
+# Create graph
+x %&gt;% 
+  # Deduplicate players
+  mutate(name = paste(first, last), one = 1) %&gt;% 
+  group_by(year) %&gt;%
+  distinct(name, .keep_all = T) %&gt;% 
+  
+  # Create running count of all-star players by team
+  arrange(year) %&gt;%
+  group_by(team) %&gt;% 
+  mutate(cumulative = cumsum(one)) %&gt;%
+  
+  # Group by team, sort, and filter
+  group_by(year, team) %&gt;%
+  summarize(nplayers = max(cumulative)) %&gt;%
+  arrange(-nplayers) %&gt;% 
+  mutate(team = factor(team, levels(team_rank$team))) %&gt;% # to sort the teams
+  filter(team %in% min_ten$team) %&gt;% # limit to only teams with &gt; 10 all stars
+
+  # Create graph
+  ggplot(aes(x = year, y = nplayers, color = team)) + 
+  geom_line() +
+  labs(title = &quot;Cumulative Football All Stars per School&quot;,
+       subtitle = &quot;1972-2017, minimum 10 players&quot;,
+       y = &quot;Number of All Stars&quot;)</code></pre>
+<p><img src="../../../../post/2017-12-20-hawaii-high-school-football-allstars_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="../../../../2017/12/19/estimated-prius-gas-mileage/" data-toggle="tooltip" data-placement="top" title="Estimated Prius Gas Mileage (December 2017 Update)">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="../../../../2018/03/18/alf-voting/" data-toggle="tooltip" data-placement="top" title="Annual Leadership Forum Voting">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/mching" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/mikec2a" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/michael-ching-033a5029" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="../../../../index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Mike Ching
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../../">Dripping Data</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.41</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../../js/main.js"></script>
+<script src="../../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../../js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Voting on Dripping Data</title>
+    <link>/tags/voting/</link>
+    <description>Recent content in Voting on Dripping Data</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 18 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/voting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Annual Leadership Forum Voting</title>
+      <link>/2018/03/18/alf-voting/</link>
+      <pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/03/18/alf-voting/</guid>
+      <description>It’s been a while since I posted, but this weekend I returned to the American Academy of Pediatrics Annual Leadership Forum and I was able to cite my analysis on the top 10 resolutions.
+In the spirit of looking further at the ALF data I decided to look at the voting records from this year. It seemed that most votes pass by at least 80% if not more. This includes the amendment votes.</description>
+    </item>
+    
+  </channel>
+</rss>
