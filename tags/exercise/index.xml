@@ -6,10 +6,19 @@
     <description>Recent content in Exercise on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/exercise/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Treadmill Charts for Running Paces</title>
+      <link>/2018/06/06/treadmill-charts-for-running-paces/</link>
+      <pubDate>Wed, 06 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/06/06/treadmill-charts-for-running-paces/</guid>
+      <description>I find it hard to pace myself on the road when doing interval workouts. The GPS apps aren’t good enough to maintain a steady pace at the goal so I always end up running too fast at the beginning then die at the end. I’ve found it easier to do these on the treadmill at the gym. The only problem is that it’s hard for me to convert between the paces I want to run and the miles per hour speed that are supplied by the treadmills.</description>
+    </item>
     
     <item>
       <title>Runkeeper Data</title>

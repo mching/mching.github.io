@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Treadmill Charts for Running Paces</title>
+  <meta property="og:title" content="Treadmill Charts for Running Paces" />
+  <meta name="twitter:title" content="Treadmill Charts for Running Paces" />
+  <meta name="description" content="I find it hard to pace myself on the road when doing interval workouts. The GPS apps aren’t good enough to maintain a steady pace at the goal so I always end up running too fast at the beginning then die at the end. I’ve found it easier to do these on the treadmill at the gym. The only problem is that it’s hard for me to convert between the paces I want to run and the miles per hour speed that are supplied by the treadmills.">
+  <meta property="og:description" content="I find it hard to pace myself on the road when doing interval workouts. The GPS apps aren’t good enough to maintain a steady pace at the goal so I always end up running too fast at the beginning then die at the end. I’ve found it easier to do these on the treadmill at the gym. The only problem is that it’s hard for me to convert between the paces I want to run and the miles per hour speed that are supplied by the treadmills.">
+  <meta name="twitter:description" content="I find it hard to pace myself on the road when doing interval workouts. The GPS apps aren’t good enough to maintain a steady pace at the goal so I always end up running too fast at the beginning then …">
+  <meta name="author" content="Mike Ching"/>
+  <link href='../../../../img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/IMG_6557.jpg" />
+  <meta name="twitter:image" content="/img/IMG_6557.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@mikec2a" />
+  <meta name="twitter:creator" content="@mikec2a" />
+  <meta property="og:url" content="/2018/06/06/treadmill-charts-for-running-paces/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dripping Data" />
+
+  <meta name="generator" content="Hugo 0.41" />
+  <link rel="canonical" href="../../../../2018/06/06/treadmill-charts-for-running-paces/" />
+  <link rel="alternate" href="../../../../index.xml" type="application/rss+xml" title="Dripping Data">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../../css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../../css/pygment_highlights.css" />
+  <link rel="stylesheet" href="../../../../css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../../">Dripping Data</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../../about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="LinkedIn" href="https://www.linkedin.com/in/michael-ching-033a5029">LinkedIn</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Twitter" href="https://twitter.com/mikec2a">Twitter</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dripping Data" href="../../../../">
+            <img class="avatar-img" src="../../../../img/IMG_6557.jpg" alt="Dripping Data" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Treadmill Charts for Running Paces</h1>
+                
+                
+                  <span class="post-meta">
+  Posted on June 6, 2018
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>I find it hard to pace myself on the road when doing interval workouts. The GPS apps aren’t good enough to maintain a steady pace at the goal so I always end up running too fast at the beginning then die at the end. I’ve found it easier to do these on the treadmill at the gym. The only problem is that it’s hard for me to convert between the paces I want to run and the miles per hour speed that are supplied by the treadmills. I wrote a function to provide these figures.</p>
+<p>It’s actually not that hard since minutes per mile is easily converted to miles per hour. Just divide 60 by the minutes per mile and you get the speed in MPH.</p>
+<pre class="r"><code>sec_to_min &lt;- function(m) {
+  seconds &lt;- round(m%%60, 1)
+  minutes &lt;- m%/%60
+  if(seconds&lt;10) {
+    seconds &lt;- paste0(&quot;0&quot;, seconds)
+  }
+  out &lt;- paste0(minutes, &quot;:&quot;, seconds)
+  return(out)
+}
+
+x &lt;- seq(300, 720, 6)
+
+mph &lt;- seq(12, 5, -0.1)
+min_per_mile &lt;- sapply(3600 / mph, sec_to_min)
+
+min_per_distance &lt;- function(speed, distance) {
+  # distance in meters
+  # speed in mph
+  # 1609 meters per mile
+  out &lt;- sec_to_min((distance / 1609.34) / speed * 3600)
+  return(out)
+}
+
+mp200 &lt;- sapply(mph, function(x) min_per_distance(x, 200))
+mp400 &lt;- sapply(mph, function(x) min_per_distance(x, 400))
+mp600 &lt;- sapply(mph, function(x) min_per_distance(x, 600))
+mp800 &lt;- sapply(mph, function(x) min_per_distance(x, 800))
+mp1200 &lt;- sapply(mph, function(x) min_per_distance(x, 1200))</code></pre>
+<pre class="text"><code>pacetable &lt;- as.data.frame(cbind(mph, min_per_mile, mp200, mp400, mp600, mp800, mp1200))
+knitr::kable(pacetable)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">mph</th>
+<th align="left">min_per_mile</th>
+<th align="left">mp200</th>
+<th align="left">mp400</th>
+<th align="left">mp600</th>
+<th align="left">mp800</th>
+<th align="left">mp1200</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">12</td>
+<td align="left">5:00</td>
+<td align="left">0:37.3</td>
+<td align="left">1:14.6</td>
+<td align="left">1:51.8</td>
+<td align="left">2:29.1</td>
+<td align="left">3:43.7</td>
+</tr>
+<tr class="even">
+<td align="left">11.9</td>
+<td align="left">5:02.5</td>
+<td align="left">0:37.6</td>
+<td align="left">1:15.2</td>
+<td align="left">1:52.8</td>
+<td align="left">2:30.4</td>
+<td align="left">3:45.6</td>
+</tr>
+<tr class="odd">
+<td align="left">11.8</td>
+<td align="left">5:05.1</td>
+<td align="left">0:37.9</td>
+<td align="left">1:15.8</td>
+<td align="left">1:53.7</td>
+<td align="left">2:31.7</td>
+<td align="left">3:47.5</td>
+</tr>
+<tr class="even">
+<td align="left">11.7</td>
+<td align="left">5:07.7</td>
+<td align="left">0:38.2</td>
+<td align="left">1:16.5</td>
+<td align="left">1:54.7</td>
+<td align="left">2:33</td>
+<td align="left">3:49.4</td>
+</tr>
+<tr class="odd">
+<td align="left">11.6</td>
+<td align="left">5:10.3</td>
+<td align="left">0:38.6</td>
+<td align="left">1:17.1</td>
+<td align="left">1:55.7</td>
+<td align="left">2:34.3</td>
+<td align="left">3:51.4</td>
+</tr>
+<tr class="even">
+<td align="left">11.5</td>
+<td align="left">5:13</td>
+<td align="left">0:38.9</td>
+<td align="left">1:17.8</td>
+<td align="left">1:56.7</td>
+<td align="left">2:35.6</td>
+<td align="left">3:53.4</td>
+</tr>
+<tr class="odd">
+<td align="left">11.4</td>
+<td align="left">5:15.8</td>
+<td align="left">0:39.2</td>
+<td align="left">1:18.5</td>
+<td align="left">1:57.7</td>
+<td align="left">2:37</td>
+<td align="left">3:55.5</td>
+</tr>
+<tr class="even">
+<td align="left">11.3</td>
+<td align="left">5:18.6</td>
+<td align="left">0:39.6</td>
+<td align="left">1:19.2</td>
+<td align="left">1:58.8</td>
+<td align="left">2:38.4</td>
+<td align="left">3:57.6</td>
+</tr>
+<tr class="odd">
+<td align="left">11.2</td>
+<td align="left">5:21.4</td>
+<td align="left">0:39.9</td>
+<td align="left">1:19.9</td>
+<td align="left">1:59.8</td>
+<td align="left">2:39.8</td>
+<td align="left">3:59.7</td>
+</tr>
+<tr class="even">
+<td align="left">11.1</td>
+<td align="left">5:24.3</td>
+<td align="left">0:40.3</td>
+<td align="left">1:20.6</td>
+<td align="left">2:00.9</td>
+<td align="left">2:41.2</td>
+<td align="left">4:01.8</td>
+</tr>
+<tr class="odd">
+<td align="left">11</td>
+<td align="left">5:27.3</td>
+<td align="left">0:40.7</td>
+<td align="left">1:21.3</td>
+<td align="left">2:02</td>
+<td align="left">2:42.7</td>
+<td align="left">4:04</td>
+</tr>
+<tr class="even">
+<td align="left">10.9</td>
+<td align="left">5:30.3</td>
+<td align="left">0:41</td>
+<td align="left">1:22.1</td>
+<td align="left">2:03.1</td>
+<td align="left">2:44.2</td>
+<td align="left">4:06.3</td>
+</tr>
+<tr class="odd">
+<td align="left">10.8</td>
+<td align="left">5:33.3</td>
+<td align="left">0:41.4</td>
+<td align="left">1:22.8</td>
+<td align="left">2:04.3</td>
+<td align="left">2:45.7</td>
+<td align="left">4:08.5</td>
+</tr>
+<tr class="even">
+<td align="left">10.7</td>
+<td align="left">5:36.4</td>
+<td align="left">0:41.8</td>
+<td align="left">1:23.6</td>
+<td align="left">2:05.4</td>
+<td align="left">2:47.2</td>
+<td align="left">4:10.9</td>
+</tr>
+<tr class="odd">
+<td align="left">10.6</td>
+<td align="left">5:39.6</td>
+<td align="left">0:42.2</td>
+<td align="left">1:24.4</td>
+<td align="left">2:06.6</td>
+<td align="left">2:48.8</td>
+<td align="left">4:13.2</td>
+</tr>
+<tr class="even">
+<td align="left">10.5</td>
+<td align="left">5:42.9</td>
+<td align="left">0:42.6</td>
+<td align="left">1:25.2</td>
+<td align="left">2:07.8</td>
+<td align="left">2:50.4</td>
+<td align="left">4:15.7</td>
+</tr>
+<tr class="odd">
+<td align="left">10.4</td>
+<td align="left">5:46.2</td>
+<td align="left">0:43</td>
+<td align="left">1:26</td>
+<td align="left">2:09.1</td>
+<td align="left">2:52.1</td>
+<td align="left">4:18.1</td>
+</tr>
+<tr class="even">
+<td align="left">10.3</td>
+<td align="left">5:49.5</td>
+<td align="left">0:43.4</td>
+<td align="left">1:26.9</td>
+<td align="left">2:10.3</td>
+<td align="left">2:53.7</td>
+<td align="left">4:20.6</td>
+</tr>
+<tr class="odd">
+<td align="left">10.2</td>
+<td align="left">5:52.9</td>
+<td align="left">0:43.9</td>
+<td align="left">1:27.7</td>
+<td align="left">2:11.6</td>
+<td align="left">2:55.4</td>
+<td align="left">4:23.2</td>
+</tr>
+<tr class="even">
+<td align="left">10.1</td>
+<td align="left">5:56.4</td>
+<td align="left">0:44.3</td>
+<td align="left">1:28.6</td>
+<td align="left">2:12.9</td>
+<td align="left">2:57.2</td>
+<td align="left">4:25.8</td>
+</tr>
+<tr class="odd">
+<td align="left">10</td>
+<td align="left">6:00</td>
+<td align="left">0:44.7</td>
+<td align="left">1:29.5</td>
+<td align="left">2:14.2</td>
+<td align="left">2:59</td>
+<td align="left">4:28.4</td>
+</tr>
+<tr class="even">
+<td align="left">9.9</td>
+<td align="left">6:03.6</td>
+<td align="left">0:45.2</td>
+<td align="left">1:30.4</td>
+<td align="left">2:15.6</td>
+<td align="left">3:00.8</td>
+<td align="left">4:31.1</td>
+</tr>
+<tr class="odd">
+<td align="left">9.8</td>
+<td align="left">6:07.3</td>
+<td align="left">0:45.7</td>
+<td align="left">1:31.3</td>
+<td align="left">2:17</td>
+<td align="left">3:02.6</td>
+<td align="left">4:33.9</td>
+</tr>
+<tr class="even">
+<td align="left">9.7</td>
+<td align="left">6:11.1</td>
+<td align="left">0:46.1</td>
+<td align="left">1:32.2</td>
+<td align="left">2:18.4</td>
+<td align="left">3:04.5</td>
+<td align="left">4:36.7</td>
+</tr>
+<tr class="odd">
+<td align="left">9.6</td>
+<td align="left">6:15</td>
+<td align="left">0:46.6</td>
+<td align="left">1:33.2</td>
+<td align="left">2:19.8</td>
+<td align="left">3:06.4</td>
+<td align="left">4:39.6</td>
+</tr>
+<tr class="even">
+<td align="left">9.5</td>
+<td align="left">6:18.9</td>
+<td align="left">0:47.1</td>
+<td align="left">1:34.2</td>
+<td align="left">2:21.3</td>
+<td align="left">3:08.4</td>
+<td align="left">4:42.6</td>
+</tr>
+<tr class="odd">
+<td align="left">9.4</td>
+<td align="left">6:23</td>
+<td align="left">0:47.6</td>
+<td align="left">1:35.2</td>
+<td align="left">2:22.8</td>
+<td align="left">3:10.4</td>
+<td align="left">4:45.6</td>
+</tr>
+<tr class="even">
+<td align="left">9.3</td>
+<td align="left">6:27.1</td>
+<td align="left">0:48.1</td>
+<td align="left">1:36.2</td>
+<td align="left">2:24.3</td>
+<td align="left">3:12.4</td>
+<td align="left">4:48.6</td>
+</tr>
+<tr class="odd">
+<td align="left">9.2</td>
+<td align="left">6:31.3</td>
+<td align="left">0:48.6</td>
+<td align="left">1:37.3</td>
+<td align="left">2:25.9</td>
+<td align="left">3:14.5</td>
+<td align="left">4:51.8</td>
+</tr>
+<tr class="even">
+<td align="left">9.1</td>
+<td align="left">6:35.6</td>
+<td align="left">0:49.2</td>
+<td align="left">1:38.3</td>
+<td align="left">2:27.5</td>
+<td align="left">3:16.7</td>
+<td align="left">4:55</td>
+</tr>
+<tr class="odd">
+<td align="left">9</td>
+<td align="left">6:40</td>
+<td align="left">0:49.7</td>
+<td align="left">1:39.4</td>
+<td align="left">2:29.1</td>
+<td align="left">3:18.8</td>
+<td align="left">4:58.3</td>
+</tr>
+<tr class="even">
+<td align="left">8.9</td>
+<td align="left">6:44.5</td>
+<td align="left">0:50.3</td>
+<td align="left">1:40.5</td>
+<td align="left">2:30.8</td>
+<td align="left">3:21.1</td>
+<td align="left">5:01.6</td>
+</tr>
+<tr class="odd">
+<td align="left">8.8</td>
+<td align="left">6:49.1</td>
+<td align="left">0:50.8</td>
+<td align="left">1:41.7</td>
+<td align="left">2:32.5</td>
+<td align="left">3:23.4</td>
+<td align="left">5:05</td>
+</tr>
+<tr class="even">
+<td align="left">8.7</td>
+<td align="left">6:53.8</td>
+<td align="left">0:51.4</td>
+<td align="left">1:42.8</td>
+<td align="left">2:34.3</td>
+<td align="left">3:25.7</td>
+<td align="left">5:08.5</td>
+</tr>
+<tr class="odd">
+<td align="left">8.6</td>
+<td align="left">6:58.6</td>
+<td align="left">0:52</td>
+<td align="left">1:44</td>
+<td align="left">2:36.1</td>
+<td align="left">3:28.1</td>
+<td align="left">5:12.1</td>
+</tr>
+<tr class="even">
+<td align="left">8.5</td>
+<td align="left">7:03.5</td>
+<td align="left">0:52.6</td>
+<td align="left">1:45.3</td>
+<td align="left">2:37.9</td>
+<td align="left">3:30.5</td>
+<td align="left">5:15.8</td>
+</tr>
+<tr class="odd">
+<td align="left">8.4</td>
+<td align="left">7:08.6</td>
+<td align="left">0:53.3</td>
+<td align="left">1:46.5</td>
+<td align="left">2:39.8</td>
+<td align="left">3:33</td>
+<td align="left">5:19.6</td>
+</tr>
+<tr class="even">
+<td align="left">8.3</td>
+<td align="left">7:13.7</td>
+<td align="left">0:53.9</td>
+<td align="left">1:47.8</td>
+<td align="left">2:41.7</td>
+<td align="left">3:35.6</td>
+<td align="left">5:23.4</td>
+</tr>
+<tr class="odd">
+<td align="left">8.2</td>
+<td align="left">7:19</td>
+<td align="left">0:54.6</td>
+<td align="left">1:49.1</td>
+<td align="left">2:43.7</td>
+<td align="left">3:38.2</td>
+<td align="left">5:27.4</td>
+</tr>
+<tr class="even">
+<td align="left">8.1</td>
+<td align="left">7:24.4</td>
+<td align="left">0:55.2</td>
+<td align="left">1:50.5</td>
+<td align="left">2:45.7</td>
+<td align="left">3:40.9</td>
+<td align="left">5:31.4</td>
+</tr>
+<tr class="odd">
+<td align="left">8</td>
+<td align="left">7:30</td>
+<td align="left">0:55.9</td>
+<td align="left">1:51.8</td>
+<td align="left">2:47.8</td>
+<td align="left">3:43.7</td>
+<td align="left">5:35.5</td>
+</tr>
+<tr class="even">
+<td align="left">7.9</td>
+<td align="left">7:35.7</td>
+<td align="left">0:56.6</td>
+<td align="left">1:53.3</td>
+<td align="left">2:49.9</td>
+<td align="left">3:46.5</td>
+<td align="left">5:39.8</td>
+</tr>
+<tr class="odd">
+<td align="left">7.8</td>
+<td align="left">7:41.5</td>
+<td align="left">0:57.4</td>
+<td align="left">1:54.7</td>
+<td align="left">2:52.1</td>
+<td align="left">3:49.4</td>
+<td align="left">5:44.1</td>
+</tr>
+<tr class="even">
+<td align="left">7.7</td>
+<td align="left">7:47.5</td>
+<td align="left">0:58.1</td>
+<td align="left">1:56.2</td>
+<td align="left">2:54.3</td>
+<td align="left">3:52.4</td>
+<td align="left">5:48.6</td>
+</tr>
+<tr class="odd">
+<td align="left">7.6</td>
+<td align="left">7:53.7</td>
+<td align="left">0:58.9</td>
+<td align="left">1:57.7</td>
+<td align="left">2:56.6</td>
+<td align="left">3:55.5</td>
+<td align="left">5:53.2</td>
+</tr>
+<tr class="even">
+<td align="left">7.5</td>
+<td align="left">8:00</td>
+<td align="left">0:59.7</td>
+<td align="left">1:59.3</td>
+<td align="left">2:59</td>
+<td align="left">3:58.6</td>
+<td align="left">5:57.9</td>
+</tr>
+<tr class="odd">
+<td align="left">7.4</td>
+<td align="left">8:06.5</td>
+<td align="left">1:00.5</td>
+<td align="left">2:00.9</td>
+<td align="left">3:01.4</td>
+<td align="left">4:01.8</td>
+<td align="left">6:02.7</td>
+</tr>
+<tr class="even">
+<td align="left">7.3</td>
+<td align="left">8:13.2</td>
+<td align="left">1:01.3</td>
+<td align="left">2:02.6</td>
+<td align="left">3:03.9</td>
+<td align="left">4:05.1</td>
+<td align="left">6:07.7</td>
+</tr>
+<tr class="odd">
+<td align="left">7.2</td>
+<td align="left">8:20</td>
+<td align="left">1:02.1</td>
+<td align="left">2:04.3</td>
+<td align="left">3:06.4</td>
+<td align="left">4:08.5</td>
+<td align="left">6:12.8</td>
+</tr>
+<tr class="even">
+<td align="left">7.1</td>
+<td align="left">8:27</td>
+<td align="left">1:03</td>
+<td align="left">2:06</td>
+<td align="left">3:09</td>
+<td align="left">4:12</td>
+<td align="left">6:18.1</td>
+</tr>
+<tr class="odd">
+<td align="left">7</td>
+<td align="left">8:34.3</td>
+<td align="left">1:03.9</td>
+<td align="left">2:07.8</td>
+<td align="left">3:11.7</td>
+<td align="left">4:15.7</td>
+<td align="left">6:23.5</td>
+</tr>
+<tr class="even">
+<td align="left">6.9</td>
+<td align="left">8:41.7</td>
+<td align="left">1:04.8</td>
+<td align="left">2:09.7</td>
+<td align="left">3:14.5</td>
+<td align="left">4:19.4</td>
+<td align="left">6:29</td>
+</tr>
+<tr class="odd">
+<td align="left">6.8</td>
+<td align="left">8:49.4</td>
+<td align="left">1:05.8</td>
+<td align="left">2:11.6</td>
+<td align="left">3:17.4</td>
+<td align="left">4:23.2</td>
+<td align="left">6:34.8</td>
+</tr>
+<tr class="even">
+<td align="left">6.7</td>
+<td align="left">8:57.3</td>
+<td align="left">1:06.8</td>
+<td align="left">2:13.5</td>
+<td align="left">3:20.3</td>
+<td align="left">4:27.1</td>
+<td align="left">6:40.6</td>
+</tr>
+<tr class="odd">
+<td align="left">6.6</td>
+<td align="left">9:05.5</td>
+<td align="left">1:07.8</td>
+<td align="left">2:15.6</td>
+<td align="left">3:23.4</td>
+<td align="left">4:31.1</td>
+<td align="left">6:46.7</td>
+</tr>
+<tr class="even">
+<td align="left">6.5</td>
+<td align="left">9:13.8</td>
+<td align="left">1:08.8</td>
+<td align="left">2:17.7</td>
+<td align="left">3:26.5</td>
+<td align="left">4:35.3</td>
+<td align="left">6:53</td>
+</tr>
+<tr class="odd">
+<td align="left">6.4</td>
+<td align="left">9:22.5</td>
+<td align="left">1:09.9</td>
+<td align="left">2:19.8</td>
+<td align="left">3:29.7</td>
+<td align="left">4:39.6</td>
+<td align="left">6:59.4</td>
+</tr>
+<tr class="even">
+<td align="left">6.3</td>
+<td align="left">9:31.4</td>
+<td align="left">1:11</td>
+<td align="left">2:22</td>
+<td align="left">3:33</td>
+<td align="left">4:44.1</td>
+<td align="left">7:06.1</td>
+</tr>
+<tr class="odd">
+<td align="left">6.2</td>
+<td align="left">9:40.6</td>
+<td align="left">1:12.2</td>
+<td align="left">2:24.3</td>
+<td align="left">3:36.5</td>
+<td align="left">4:48.6</td>
+<td align="left">7:13</td>
+</tr>
+<tr class="even">
+<td align="left">6.1</td>
+<td align="left">9:50.2</td>
+<td align="left">1:13.3</td>
+<td align="left">2:26.7</td>
+<td align="left">3:40</td>
+<td align="left">4:53.4</td>
+<td align="left">7:20.1</td>
+</tr>
+<tr class="odd">
+<td align="left">6</td>
+<td align="left">10:00</td>
+<td align="left">1:14.6</td>
+<td align="left">2:29.1</td>
+<td align="left">3:43.7</td>
+<td align="left">4:58.3</td>
+<td align="left">7:27.4</td>
+</tr>
+<tr class="even">
+<td align="left">5.9</td>
+<td align="left">10:10.2</td>
+<td align="left">1:15.8</td>
+<td align="left">2:31.7</td>
+<td align="left">3:47.5</td>
+<td align="left">5:03.3</td>
+<td align="left">7:35</td>
+</tr>
+<tr class="odd">
+<td align="left">5.8</td>
+<td align="left">10:20.7</td>
+<td align="left">1:17.1</td>
+<td align="left">2:34.3</td>
+<td align="left">3:51.4</td>
+<td align="left">5:08.5</td>
+<td align="left">7:42.8</td>
+</tr>
+<tr class="even">
+<td align="left">5.7</td>
+<td align="left">10:31.6</td>
+<td align="left">1:18.5</td>
+<td align="left">2:37</td>
+<td align="left">3:55.5</td>
+<td align="left">5:14</td>
+<td align="left">7:50.9</td>
+</tr>
+<tr class="odd">
+<td align="left">5.6</td>
+<td align="left">10:42.9</td>
+<td align="left">1:19.9</td>
+<td align="left">2:39.8</td>
+<td align="left">3:59.7</td>
+<td align="left">5:19.6</td>
+<td align="left">7:59.3</td>
+</tr>
+<tr class="even">
+<td align="left">5.5</td>
+<td align="left">10:54.5</td>
+<td align="left">1:21.3</td>
+<td align="left">2:42.7</td>
+<td align="left">4:04</td>
+<td align="left">5:25.4</td>
+<td align="left">8:08.1</td>
+</tr>
+<tr class="odd">
+<td align="left">5.4</td>
+<td align="left">11:06.7</td>
+<td align="left">1:22.8</td>
+<td align="left">2:45.7</td>
+<td align="left">4:08.5</td>
+<td align="left">5:31.4</td>
+<td align="left">8:17.1</td>
+</tr>
+<tr class="even">
+<td align="left">5.3</td>
+<td align="left">11:19.2</td>
+<td align="left">1:24.4</td>
+<td align="left">2:48.8</td>
+<td align="left">4:13.2</td>
+<td align="left">5:37.7</td>
+<td align="left">8:26.5</td>
+</tr>
+<tr class="odd">
+<td align="left">5.2</td>
+<td align="left">11:32.3</td>
+<td align="left">1:26</td>
+<td align="left">2:52.1</td>
+<td align="left">4:18.1</td>
+<td align="left">5:44.1</td>
+<td align="left">8:36.2</td>
+</tr>
+<tr class="even">
+<td align="left">5.1</td>
+<td align="left">11:45.9</td>
+<td align="left">1:27.7</td>
+<td align="left">2:55.4</td>
+<td align="left">4:23.2</td>
+<td align="left">5:50.9</td>
+<td align="left">8:46.3</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">12:00</td>
+<td align="left">1:29.5</td>
+<td align="left">2:59</td>
+<td align="left">4:28.4</td>
+<td align="left">5:57.9</td>
+<td align="left">8:56.9</td>
+</tr>
+</tbody>
+</table>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="../../../../2018/06/03/runkeeper-data/" data-toggle="tooltip" data-placement="top" title="Runkeeper Data">&larr; Previous Post</a>
+          </li>
+        
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/mching" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/mikec2a" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/michael-ching-033a5029" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="../../../../index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Mike Ching
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../../">Dripping Data</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.41</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../../js/main.js"></script>
+<script src="../../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../../js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+
