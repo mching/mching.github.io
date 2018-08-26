@@ -6,10 +6,21 @@
     <description>Recent content on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Astronaut Fluid Shift Experiment</title>
+      <link>/2018/08/25/astronaut-fluid-shift-experiment/</link>
+      <pubDate>Sat, 25 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/08/25/astronaut-fluid-shift-experiment/</guid>
+      <description>Today I ran an experiment with the students in my daughter’s First Lego League team. It was meant to demonstrate how fluid shifts in space. The kids measured their leg circumference at 3 different spots after standing for 10 minutes. They lay with their legs in the air for 10 more minutes and then re-measured the circumference.
+The inspiration for this activity came from the NASA website.
+library(googlesheets) suppressPackageStartupMessages(library(dplyr)) library(ggplot2) library(tidyr) my_sheets &amp;lt;- gs_ls() fb &amp;lt;- gs_title(&amp;quot;get_a_leg_up&amp;quot;) ## Sheet successfully identified: &amp;quot;get_a_leg_up&amp;quot; x &amp;lt;- gs_read(fb) ## Accessing worksheet titled &amp;#39;Sheet1&amp;#39;.</description>
+    </item>
     
     <item>
       <title>Fluid Management for Running</title>
@@ -17,7 +28,7 @@
       <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/06/23/fluid-management-for-running/</guid>
-      <description>Update: 7/29/18
+      <description>Update: 8/25/2018
 I’ve been having a hard time with my long runs now that the weather is getting hot. I went on one in particular that was particularly tough. I was nauseous and felt hot afterwards for a long time. I probably had heat exhaustion. The next morning when I weighed myself I was about 5 lbs less than I thought I should be. This got me thinking that maybe I was also very dehydrated, even though I had taken water breaks at several water stops along the way.</description>
     </item>
     

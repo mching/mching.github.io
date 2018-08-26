@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Experiment on Dripping Data</title>
+    <link>/tags/experiment/</link>
+    <description>Recent content in Experiment on Dripping Data</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 25 Aug 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/experiment/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Astronaut Fluid Shift Experiment</title>
+      <link>/2018/08/25/astronaut-fluid-shift-experiment/</link>
+      <pubDate>Sat, 25 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/08/25/astronaut-fluid-shift-experiment/</guid>
+      <description>Today I ran an experiment with the students in my daughter’s First Lego League team. It was meant to demonstrate how fluid shifts in space. The kids measured their leg circumference at 3 different spots after standing for 10 minutes. They lay with their legs in the air for 10 more minutes and then re-measured the circumference.
+The inspiration for this activity came from the NASA website.
+library(googlesheets) suppressPackageStartupMessages(library(dplyr)) library(ggplot2) library(tidyr) my_sheets &amp;lt;- gs_ls() fb &amp;lt;- gs_title(&amp;quot;get_a_leg_up&amp;quot;) ## Sheet successfully identified: &amp;quot;get_a_leg_up&amp;quot; x &amp;lt;- gs_read(fb) ## Accessing worksheet titled &amp;#39;Sheet1&amp;#39;.</description>
+    </item>
+    
+  </channel>
+</rss>

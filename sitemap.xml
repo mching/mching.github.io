@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2018/08/25/astronaut-fluid-shift-experiment/</loc>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2018/06/23/fluid-management-for-running/</loc>
     <lastmod>2018-06-23T00:00:00+00:00</lastmod>
   </url>
@@ -318,7 +323,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-06-23T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -337,6 +342,12 @@
   <url>
     <loc>/tags/exercise/</loc>
     <lastmod>2018-06-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/experiment/</loc>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -396,7 +407,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2018-06-23T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -414,7 +425,7 @@
   
   <url>
     <loc>/categories/r/</loc>
-    <lastmod>2018-06-23T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
