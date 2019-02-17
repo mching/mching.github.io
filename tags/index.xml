@@ -77,7 +77,7 @@
     <item>
       <title>Cars</title>
       <link>/tags/cars/</link>
-      <pubDate>Thu, 29 Dec 2016 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 27 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/cars/</guid>
       <description></description>
@@ -264,6 +264,15 @@
     </item>
     
     <item>
+      <title>Scouting</title>
+      <link>/tags/scouting/</link>
+      <pubDate>Sat, 16 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/scouting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Securitynow</title>
       <link>/tags/securitynow/</link>
       <pubDate>Mon, 10 Jul 2017 00:00:00 +0000</pubDate>
@@ -300,11 +309,29 @@
     </item>
     
     <item>
+      <title>Traffic</title>
+      <link>/tags/traffic/</link>
+      <pubDate>Fri, 27 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/traffic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Turkey</title>
       <link>/tags/turkey/</link>
       <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/turkey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Twitter</title>
+      <link>/tags/twitter/</link>
+      <pubDate>Fri, 27 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/twitter/</guid>
       <description></description>
     </item>
     

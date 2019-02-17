@@ -22,7 +22,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Dripping Data" />
 
-  <meta name="generator" content="Hugo 0.47.1" />
+  <meta name="generator" content="Hugo 0.54.0" />
   <link rel="canonical" href="../../../../2018/06/06/treadmill-charts-for-running-paces/" />
   <link rel="alternate" href="../../../../index.xml" type="application/rss+xml" title="Dripping Data">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
@@ -192,7 +192,10 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>I find it hard to pace myself on the road when doing interval workouts. The GPS apps aren’t good enough to maintain a steady pace at the goal so I always end up running too fast at the beginning then die at the end. I’ve found it easier to do these on the treadmill at the gym. The only problem is that it’s hard for me to convert between the paces I want to run and the miles per hour speed that are supplied by the treadmills. I wrote a function to provide these figures.</p>
+        
+
+
+<p>I find it hard to pace myself on the road when doing interval workouts. The GPS apps aren’t good enough to maintain a steady pace at the goal so I always end up running too fast at the beginning then die at the end. I’ve found it easier to do these on the treadmill at the gym. The only problem is that it’s hard for me to convert between the paces I want to run and the miles per hour speed that are supplied by the treadmills. I wrote a function to provide these figures.</p>
 <p>It’s actually not that hard since minutes per mile is easily converted to miles per hour. Just divide 60 by the minutes per mile and you get the speed in MPH.</p>
 <pre class="r"><code>sec_to_min &lt;- function(m) {
   seconds &lt;- round(m%%60, 1)
@@ -1042,7 +1045,7 @@ knitr::kable(pacetable)</code></pre>
           
 
           &nbsp;&bull;&nbsp;
-          2018
+          2019
 
           
             &nbsp;&bull;&nbsp;
@@ -1051,7 +1054,7 @@ knitr::kable(pacetable)</code></pre>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.47.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.54.0</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>
