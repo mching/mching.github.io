@@ -6,28 +6,12 @@
     <description>Recent content in R on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-<<<<<<< Updated upstream
     <lastBuildDate>Sat, 16 Feb 2019 00:00:00 +0000</lastBuildDate>
-=======
-    <lastBuildDate>Fri, 15 Mar 2019 00:00:00 +0000</lastBuildDate>
->>>>>>> Stashed changes
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-<<<<<<< Updated upstream
-=======
-      <title>Effects of Mangrove Clearance on Water Quality at He&#39;eia Fishpond</title>
-      <link>/2019/03/15/heeia/</link>
-      <pubDate>Fri, 15 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/2019/03/15/heeia/</guid>
-      <description>library(googlesheets) suppressPackageStartupMessages(library(dplyr)) library(ggplot2) # Change cache flag to F if updating data my_sheets &amp;lt;- gs_ls() fb &amp;lt;- gs_title(&amp;quot;heeia&amp;quot;) ## Sheet successfully identified: &amp;quot;heeia&amp;quot; x &amp;lt;- gs_read(fb) ## Accessing worksheet titled &amp;#39;Sheet1&amp;#39;. ## Parsed with column specification: ## cols( ## Date = col_date(format = &amp;quot;&amp;quot;), ## ID = col_double(), ## mangrove = col_logical(), ## DO = col_double(), ## pH = col_double(), ## turbidity = col_double() ## ) x &amp;lt;- as_tibble(x) x ## # A tibble: 18 x 6 ## Date ID mangrove DO pH turbidity ## &amp;lt;date&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;lgl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; ## 1 2019-02-23 1 FALSE 0.</description>
-    </item>
-    
-    <item>
->>>>>>> Stashed changes
       <title>Tenderfoot Paces</title>
       <link>/2019/02/16/tenderfoot-paces/</link>
       <pubDate>Sat, 16 Feb 2019 00:00:00 +0000</pubDate>

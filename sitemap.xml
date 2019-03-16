@@ -3,14 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-<<<<<<< Updated upstream
-=======
-    <loc>/2019/03/15/heeia/</loc>
-    <lastmod>2019-03-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
->>>>>>> Stashed changes
     <loc>/2019/02/16/tenderfoot-paces/</loc>
     <lastmod>2019-02-16T00:00:00+00:00</lastmod>
   </url>
@@ -341,17 +333,7 @@
   
   <url>
     <loc>/</loc>
-<<<<<<< Updated upstream
     <lastmod>2019-02-16T00:00:00+00:00</lastmod>
-=======
-    <lastmod>2019-03-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ecology/</loc>
-    <lastmod>2019-03-15T00:00:00+00:00</lastmod>
->>>>>>> Stashed changes
     <priority>0</priority>
   </url>
   
@@ -422,12 +404,6 @@
   </url>
   
   <url>
-    <loc>/tags/observation/</loc>
-    <lastmod>2019-03-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/parking/</loc>
     <lastmod>2017-07-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -441,11 +417,7 @@
   
   <url>
     <loc>/post/</loc>
-<<<<<<< Updated upstream
     <lastmod>2019-02-16T00:00:00+00:00</lastmod>
-=======
-    <lastmod>2019-03-15T00:00:00+00:00</lastmod>
->>>>>>> Stashed changes
     <priority>0</priority>
   </url>
   
@@ -463,11 +435,7 @@
   
   <url>
     <loc>/categories/r/</loc>
-<<<<<<< Updated upstream
     <lastmod>2019-02-16T00:00:00+00:00</lastmod>
-=======
-    <lastmod>2019-03-15T00:00:00+00:00</lastmod>
->>>>>>> Stashed changes
     <priority>0</priority>
   </url>
   
