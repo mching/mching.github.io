@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ecology on Dripping Data</title>
+    <link>/tags/ecology/</link>
+    <description>Recent content in Ecology on Dripping Data</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/ecology/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Effects of Mangrove Clearance on Water Quality at He&#39;eia Fishpond</title>
+      <link>/2019/03/15/heeia/</link>
+      <pubDate>Fri, 15 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/03/15/heeia/</guid>
+      <description>library(googlesheets) suppressPackageStartupMessages(library(dplyr)) library(ggplot2) # Change cache flag to F if updating data my_sheets &amp;lt;- gs_ls() fb &amp;lt;- gs_title(&amp;quot;heeia&amp;quot;) ## Sheet successfully identified: &amp;quot;heeia&amp;quot; x &amp;lt;- gs_read(fb) ## Accessing worksheet titled &amp;#39;Sheet1&amp;#39;. ## Parsed with column specification: ## cols( ## Date = col_date(format = &amp;quot;&amp;quot;), ## ID = col_double(), ## mangrove = col_logical(), ## DO = col_double(), ## pH = col_double(), ## turbidity = col_double() ## ) x &amp;lt;- as_tibble(x) x ## # A tibble: 18 x 6 ## Date ID mangrove DO pH turbidity ## &amp;lt;date&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;lgl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; ## 1 2019-02-23 1 FALSE 0.</description>
+    </item>
+    
+  </channel>
+</rss>
