@@ -18,8 +18,7 @@
       
       <guid>/2018/08/25/astronaut-fluid-shift-experiment/</guid>
       <description>Today I ran an experiment with the students in my daughter’s First Lego League team. It was meant to demonstrate how fluid shifts in space. The kids measured their leg circumference at 3 different spots after standing for 10 minutes. They lay with their legs propped up in the air for 10 more minutes and then re-measured the circumference.
-The inspiration for this activity came from the NASA website.
-library(googlesheets) suppressPackageStartupMessages(library(dplyr)) library(ggplot2) library(tidyr) my_sheets &amp;lt;- gs_ls() fb &amp;lt;- gs_title(&amp;quot;get_a_leg_up&amp;quot;) ## Sheet successfully identified: &amp;quot;get_a_leg_up&amp;quot; x &amp;lt;- gs_read(fb) ## Accessing worksheet titled &amp;#39;Sheet1&amp;#39;.</description>
+The inspiration for this activity came from the NASA website.</description>
     </item>
     
   </channel>

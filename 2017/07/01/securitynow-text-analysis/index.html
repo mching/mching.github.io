@@ -24,7 +24,7 @@ I used the tidyverse packages and tidytext by David Robinson. He and Julia Silge
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Dripping Data" />
 
-  <meta name="generator" content="Hugo 0.47.1" />
+  <meta name="generator" content="Hugo 0.54.0" />
   <link rel="canonical" href="../../../../2017/07/01/securitynow-text-analysis/" />
   <link rel="alternate" href="../../../../index.xml" type="application/rss+xml" title="Dripping Data">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
@@ -194,7 +194,10 @@ I used the tidyverse packages and tidytext by David Robinson. He and Julia Silge
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>I wanted to try my hand at some text mining using the tidytext package, and I was wondering what I could look at. I love the podcast Security Now! by Steve Gibson and Leo Laporte, and I’ve always wondered if there was a way to build a good index of their podcast.</p>
+        
+
+
+<p>I wanted to try my hand at some text mining using the tidytext package, and I was wondering what I could look at. I love the podcast Security Now! by Steve Gibson and Leo Laporte, and I’ve always wondered if there was a way to build a good index of their podcast.</p>
 <p>I used the <strong>tidyverse</strong> packages and <strong>tidytext</strong> by David Robinson. He and Julia Silge wrote <a href="http://tidytextmining.com/">the book</a> from which most of these methods came from.</p>
 <pre class="r"><code>library(dplyr)</code></pre>
 <pre><code>## 
@@ -401,7 +404,7 @@ custom_stop_words &lt;- bind_rows(data_frame(word = c(&quot;leo&quot;, &quot;ste
           
 
           &nbsp;&bull;&nbsp;
-          2018
+          2019
 
           
             &nbsp;&bull;&nbsp;
@@ -410,7 +413,7 @@ custom_stop_words &lt;- bind_rows(data_frame(word = c(&quot;leo&quot;, &quot;ste
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.47.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.54.0</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

@@ -19,7 +19,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Dripping Data" />
 
-  <meta name="generator" content="Hugo 0.47.1" />
+  <meta name="generator" content="Hugo 0.54.0" />
   <link rel="canonical" href="../../../../categories/r/" />
   <link rel="alternate" href="../../../../categories/r/index.xml" type="application/rss+xml" title="Dripping Data">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
@@ -166,6 +166,122 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="../../../../2016/12/09/simple-secret-santa-picker/">
+                <h2 class="post-title">Simple Secret Santa Picker</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on December 9, 2016
+  
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  A post about automating Secret Santa assignments popped up in my Facebook feed the other day. This being the Christmas season, I took a look. It seemed a bit complex, and I wondered if I could make it more efficient.
+The original function took in a list of people (e.g., Ann, Bill, Chris). Using a nested while-for loop, it randomly picked a name (Bill), and matched it to the first person in the list (Ann:Bill).
+                  <a href="../../../../2016/12/09/simple-secret-santa-picker/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <div class="blog-tags">
+                  
+                    <a href="//tags/random/">random</a>&nbsp;
+                  
+                </div>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../../2016/11/30/unlucky-fantasy-football/">
+                <h2 class="post-title">An Unlucky Fantasy Football Season Is Over</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on November 30, 2016
+  
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  The regular fantasy football season just finished, and as usual, my team underperformed. I had the 3rd most points in the league and finished 7 out of 8 teams with a record of 4-8. I wondered what were the chances of such a bad record. This called for a simulation!
+Methods I transcribed all the scores for each game into a spreadsheet and loaded it into R.
+library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union dat &lt;- read.
+                  <a href="../../../../2016/11/30/unlucky-fantasy-football/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <div class="blog-tags">
+                  
+                    <a href="//tags/football/">football</a>&nbsp;
+                  
+                    <a href="//tags/simulation/">simulation</a>&nbsp;
+                  
+                    <a href="//tags/sports/">sports</a>&nbsp;
+                  
+                </div>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../../2016/11/25/turkey-graph/">
+                <h2 class="post-title">Convection vs. Conventional Electric Oven Speed in Roasting Turkey</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on November 25, 2016
+  
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  It’s the day after Thanksgiving, and we have data on another turkey. This year our electricity went out just before I was going to put the turkey in our old electric oven so I had to go to my parents’ house to cook the turkey. They just got a fancy new oven with convection roasting, and they claimed it would be faster. This called for an analysis!
+Methods Like last year, I took measurements of the probe thermomenter inserted into the deepest part of the breast.
+                  <a href="../../../../2016/11/25/turkey-graph/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <div class="blog-tags">
+                  
+                    <a href="//tags/prediction/">prediction</a>&nbsp;
+                  
+                </div>
+              
+
+            </article>
           
             <article class="post-preview">
               <a href="../../../../2016/11/15/pass-my-board-exam/">
@@ -421,110 +537,6 @@ I average about 15 pages a day and about 45 flashcards a day, or 3 flashcards pe
 
             </article>
           
-            <article class="post-preview">
-              <a href="../../../../2016/07/14/reverse-parking/">
-                <h2 class="post-title">Reverse-In Parking in Hawaii and California</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on July 14, 2016
-  
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  Introduction One of my mainland-born friends is annoyed that Hawaii drivers like to reverse their cars into parking stalls much more than the mainland. My wife, who is also from the mainland, agreed with him enthusiastically. Whether this is appropriate parking behavior or not, I had never noticed it before, so I figured it was something I could test with some observations. I had a trip coming up to the mainland, and I was able to collect some data to test whether the Hawaii drivers were really so different than their California counterparts.
-                  <a href="../../../../2016/07/14/reverse-parking/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-                <div class="blog-tags">
-                  
-                    <a href="//tags/parking/">parking</a>&nbsp;
-                  
-                </div>
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../../2016/06/13/sorting-photo-directories-with-r-and-exiftool/">
-                <h2 class="post-title">Sorting photo directories with R and exiftool</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on June 13, 2016
-  
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  We were fans of Google&rsquo;s Picasa photo organization software, but when it was discontinued, I decided that I would like to transfer all my digital photos onto an external drive and then into Adobe Lightroom. To do so, however, my &ldquo;research&rdquo; told me that it would be best to group them into catalogs based on year, mainly because I have on the order of 10^5 photos.
-I had my pictures organized into about 300-400 directories by event.
-                  <a href="../../../../2016/06/13/sorting-photo-directories-with-r-and-exiftool/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../../2016/05/30/monopoly-simulations/">
-                <h2 class="post-title">Rolling 3 Doubles in Monopoly</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on May 30, 2016
-  
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  Tonight my two kids and I were playing Monopoly. It’s a terrible, brutal game that usually ends in bad feelings, but for some reason they always want to play it. One of the rules of the game is that if you roll a double (e.g., two 2s), you get another turn. However, if you roll doubles three times in a row, you are sent to jail.
-I wondered what was the probability of rolling 3 doubles in a row.
-                  <a href="../../../../2016/05/30/monopoly-simulations/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-                <div class="blog-tags">
-                  
-                    <a href="//tags/simulation/">simulation</a>&nbsp;
-                  
-                </div>
-              
-
-            </article>
-          
         </div>
         
           <ul class="pager main-pager">
@@ -533,6 +545,10 @@ I wondered what was the probability of rolling 3 doubles in a row.
                 <a href="../../../../categories/r/page/4/">&larr; Newer Posts</a>
               </li>
             
+            
+              <li class="next">
+                <a href="../../../../categories/r/page/6/">Older Posts &rarr;</a>
+              </li>
             
           </ul>
         
@@ -591,7 +607,7 @@ I wondered what was the probability of rolling 3 doubles in a row.
           
 
           &nbsp;&bull;&nbsp;
-          2018
+          2019
 
           
             &nbsp;&bull;&nbsp;
@@ -600,7 +616,7 @@ I wondered what was the probability of rolling 3 doubles in a row.
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.47.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.54.0</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>
