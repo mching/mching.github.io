@@ -6,20 +6,10 @@
     <description>Recent content in R on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 16 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Tenderfoot Paces</title>
-      <link>/2019/02/16/tenderfoot-paces/</link>
-      <pubDate>Sat, 16 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/2019/02/16/tenderfoot-paces/</guid>
-      <description>I had to organize the Tenderfoot scouts in my troop to learn some orienteering. The first step is to calculate how long their paces are. We went to the track and measured their pace count per 100 meters at least twice per scout. I wondered what the distribution looked like.
-I used dplyr method to group and summarize the data. It’s a little overkill but it does make it super easy.</description>
-    </item>
     
     <item>
       <title>Astronaut Fluid Shift Experiment</title>
@@ -28,16 +18,8 @@ I used dplyr method to group and summarize the data. It’s a little overkill bu
       
       <guid>/2018/08/25/astronaut-fluid-shift-experiment/</guid>
       <description>Today I ran an experiment with the students in my daughter’s First Lego League team. It was meant to demonstrate how fluid shifts in space. The kids measured their leg circumference at 3 different spots after standing for 10 minutes. They lay with their legs propped up in the air for 10 more minutes and then re-measured the circumference.
-The inspiration for this activity came from the NASA website.</description>
-    </item>
-    
-    <item>
-      <title>Honolulu Traffic Tweets</title>
-      <link>/2018/07/27/honolulu-traffic-tweets/</link>
-      <pubDate>Fri, 27 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/07/27/honolulu-traffic-tweets/</guid>
-      <description></description>
+The inspiration for this activity came from the NASA website.
+library(googlesheets) suppressPackageStartupMessages(library(dplyr)) library(ggplot2) library(tidyr) my_sheets &amp;lt;- gs_ls() fb &amp;lt;- gs_title(&amp;quot;get_a_leg_up&amp;quot;) ## Sheet successfully identified: &amp;quot;get_a_leg_up&amp;quot; x &amp;lt;- gs_read(fb) ## Accessing worksheet titled &amp;#39;Sheet1&amp;#39;.</description>
     </item>
     
     <item>
@@ -115,7 +97,7 @@ Methods Each time I filled up the gas tank, I collected the number of gallons th
       
       <guid>/2017/12/15/fax-problem-at-work/</guid>
       <description>Our fax machine at work has been very slow lately. One of our frequently faxed numbers complained that it took over an hour to send a fax. Googling this problem didn’t result in any solutions, other than maybe learning that this is a common problem with fax over IP telephony. I decided to take a closer look at the logs.
-The logs are printed out roughly every day or two.</description>
+The logs are printed out roughly every day or two. I scanned the log and ran it through the Adobe Acrobat OCR program.</description>
     </item>
     
     <item>
@@ -359,7 +341,7 @@ library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following
       <guid>/2017/01/08/pidgey-evolution-updated/</guid>
       <description>I was evolving some Pokemon in Pokemon Go and wondered how much the Pokemon’s attributes change after evolution. The attributes of interest were combat power (CP) and hit points (HP). I focused my analysis from Pidgeys because I had the most data points for this species.
 I collected data from a couple of days’ evolution, available for viewing here. Both times I was using a Lucky Egg.
-x &amp;lt;- read.</description>
+x &amp;lt;- read.csv(&amp;quot;../datasets/evolution2.csv&amp;quot;) x &amp;lt;- tbl_df(x) pidgeys &amp;lt;- filter(x, pokemon == &amp;quot;Pidgey&amp;quot;) pidgeys ## # A tibble: 55 × 7 ## pokemon CP_pre HP_pre kg_pre CP_post HP_post kg_post ## &amp;lt;fctr&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; ## 1 Pidgey 270 NA NA 533 NA NA ## 2 Pidgey 267 NA NA 515 NA NA ## 3 Pidgey 259 NA NA 526 NA NA ## 4 Pidgey 212 NA NA 413 NA NA ## 5 Pidgey 209 43 2.</description>
     </item>
     
     <item>

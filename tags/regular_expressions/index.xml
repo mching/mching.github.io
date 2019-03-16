@@ -18,7 +18,7 @@
       
       <guid>/2017/12/15/fax-problem-at-work/</guid>
       <description>Our fax machine at work has been very slow lately. One of our frequently faxed numbers complained that it took over an hour to send a fax. Googling this problem didn’t result in any solutions, other than maybe learning that this is a common problem with fax over IP telephony. I decided to take a closer look at the logs.
-The logs are printed out roughly every day or two.</description>
+The logs are printed out roughly every day or two. I scanned the log and ran it through the Adobe Acrobat OCR program.</description>
     </item>
     
   </channel>
