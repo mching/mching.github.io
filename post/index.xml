@@ -27,7 +27,7 @@ The premise is that the fishpond has been overgrown by invasive mangrove plants.
       <pubDate>Sat, 16 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/02/16/tenderfoot-paces/</guid>
-      <description>I had to organize the Tenderfoot scouts in my troop to learn some orienteering. The first step is to calculate how long their paces are. We went to the track and measured their pace count per 100 meters at least twice per scout. I wondered what the distribution looked like.
+      <description>I had to organize the Tenderfoot scouts in my troop to learn some orienteering. The first step was to calculate how long their paces are. We went to the track and measured their pace count per 100 meters at least twice per scout. I wondered what the distribution looked like.
 I used dplyr method to group and summarize the data. It’s a little overkill but it does make it super easy.</description>
     </item>
     
