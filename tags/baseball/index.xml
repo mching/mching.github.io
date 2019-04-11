@@ -6,19 +6,10 @@
     <description>Recent content in Baseball on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Jul 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/baseball/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Fantasy Baseball Prediction Ensemble Model</title>
-      <link>/2019/04/10/fantasy-baseball-prediction-ensemble-model/</link>
-      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/2019/04/10/fantasy-baseball-prediction-ensemble-model/</guid>
-      <description>It’s fantasy baseball season again, and it was time for my kids to do their draft with my friend’s kids. None of them know anything about baseball players except for the very top stars (Mookie Betts, Mike Trout), so they rely a lot on analyst predictions. Of course, one person’s predictions are not always that great, so inspired by Nate Silver, I set out to build a combination of several models to see if I could get a more accurate outcome.</description>
-    </item>
     
     <item>
       <title>Exploring Disabled List Data from Major League Baseball</title>
