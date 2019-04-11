@@ -6,94 +6,40 @@
     <description>Recent content in Tags on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Aap</title>
-      <link>/tags/aap/</link>
-      <pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/aap/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Astronomy</title>
-      <link>/tags/astronomy/</link>
-      <pubDate>Sun, 06 Nov 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/astronomy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Baseball</title>
+      <title>baseball</title>
       <link>/tags/baseball/</link>
-      <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/baseball/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Biology</title>
-      <link>/tags/biology/</link>
-      <pubDate>Sun, 09 Apr 2017 00:00:00 +0000</pubDate>
+      <title>fantasy</title>
+      <link>/tags/fantasy/</link>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/biology/</guid>
+      <guid>/tags/fantasy/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Bookdown</title>
-      <link>/tags/bookdown/</link>
-      <pubDate>Mon, 10 Jul 2017 00:00:00 +0000</pubDate>
+      <title>sports</title>
+      <link>/tags/sports/</link>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/bookdown/</guid>
+      <guid>/tags/sports/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Calculation</title>
-      <link>/tags/calculation/</link>
-      <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/calculation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Car</title>
-      <link>/tags/car/</link>
-      <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/car/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cars</title>
-      <link>/tags/cars/</link>
-      <pubDate>Fri, 27 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/cars/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cooking</title>
-      <link>/tags/cooking/</link>
-      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/cooking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ecology</title>
+      <title>ecology</title>
       <link>/tags/ecology/</link>
       <pubDate>Fri, 15 Mar 2019 00:00:00 +0000</pubDate>
       
@@ -102,106 +48,7 @@
     </item>
     
     <item>
-      <title>Education</title>
-      <link>/tags/education/</link>
-      <pubDate>Tue, 30 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/education/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Electriccar</title>
-      <link>/tags/electriccar/</link>
-      <pubDate>Wed, 12 Jul 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/electriccar/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Exercise</title>
-      <link>/tags/exercise/</link>
-      <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/exercise/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Experiment</title>
-      <link>/tags/experiment/</link>
-      <pubDate>Sat, 25 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/experiment/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fantasy</title>
-      <link>/tags/fantasy/</link>
-      <pubDate>Mon, 03 Jul 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/fantasy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Football</title>
-      <link>/tags/football/</link>
-      <pubDate>Wed, 20 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/football/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Games</title>
-      <link>/tags/games/</link>
-      <pubDate>Sat, 22 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/games/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gis</title>
-      <link>/tags/gis/</link>
-      <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/gis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Health</title>
-      <link>/tags/health/</link>
-      <pubDate>Sun, 14 Aug 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/health/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>/tags/hugo/</link>
-      <pubDate>Sun, 02 Jul 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mpg</title>
-      <link>/tags/mpg/</link>
-      <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/mpg/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Observation</title>
+      <title>observation</title>
       <link>/tags/observation/</link>
       <pubDate>Fri, 15 Mar 2019 00:00:00 +0000</pubDate>
       
@@ -210,79 +57,7 @@
     </item>
     
     <item>
-      <title>Parking</title>
-      <link>/tags/parking/</link>
-      <pubDate>Wed, 12 Jul 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/parking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pokemon</title>
-      <link>/tags/pokemon/</link>
-      <pubDate>Sun, 08 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/pokemon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Prediction</title>
-      <link>/tags/prediction/</link>
-      <pubDate>Fri, 25 Nov 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/prediction/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Probability</title>
-      <link>/tags/probability/</link>
-      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/probability/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Random</title>
-      <link>/tags/random/</link>
-      <pubDate>Fri, 09 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/random/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Regular_expressions</title>
-      <link>/tags/regular_expressions/</link>
-      <pubDate>Fri, 15 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/regular_expressions/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Robotics</title>
-      <link>/tags/robotics/</link>
-      <pubDate>Thu, 30 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/robotics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Running</title>
-      <link>/tags/running/</link>
-      <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/running/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Scouting</title>
+      <title>scouting</title>
       <link>/tags/scouting/</link>
       <pubDate>Sat, 16 Feb 2019 00:00:00 +0000</pubDate>
       
@@ -291,43 +66,25 @@
     </item>
     
     <item>
-      <title>Securitynow</title>
-      <link>/tags/securitynow/</link>
-      <pubDate>Mon, 10 Jul 2017 00:00:00 +0000</pubDate>
+      <title>experiment</title>
+      <link>/tags/experiment/</link>
+      <pubDate>Sat, 25 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/securitynow/</guid>
+      <guid>/tags/experiment/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Simulation</title>
-      <link>/tags/simulation/</link>
-      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
+      <title>cars</title>
+      <link>/tags/cars/</link>
+      <pubDate>Fri, 27 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/simulation/</guid>
+      <guid>/tags/cars/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Sports</title>
-      <link>/tags/sports/</link>
-      <pubDate>Wed, 20 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/sports/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Textmining</title>
-      <link>/tags/textmining/</link>
-      <pubDate>Sun, 16 Jul 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/textmining/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Traffic</title>
+      <title>traffic</title>
       <link>/tags/traffic/</link>
       <pubDate>Fri, 27 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -336,16 +93,7 @@
     </item>
     
     <item>
-      <title>Turkey</title>
-      <link>/tags/turkey/</link>
-      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/turkey/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Twitter</title>
+      <title>twitter</title>
       <link>/tags/twitter/</link>
       <pubDate>Fri, 27 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -354,16 +102,43 @@
     </item>
     
     <item>
-      <title>Visualization</title>
-      <link>/tags/visualization/</link>
-      <pubDate>Mon, 19 Jun 2017 00:00:00 +0000</pubDate>
+      <title>exercise</title>
+      <link>/tags/exercise/</link>
+      <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/visualization/</guid>
+      <guid>/tags/exercise/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Voting</title>
+      <title>running</title>
+      <link>/tags/running/</link>
+      <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/running/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>weights</title>
+      <link>/tags/weights/</link>
+      <pubDate>Sun, 03 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/weights/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AAP</title>
+      <link>/tags/aap/</link>
+      <pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/aap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>voting</title>
       <link>/tags/voting/</link>
       <pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate>
       
@@ -372,7 +147,70 @@
     </item>
     
     <item>
-      <title>Website</title>
+      <title>football</title>
+      <link>/tags/football/</link>
+      <pubDate>Wed, 20 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/football/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>car</title>
+      <link>/tags/car/</link>
+      <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/car/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mpg</title>
+      <link>/tags/mpg/</link>
+      <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/mpg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regular_expressions</title>
+      <link>/tags/regular_expressions/</link>
+      <pubDate>Fri, 15 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/regular_expressions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cooking</title>
+      <link>/tags/cooking/</link>
+      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/cooking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>turkey</title>
+      <link>/tags/turkey/</link>
+      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/turkey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>robotics</title>
+      <link>/tags/robotics/</link>
+      <pubDate>Thu, 30 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/robotics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>website</title>
       <link>/tags/website/</link>
       <pubDate>Sat, 09 Sep 2017 00:00:00 +0000</pubDate>
       
@@ -381,11 +219,173 @@
     </item>
     
     <item>
-      <title>Weights</title>
-      <link>/tags/weights/</link>
-      <pubDate>Sun, 03 Jun 2018 00:00:00 +0000</pubDate>
+      <title>probability</title>
+      <link>/tags/probability/</link>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/weights/</guid>
+      <guid>/tags/probability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>simulation</title>
+      <link>/tags/simulation/</link>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/simulation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>textmining</title>
+      <link>/tags/textmining/</link>
+      <pubDate>Sun, 16 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/textmining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>electriccar</title>
+      <link>/tags/electriccar/</link>
+      <pubDate>Wed, 12 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/electriccar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>parking</title>
+      <link>/tags/parking/</link>
+      <pubDate>Wed, 12 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/parking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bookdown</title>
+      <link>/tags/bookdown/</link>
+      <pubDate>Mon, 10 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/bookdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>securitynow</title>
+      <link>/tags/securitynow/</link>
+      <pubDate>Mon, 10 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/securitynow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>/tags/hugo/</link>
+      <pubDate>Sun, 02 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>visualization</title>
+      <link>/tags/visualization/</link>
+      <pubDate>Mon, 19 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/visualization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>education</title>
+      <link>/tags/education/</link>
+      <pubDate>Tue, 30 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/education/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GIS</title>
+      <link>/tags/gis/</link>
+      <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/gis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>calculation</title>
+      <link>/tags/calculation/</link>
+      <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/calculation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>games</title>
+      <link>/tags/games/</link>
+      <pubDate>Sat, 22 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/games/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>biology</title>
+      <link>/tags/biology/</link>
+      <pubDate>Sun, 09 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/biology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pokemon</title>
+      <link>/tags/pokemon/</link>
+      <pubDate>Sun, 08 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/pokemon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>random</title>
+      <link>/tags/random/</link>
+      <pubDate>Fri, 09 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/random/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>prediction</title>
+      <link>/tags/prediction/</link>
+      <pubDate>Fri, 25 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/prediction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>astronomy</title>
+      <link>/tags/astronomy/</link>
+      <pubDate>Sun, 06 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/astronomy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>health</title>
+      <link>/tags/health/</link>
+      <pubDate>Sun, 14 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/health/</guid>
       <description></description>
     </item>
     

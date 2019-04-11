@@ -1,19 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
   <head>
+    
+
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Tenderfoot Paces</title>
+  <title>Tenderfoot Paces - Dripping Data</title>
   <meta property="og:title" content="Tenderfoot Paces" />
   <meta name="twitter:title" content="Tenderfoot Paces" />
-  <meta name="description" content="I had to organize the Tenderfoot scouts in my troop to learn some orienteering. The first step is to calculate how long their paces are. We went to the track and measured their pace count per 100 meters at least twice per scout. I wondered what the distribution looked like.
+  <meta name="description" content="I had to organize the Tenderfoot scouts in my troop to learn some orienteering. The first step was to calculate how long their paces are. We went to the track and measured their pace count per 100 meters at least twice per scout. I wondered what the distribution looked like.
 I used dplyr method to group and summarize the data. It’s a little overkill but it does make it super easy.">
-  <meta property="og:description" content="I had to organize the Tenderfoot scouts in my troop to learn some orienteering. The first step is to calculate how long their paces are. We went to the track and measured their pace count per 100 meters at least twice per scout. I wondered what the distribution looked like.
+  <meta property="og:description" content="I had to organize the Tenderfoot scouts in my troop to learn some orienteering. The first step was to calculate how long their paces are. We went to the track and measured their pace count per 100 meters at least twice per scout. I wondered what the distribution looked like.
 I used dplyr method to group and summarize the data. It’s a little overkill but it does make it super easy.">
-  <meta name="twitter:description" content="I had to organize the Tenderfoot scouts in my troop to learn some orienteering. The first step is to calculate how long their paces are. We went to the track and measured their pace count per 100 …">
-  <meta name="author" content="Mike Ching"/>
+  <meta name="twitter:description" content="I had to organize the Tenderfoot scouts in my troop to learn some orienteering. The first step was to calculate how long their paces are. We went to the track and measured their pace count per 100 …">
+  <meta name="author" content="Mike Ching"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Dripping Data",
+    
+    "url": "\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "\/2019\/02\/16\/tenderfoot-paces\/",
+          "name": "Tenderfoot paces"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Mike Ching"
+  },
+  "headline": "Tenderfoot Paces",
+  "description" : "I had to organize the Tenderfoot scouts in my troop to learn some orienteering. The first step was to calculate how long their paces are. We went to the track and measured their pace count per 100 meters at least twice per scout. I wondered what the distribution looked like.\nI used dplyr method to group and summarize the data. It’s a little overkill but it does make it super easy.",
+  "inLanguage" : "en",
+  "wordCount":  428 ,
+  "datePublished" : "2019-02-16T00:00:00",
+  "dateModified" : "2019-02-16T00:00:00",
+  "image" : "\/img\/IMG_6557.jpg",
+  "keywords" : [ "scouting" ],
+  "mainEntityOfPage" : "\/2019\/02\/16\/tenderfoot-paces\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "\/img\/IMG_6557.jpg",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Tenderfoot Paces" />
+<meta property="og:description" content="I had to organize the Tenderfoot scouts in my troop to learn some orienteering. The first step was to calculate how long their paces are. We went to the track and measured their pace count per 100 meters at least twice per scout. I wondered what the distribution looked like.
+I used dplyr method to group and summarize the data. It’s a little overkill but it does make it super easy.">
+<meta property="og:image" content="/img/IMG_6557.jpg" />
+<meta property="og:url" content="/2019/02/16/tenderfoot-paces/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Dripping Data" />
+  <meta name="twitter:title" content="Tenderfoot Paces" />
+  <meta name="twitter:description" content="I had to organize the Tenderfoot scouts in my troop to learn some orienteering. The first step was to calculate how long their paces are. We went to the track and measured their pace count per 100 …">
+  <meta name="twitter:image" content="/img/IMG_6557.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@mikec2a" />
+  <meta name="twitter:creator" content="@mikec2a" />
   <link href='../../../../img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="/img/IMG_6557.jpg" />
   <meta name="twitter:image" content="/img/IMG_6557.jpg" />
@@ -24,68 +107,16 @@ I used dplyr method to group and summarize the data. It’s a little overkill bu
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Dripping Data" />
 
-  <meta name="generator" content="Hugo 0.54.0" />
-  <link rel="canonical" href="../../../../2019/02/16/tenderfoot-paces/" />
-  <link rel="alternate" href="../../../../index.xml" type="application/rss+xml" title="Dripping Data">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="../../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="../../../../css/syntax.css" /><link rel="stylesheet" href="../../../../css/codeblock.css" />
+  <meta name="generator" content="Hugo 0.55.0" />
+  <link rel="alternate" href="../../../../index.xml" type="application/rss+xml" title="Dripping Data"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="../../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="../../../../css/syntax.css" /><link rel="stylesheet" href="../../../../css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
-
-
-
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-<div class="pswp__bg"></div>
-
-<div class="pswp__scroll-wrap">
-    
-    <div class="pswp__container">
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-    </div>
-    
-    <div class="pswp__ui pswp__ui--hidden">
-    <div class="pswp__top-bar">
-      
-      <div class="pswp__counter"></div>
-      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-      <button class="pswp__button pswp__button--share" title="Share"></button>
-      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-      
-      
-      <div class="pswp__preloader">
-        <div class="pswp__preloader__icn">
-          <div class="pswp__preloader__cut">
-            <div class="pswp__preloader__donut"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-      <div class="pswp__share-tooltip"></div>
-    </div>
-    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-    </button>
-    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-    </button>
-    <div class="pswp__caption">
-      <div class="pswp__caption__center"></div>
-    </div>
-    </div>
-    </div>
-</div>
-
-</head>
-
+  </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
   <div class="container-fluid">
@@ -133,15 +164,15 @@ I used dplyr method to group and summarize the data. It’s a little overkill bu
       </ul>
     </div>
 
-    <div class="avatar-container">
-      <div class="avatar-img-border">
-        
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
           <a title="Dripping Data" href="../../../../">
             <img class="avatar-img" src="../../../../img/IMG_6557.jpg" alt="Dripping Data" />
           </a>
-        
+        </div>
       </div>
-    </div>
+    
 
   </div>
 </nav>
@@ -150,9 +181,58 @@ I used dplyr method to group and summarize the data. It’s a little overkill bu
 
 
     
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
   
   
   
+
+
 
 
 
@@ -162,25 +242,31 @@ I used dplyr method to group and summarize the data. It’s a little overkill bu
   <header class="header-section ">
     
     <div class="intro-header no-img">
-      
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
-              <h1>Tenderfoot Paces</h1>
-                
-                
-                  <span class="post-meta">
+              
+                <h1>Tenderfoot Paces</h1>
+              
+              
+              
+              
+                <span class="post-meta">
   
   
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on February 16, 2019
+  <i class="fas fa-calendar"></i>&nbsp;Posted on February 16, 2019
   
+  
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Mike Ching
   
   
 </span>
 
 
-                
+              
             </div>
           </div>
         </div>
@@ -197,7 +283,7 @@ I used dplyr method to group and summarize the data. It’s a little overkill bu
         
 
 
-<p>I had to organize the Tenderfoot scouts in my troop to learn some orienteering. The first step is to calculate how long their paces are. We went to the track and measured their pace count per 100 meters at least twice per scout. I wondered what the distribution looked like.</p>
+<p>I had to organize the Tenderfoot scouts in my troop to learn some orienteering. The first step was to calculate how long their paces are. We went to the track and measured their pace count per 100 meters at least twice per scout. I wondered what the distribution looked like.</p>
 <p>I used dplyr method to group and summarize the data. It’s a little overkill but it does make it super easy. It looks like the median length of a pace is just about 151 cm, with a mean of pretty much the same thing.</p>
 <pre class="r"><code>library(googlesheets)
 suppressPackageStartupMessages(library(dplyr))
@@ -213,6 +299,7 @@ fb &lt;- gs_title(&quot;BoysPaces&quot;)</code></pre>
 ##   Name = col_character(),
 ##   paces_per_100m = col_double()
 ## )</code></pre>
+<p>Here’s what the raw data looked like.</p>
 <pre class="r"><code>x &lt;- as_tibble(x)
 x</code></pre>
 <pre><code>## # A tibble: 23 x 2
@@ -228,7 +315,9 @@ x</code></pre>
 ##  8 KF                66
 ##  9 BL                55
 ## 10 BL                59
-## # ... with 13 more rows</code></pre>
+## # … with 13 more rows</code></pre>
+<pre class="r"><code>nboys &lt;- length(unique(x$Name))</code></pre>
+<p>Here I calculated the mean paces per 100 meters per boy and how long their paces were in meters and feet.</p>
 <pre class="r"><code>x %&gt;% group_by(Name) %&gt;%
   summarize(mean_paces_per_100m = mean(paces_per_100m)) %&gt;%
   mutate(paces_m = 100/mean_paces_per_100m, 
@@ -246,11 +335,13 @@ x</code></pre>
 ##  8 SK                   83.5    1.20     3.93
 ##  9 VC                   68      1.47     4.82
 ## 10 VM                   59      1.69     5.56</code></pre>
+<p>To look at the distribution I plotted a boxplot.</p>
 <pre class="r"><code>x %&gt;% group_by(Name) %&gt;%
   summarize(mean_paces_per_100m = mean(paces_per_100m)) %&gt;%
   mutate(paces_m = 100/mean_paces_per_100m) %&gt;%
   ggplot(aes(y = paces_m)) + geom_boxplot()</code></pre>
 <p><img src="../../../../post/2019-02-16-tenderfoot-paces_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Here’s the median and mean pace length for the boys.</p>
 <pre class="r"><code>x %&gt;% group_by(Name) %&gt;%
   summarize(mean_paces_per_100m = mean(paces_per_100m)) %&gt;%
   mutate(pace_length_m = 100/mean_paces_per_100m) %&gt;%
@@ -262,11 +353,11 @@ x</code></pre>
 <pre class="r"><code>x %&gt;% group_by(Name) %&gt;%
   summarize(mean_paces_per_100m = mean(paces_per_100m)) %&gt;%
   mutate(pace_length_m = 100/mean_paces_per_100m) %&gt;%
-  summarize(mean_pace_length = mean(pace_length_m))</code></pre>
-<pre><code>## # A tibble: 1 x 1
-##   mean_pace_length
-##              &lt;dbl&gt;
-## 1             1.51</code></pre>
+  summarize(mean_pace_length = mean(pace_length_m), sem_pace_length = sd(pace_length_m)/sqrt(nboys))</code></pre>
+<pre><code>## # A tibble: 1 x 2
+##   mean_pace_length sem_pace_length
+##              &lt;dbl&gt;           &lt;dbl&gt;
+## 1             1.51          0.0723</code></pre>
 
 
         
@@ -275,6 +366,8 @@ x</code></pre>
               <a href="//tags/scouting/">scouting</a>&nbsp;
             
           </div>
+        
+
         
 
         
@@ -314,24 +407,24 @@ x</code></pre>
               <li>
                 <a href="https://github.com/mching" title="GitHub">
                   <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
               </li>
               <li>
                 <a href="https://twitter.com/mikec2a" title="Twitter">
                   <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
               </li>
               <li>
                 <a href="https://linkedin.com/in/michael-ching-033a5029" title="LinkedIn">
                   <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
               </li>
@@ -341,8 +434,8 @@ x</code></pre>
             <a href="../../../../index.xml" title="RSS">
             
               <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
               </span>
             </a>
           </li>
@@ -355,8 +448,10 @@ x</code></pre>
             
           
 
-          &nbsp;&bull;&nbsp;
-          2019
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2019
+          
 
           
             &nbsp;&bull;&nbsp;
@@ -365,22 +460,22 @@ x</code></pre>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.54.0</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.55.0</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>
     </div>
   </div>
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="../../../../js/main.js"></script><script> renderMathInElement(document.body); </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
-<script src="../../../../js/load-photoswipe.js"></script>
+
+<script src="../../../../js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="../../../../js/load-photoswipe.js"></script>
+
+
+
 
 
 
