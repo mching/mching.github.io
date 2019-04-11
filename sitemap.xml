@@ -3,6 +3,14 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+<<<<<<< Updated upstream
+=======
+    <loc>/2019/04/10/fantasy-baseball-prediction-ensemble-model/</loc>
+    <lastmod>2019-04-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+>>>>>>> Stashed changes
     <loc>/2019/03/15/heeia/</loc>
     <lastmod>2019-03-15T00:00:00+00:00</lastmod>
   </url>
@@ -291,7 +299,7 @@
   
   <url>
     <loc>/tags/baseball/</loc>
-    <lastmod>2017-07-17T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -338,7 +346,11 @@
   
   <url>
     <loc>/</loc>
+<<<<<<< Updated upstream
     <lastmod>2019-03-15T00:00:00+00:00</lastmod>
+=======
+    <lastmod>2019-04-10T00:00:00+00:00</lastmod>
+>>>>>>> Stashed changes
     <priority>0</priority>
   </url>
   
@@ -374,7 +386,7 @@
   
   <url>
     <loc>/tags/fantasy/</loc>
-    <lastmod>2017-07-03T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -434,7 +446,11 @@
   
   <url>
     <loc>/post/</loc>
+<<<<<<< Updated upstream
     <lastmod>2019-03-15T00:00:00+00:00</lastmod>
+=======
+    <lastmod>2019-04-10T00:00:00+00:00</lastmod>
+>>>>>>> Stashed changes
     <priority>0</priority>
   </url>
   
@@ -452,7 +468,11 @@
   
   <url>
     <loc>/categories/r/</loc>
+<<<<<<< Updated upstream
     <lastmod>2019-03-15T00:00:00+00:00</lastmod>
+=======
+    <lastmod>2019-04-10T00:00:00+00:00</lastmod>
+>>>>>>> Stashed changes
     <priority>0</priority>
   </url>
   
@@ -500,7 +520,7 @@
   
   <url>
     <loc>/tags/sports/</loc>
-    <lastmod>2017-12-20T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
