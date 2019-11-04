@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>running</title>
+      <link>/tags/running/</link>
+      <pubDate>Sun, 03 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/running/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sports</title>
+      <link>/tags/sports/</link>
+      <pubDate>Sun, 03 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/sports/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>games</title>
@@ -35,15 +53,6 @@
       <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/fantasy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sports</title>
-      <link>/tags/sports/</link>
-      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/sports/</guid>
       <description></description>
     </item>
     
@@ -116,15 +125,6 @@
       <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/exercise/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>running</title>
-      <link>/tags/running/</link>
-      <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/running/</guid>
       <description></description>
     </item>
     
