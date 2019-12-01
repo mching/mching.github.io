@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>birthdays on Dripping Data</title>
+    <link>/tags/birthdays/</link>
+    <description>Recent content in birthdays on Dripping Data</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Nov 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/birthdays/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Prime Ages</title>
+      <link>/2019/11/29/prime-ages/</link>
+      <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/11/29/prime-ages/</guid>
+      <description>This past year our family members were 43, 43, 13, and 11 years old, which are all prime numbers. I wondered if there was or will be any other year where this will happen. There was probably a real math way to figure this out, but it was easier just to brute force calculate each year.
+I took out the obvious years (where we are even ages), so starting when our daughter was born, I calculated how old each of us was or will be.</description>
+    </item>
+    
+  </channel>
+</rss>
