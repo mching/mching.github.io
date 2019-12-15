@@ -189,7 +189,7 @@
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 29, 2019
+  <i class="fas fa-calendar"></i>&nbsp;Posted on December 14, 2019
   
   
   
@@ -217,6 +217,95 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+    <a href="../../../2017/06/26/justin-smoak-and-babip-trends/">
+        <h2 class="post-title">Justin Smoak and BABIP Trends</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on June 26, 2017
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Mike Ching
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        The podcast I listen to said something like, “I bet Justin Smoak must have one of the lowest BABIPs of anyone to this point in his career.” I thought it might be a good chance to explore this nebulous BABIP a little, what are the historical league and career trends in BABIP. Maybe 3 sentences are needed.
+Or maybe a second paragraph. Or 2.
+library(Lahman) library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(hrbrthemes) BABIP is calculated as balls in play (hits minus home runs) divided by total at bats that caused these balls in play (at bats minus strikeouts minus home runs plus sacrifice flies).
+        <a href="../../../2017/06/26/justin-smoak-and-babip-trends/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="//tags/baseball/">baseball</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="../../../2017/06/19/goodreads-analysis/">
+        <h2 class="post-title">Goodreads Analysis</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on June 19, 2017
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Mike Ching
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        I just finished my 2017 Reading Challenge on Goodreads. My goal was to read 15 books this year. Poking around the site I discovered that I could export my data. I decided to have a look to see what my reading habits looked like, and since I was doing this for me, I decided to look at my wife’s data too.
+Dataset library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union library(tidyr) library(ggplot2) library(lubridate) ## ## Attaching package: &#39;lubridate&#39; ## The following object is masked from &#39;package:base&#39;: ## ## date library(hrbrthemes) books &lt;- read.
+        <a href="../../../2017/06/19/goodreads-analysis/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="//tags/visualization/">visualization</a>&nbsp;
+        
+    </div>
+    
+
+</article>
           
             <article class="post-preview">
     <a href="../../../2017/05/30/years-at-private-school-and-academic-achievement/">
@@ -556,94 +645,6 @@ Here’s a picture of the game layout.
         From listening to my favorite fantasy baseball podcast it seems that there is a belief that teams that score lots of runs are not likely to produce saves. The idea seems to be that such teams would blow out their competitors and so have less opportunity for games to be saved. While it made sense, I wondered what the data said.
 library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(Lahman) data(&quot;Teams&quot;) Teams &lt;- tbl_df(Teams) Exploration of Saves over Time Saves did not become an official statistic until 1969 (source).
         <a href="../../../2017/04/18/saves-and-runs-scored/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="//tags/baseball/">baseball</a>&nbsp;
-        
-        <a href="//tags/sports/">sports</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="../../../2017/04/09/bean-sprout-respiration/">
-        <h2 class="post-title">Graphing Bean Sprout Respiration with the Hadleyverse</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 9, 2017
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Michael Ching
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        My wife’s high school biology students did a lab recently and had difficulty graphing the pooled data. One student allegedly took 2 hours to figure out how to do this in Excel. This seemed like it would be a nice exercise to try in the Hadleyverse. To replicate this plot, I had to take her students’ data in wide form, tidy it up, calculate means for each group and time, and then plot these.
-        <a href="../../../2017/04/09/bean-sprout-respiration/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="//tags/biology/">biology</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="../../../2017/03/31/baseball-team-season-saves/">
-        <h2 class="post-title">Baseball Team Season Save Leaders with the Lowest Totals since 2000</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on March 31, 2017
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Michael Ching
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        I was listening to my fantasy baseball podcast last week, and the conversation turned to the Phillies closer situation. One host suggested that the Phillies might not have any pitcher with more than 10 saves this season. The other host thought that this would be unlikely. They looked quickly at the data and found that this has happened a few times since 2000. I wondered if there was a way to look this up using the Lahman database in R.
-        <a href="../../../2017/03/31/baseball-team-season-saves/" class="post-read-more">[Read More]</a>
         
     </div>
 

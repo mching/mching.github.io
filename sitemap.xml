@@ -3,37 +3,67 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/categories/</loc>
+    <lastmod>2019-12-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2019-12-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/football/</loc>
+    <lastmod>2019-12-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2019/12/14/iolani-football-1945-2019/</loc>
+    <lastmod>2019-12-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2019-12-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/r/</loc>
+    <lastmod>2019-12-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/sports/</loc>
+    <lastmod>2019-12-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2019-12-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/cooking/</loc>
+    <lastmod>2019-11-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/turkey/</loc>
+    <lastmod>2019-11-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2019/11/30/turkey-data-2019-update/</loc>
+    <lastmod>2019-11-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/birthdays/</loc>
     <lastmod>2019-11-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
-    <lastmod>2019-11-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2019-11-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2019-11-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/2019/11/29/prime-ages/</loc>
-    <lastmod>2019-11-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/r/</loc>
-    <lastmod>2019-11-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2019-11-29T00:00:00+00:00</lastmod>
   </url>
   
@@ -44,11 +74,6 @@
   
   <url>
     <loc>/tags/running/</loc>
-    <lastmod>2019-11-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/sports/</loc>
     <lastmod>2019-11-03T00:00:00+00:00</lastmod>
   </url>
   
@@ -178,11 +203,6 @@
   </url>
   
   <url>
-    <loc>/tags/football/</loc>
-    <lastmod>2017-12-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/2017/12/20/hi-hs-football-allstars/</loc>
     <lastmod>2017-12-20T00:00:00+00:00</lastmod>
   </url>
@@ -210,16 +230,6 @@
   <url>
     <loc>/tags/regular_expressions/</loc>
     <lastmod>2017-12-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/cooking/</loc>
-    <lastmod>2017-12-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/turkey/</loc>
-    <lastmod>2017-12-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>

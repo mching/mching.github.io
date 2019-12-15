@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 29 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>football</title>
+      <link>/tags/football/</link>
+      <pubDate>Sat, 14 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/football/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sports</title>
+      <link>/tags/sports/</link>
+      <pubDate>Sat, 14 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/sports/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cooking</title>
+      <link>/tags/cooking/</link>
+      <pubDate>Sat, 30 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/cooking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>turkey</title>
+      <link>/tags/turkey/</link>
+      <pubDate>Sat, 30 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/turkey/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>birthdays</title>
@@ -26,15 +62,6 @@
       <pubDate>Sun, 03 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/running/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sports</title>
-      <link>/tags/sports/</link>
-      <pubDate>Sun, 03 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/sports/</guid>
       <description></description>
     </item>
     
@@ -165,15 +192,6 @@
     </item>
     
     <item>
-      <title>football</title>
-      <link>/tags/football/</link>
-      <pubDate>Wed, 20 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/football/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>car</title>
       <link>/tags/car/</link>
       <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
@@ -197,24 +215,6 @@
       <pubDate>Fri, 15 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/regular_expressions/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cooking</title>
-      <link>/tags/cooking/</link>
-      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/cooking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>turkey</title>
-      <link>/tags/turkey/</link>
-      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/turkey/</guid>
       <description></description>
     </item>
     

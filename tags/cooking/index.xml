@@ -6,10 +6,20 @@
     <description>Recent content in cooking on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/cooking/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Turkey Data 2019 Update</title>
+      <link>/2019/11/30/turkey-data-2019-update/</link>
+      <pubDate>Sat, 30 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/11/30/turkey-data-2019-update/</guid>
+      <description>Another Thanksgiving has come and gone and I have new data from this year’s 16 lb bird to add to the last time I updated this post.
+An unexpected update problem was that the googlesheets package has been updated to googlesheets4 with new methods. I was able to figure out how to use the methods in blogdown and it opened a browser tab for me to authenticate. However it did so every time, so when I went to knit the actual HTML page, it hung, probably because I was not able to authenticate via the browser.</description>
+    </item>
     
     <item>
       <title>Turkey Data from 2017: A Bigger Bird</title>
