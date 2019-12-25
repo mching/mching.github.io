@@ -6,10 +6,21 @@
     <description>Recent content on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Prime Rib Temperature</title>
+      <link>/2019/12/24/prime-rib-temperature/</link>
+      <pubDate>Tue, 24 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/12/24/prime-rib-temperature/</guid>
+      <description>We started a new family Christmas Eve tradition with roast prime rib. This year was a 6.61 lb bone on prime rib.
+library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) dat &amp;lt;- tbl_df(read.csv(&amp;quot;../datasets/Prime_rib_temp.csv&amp;quot;)) I followed the Serious Eats recipe.
+I cut off the bone then salted and let the bones and meat dry brine overnight.</description>
+    </item>
     
     <item>
       <title>Iolani Football 1945-2019</title>
@@ -17,8 +28,7 @@
       <pubDate>Sat, 14 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/12/14/iolani-football-1945-2019/</guid>
-      <description>This week the local paper released a season recap of my alma mater’s football team. Included in the article was a link to game results dating back to 1945. It looked like there was an opportunity for a little data analysis on things like home and away records, records versus specific schools, etc.
-I downloaded the data and cleaned it for analysis in Google Sheets.
+      <description>This week the local paper released a season recap of my alma mater’s football team. Included in the article was a link to game results dating back to 1945. It looked like there was an opportunity for a little data analysis on things like home and away records, records versus specific schools, etc. I downloaded the data and cleaned it for analysis in Google Sheets.
 library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union library(lubridate) ## ## Attaching package: &amp;#39;lubridate&amp;#39; ## The following object is masked from &amp;#39;package:base&amp;#39;: ## ## date library(ggplot2) iolani &amp;lt;- tbl_df(read.</description>
     </item>
     

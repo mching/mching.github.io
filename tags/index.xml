@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>cooking</title>
+      <link>/tags/cooking/</link>
+      <pubDate>Tue, 24 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/cooking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>primerib</title>
+      <link>/tags/primerib/</link>
+      <pubDate>Tue, 24 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/primerib/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>football</title>
@@ -26,15 +44,6 @@
       <pubDate>Sat, 14 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/sports/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cooking</title>
-      <link>/tags/cooking/</link>
-      <pubDate>Sat, 30 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/cooking/</guid>
       <description></description>
     </item>
     
