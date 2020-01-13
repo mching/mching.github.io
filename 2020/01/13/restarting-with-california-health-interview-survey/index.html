@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Restarting with California Health Interview Survey - Dripping Data</title>
+  <meta name="description" content="Lately this blog has had a lot of descriptive posts about my life but not much that stretches my R abilities. Later this year my organization is holding its research day, so I decided to start practicing on a dataset that I last used about 7 years ago. The California Health Interview Survey is a survey of households that is weighted to be representative of the non-institutionalized population of California.">
+  <meta name="author" content="Mike Ching"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Dripping Data",
+    
+    "url": "\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "\/2020\/01\/13\/restarting-with-california-health-interview-survey\/",
+          "name": "Restarting with california health interview survey"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Mike Ching"
+  },
+  "headline": "Restarting with California Health Interview Survey",
+  "description" : "Lately this blog has had a lot of descriptive posts about my life but not much that stretches my R abilities. Later this year my organization is holding its research day, so I decided to start practicing on a dataset that I last used about 7 years ago. The California Health Interview Survey is a survey of households that is weighted to be representative of the non-institutionalized population of California.",
+  "inLanguage" : "en",
+  "wordCount":  914 ,
+  "datePublished" : "2020-01-13T00:00:00",
+  "dateModified" : "2020-01-13T00:00:00",
+  "image" : "\/img\/IMG_6557.jpg",
+  "keywords" : [ "health" ],
+  "mainEntityOfPage" : "\/2020\/01\/13\/restarting-with-california-health-interview-survey\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "\/img\/IMG_6557.jpg",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Restarting with California Health Interview Survey" />
+<meta property="og:description" content="Lately this blog has had a lot of descriptive posts about my life but not much that stretches my R abilities. Later this year my organization is holding its research day, so I decided to start practicing on a dataset that I last used about 7 years ago. The California Health Interview Survey is a survey of households that is weighted to be representative of the non-institutionalized population of California.">
+<meta property="og:image" content="/img/IMG_6557.jpg" />
+<meta property="og:url" content="/2020/01/13/restarting-with-california-health-interview-survey/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Dripping Data" />
+
+  <meta name="twitter:title" content="Restarting with California Health Interview Survey" />
+  <meta name="twitter:description" content="Lately this blog has had a lot of descriptive posts about my life but not much that stretches my R abilities. Later this year my organization is holding its research day, so I decided to start …">
+  <meta name="twitter:image" content="/img/IMG_6557.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@mikec2a" />
+  <meta name="twitter:creator" content="@mikec2a" />
+  <link href='../../../../img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.62.2" />
+  <link rel="alternate" href="../../../../index.xml" type="application/rss+xml" title="Dripping Data"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="../../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="../../../../css/syntax.css" /><link rel="stylesheet" href="../../../../css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../../">Dripping Data</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../../about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="LinkedIn" href="https://www.linkedin.com/in/michael-ching-033a5029">LinkedIn</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Twitter" href="https://twitter.com/mikec2a">Twitter</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Dripping Data" href="../../../../">
+            <img class="avatar-img" src="../../../../img/IMG_6557.jpg" alt="Dripping Data" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Restarting with California Health Interview Survey</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 13, 2020
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Mike Ching
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+
+<p>Lately this blog has had a lot of descriptive posts about my life but not much that stretches my R abilities. Later this year my organization is holding its research day, so I decided to start practicing on a dataset that I last used about 7 years ago. The <a href="https://healthpolicy.ucla.edu/Pages/home.aspx">California Health Interview Survey</a> is a survey of households that is weighted to be representative of the non-institutionalized population of California. This dataset has a few wrinkles in it that require a higher level of R programming so I thought I would try to stretch my rusty skills a little.</p>
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>library(survey)</code></pre>
+<pre><code>## Loading required package: grid</code></pre>
+<pre><code>## Loading required package: Matrix</code></pre>
+<pre><code>## Loading required package: survival</code></pre>
+<pre><code>## 
+## Attaching package: &#39;survey&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:graphics&#39;:
+## 
+##     dotchart</code></pre>
+<pre class="r"><code>library(foreign)</code></pre>
+<p>Fortunately when I last used this dataset in 2013, I had commented my code pretty well so I was able to remember how to load in the Stata file.</p>
+<pre class="r"><code>chis &lt;- read.dta(&quot;/Users/mching/Dropbox/Mike/CHIS18/CHILD.dta&quot;, 
+                 convert.dates = TRUE, convert.factors = TRUE, 
+                 missing.type = TRUE, convert.underscore = TRUE, 
+                 warn.missing.labels = FALSE)</code></pre>
+<div id="unweighted-data" class="section level1">
+<h1>Unweighted Data</h1>
+<p>Here’s what the data dictionary said about a variable documenting children who needed dental care in the last year.</p>
+<table style="width:100%">
+<tr>
+<th>
+</th>
+<th>
+</th>
+<th>
+Frequency
+</th>
+<th>
+%
+</th>
+</tr>
+<tr>
+<td>
+-1
+</td>
+<td>
+Inapplicable
+</td>
+<td>
+58
+</td>
+<td>
+3.66
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+Yes
+</td>
+<td>
+67
+</td>
+<td>
+4.22
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+No
+</td>
+<td>
+1461
+</td>
+<td>
+92.12
+</td>
+</tr>
+</table>
+<p>And here’s what the dataset I loaded had to say about this variable.</p>
+<pre class="r"><code>table(chis$cb27)</code></pre>
+<pre><code>## 
+##                    NOT ASCERTAINED                         DON&#39;T KNOW 
+##                                  0                                  0 
+##                            REFUSED ADULT/HOUSEHOLD INFO NOT COLLECTED 
+##                                  0                                  0 
+##                      PROXY SKIPPED                       INAPPLICABLE 
+##                                  0                                 58 
+##                                YES                                 NO 
+##                                 67                               1461</code></pre>
+<pre class="r"><code>round(prop.table(table(chis$cb27))*100, 2)</code></pre>
+<pre><code>## 
+##                    NOT ASCERTAINED                         DON&#39;T KNOW 
+##                               0.00                               0.00 
+##                            REFUSED ADULT/HOUSEHOLD INFO NOT COLLECTED 
+##                               0.00                               0.00 
+##                      PROXY SKIPPED                       INAPPLICABLE 
+##                               0.00                               3.66 
+##                                YES                                 NO 
+##                               4.22                              92.12</code></pre>
+<p>As you can see from above, the unweighted data were the same as in the data dictionary.</p>
+</div>
+<div id="weighted-data" class="section level1">
+<h1>Weighted Data</h1>
+<p>In the survey package you have to create a survey object that can be used to run the survey methods. Code for creating the survey object was nodified from AJ Damico’s <a href="http://asdfree.com/california-health-interview-survey-chis.html">Analyze Survey Data for Free</a> website.</p>
+<pre class="r"><code>chis_design &lt;- 
+    svrepdesign( 
+        data = chis , 
+        weights = ~ rakedw0 , 
+        repweights = &quot;rakedw[1-9]&quot; , 
+        type = &quot;other&quot; , 
+        scale = 1 , 
+        rscales = 1 , 
+        mse = TRUE 
+    )</code></pre>
+<p>I generated a quick table to see if the survey method for calculating the population estimates worked.</p>
+<pre class="r"><code>round(svytable(~cb27, chis_design), -3)</code></pre>
+<pre><code>## cb27
+##                    NOT ASCERTAINED                         DON&#39;T KNOW 
+##                                  0                                  0 
+##                            REFUSED ADULT/HOUSEHOLD INFO NOT COLLECTED 
+##                                  0                                  0 
+##                      PROXY SKIPPED                       INAPPLICABLE 
+##                                  0                             321000 
+##                                YES                                 NO 
+##                             247000                            5477000</code></pre>
+<p>I checked it against <a href="http://ask.chis.ucla.edu/">AskCHIS</a>, the web interface to the CHIS dataset. Here’s what it returned for this variable:</p>
+<table style="width:100%">
+<tr>
+<th>
+Needed Dental Care
+</th>
+<th>
+Percentage
+</th>
+<th>
+Confidence Interval (95%)
+</th>
+<th>
+Population
+</th>
+</tr>
+<tr>
+<td>
+Needed dental care
+</td>
+<td>
+4.3%
+</td>
+<td>
+2.5 - 6.2
+</td>
+<td>
+247,000
+</td>
+</tr>
+<tr>
+<td>
+Did not need dental care
+</td>
+<td>
+95.7%
+</td>
+<td>
+93.8 - 97.5
+</td>
+<td>
+5,477,000
+</td>
+</tr>
+<tr>
+<td>
+Total
+</td>
+<td>
+100.0%
+</td>
+<td>
+-
+</td>
+<td>
+5,724,000
+</td>
+</tr>
+</table>
+<p>The estimated population number of children who needed/didn’t neet care was exactly the same as what I calculated. The ratios were not the same because of all the inapplicable results.</p>
+<pre class="r"><code>svymean(~cb27, chis_design)</code></pre>
+<pre><code>##                                            mean     SE
+## cb27NOT ASCERTAINED                    0.000000 0.0000
+## cb27DON&#39;T KNOW                         0.000000 0.0000
+## cb27REFUSED                            0.000000 0.0000
+## cb27ADULT/HOUSEHOLD INFO NOT COLLECTED 0.000000 0.0000
+## cb27PROXY SKIPPED                      0.000000 0.0000
+## cb27INAPPLICABLE                       0.053042 0.0101
+## cb27YES                                0.040885 0.0088
+## cb27NO                                 0.906073 0.0141</code></pre>
+<p>Getting the weighted frequencies on just the yes or no responses was tricky. It required creating a variable for the Inapplicable patients and then creating a mean based on that.</p>
+<pre class="r"><code>chis$cb27_inapplicable &lt;- ifelse(chis$cb27 == &quot;INAPPLICABLE&quot;, T, F)
+
+chis_design &lt;- 
+    svrepdesign( 
+        data = chis , 
+        weights = ~ rakedw0 , 
+        repweights = &quot;rakedw[1-9]&quot; , 
+        type = &quot;other&quot; , 
+        scale = 1 , 
+        rscales = 1 , 
+        mse = TRUE 
+    )
+
+svyby(~cb27, ~cb27_inapplicable, svymean, design = chis_design)</code></pre>
+<pre><code>##       cb27_inapplicable cb27NOT ASCERTAINED cb27DON&#39;T KNOW cb27REFUSED
+## FALSE             FALSE                   0              0           0
+## TRUE               TRUE                   0              0           0
+##       cb27ADULT/HOUSEHOLD INFO NOT COLLECTED cb27PROXY SKIPPED cb27INAPPLICABLE
+## FALSE                                      0                 0                0
+## TRUE                                       0                 0                1
+##          cb27YES    cb27NO se1 se2 se3 se4 se5 se6         se7         se8
+## FALSE 0.04317531 0.9568247   0   0   0   0   0   0 0.009349207 0.009349207
+## TRUE  0.00000000 0.0000000   0   0   0   0   0   0 0.000000000 0.000000000</code></pre>
+<p>The weighted means were the same as what AskCHIS said (yes = 4.3%, no = 95.7%). The confidence intervals were very slightly off from AskCHIS (yes = 2.5-6.2, no = 93.8-97.5) but I figured they were close enough to not matter too much.</p>
+<pre class="r"><code>confint(svyby(~cb27, ~cb27_inapplicable, svymean, design = chis_design))</code></pre>
+<pre><code>##                                                  2.5 %     97.5 %
+## FALSE:cb27NOT ASCERTAINED                    0.0000000 0.00000000
+## TRUE:cb27NOT ASCERTAINED                     0.0000000 0.00000000
+## FALSE:cb27DON&#39;T KNOW                         0.0000000 0.00000000
+## TRUE:cb27DON&#39;T KNOW                          0.0000000 0.00000000
+## FALSE:cb27REFUSED                            0.0000000 0.00000000
+## TRUE:cb27REFUSED                             0.0000000 0.00000000
+## FALSE:cb27ADULT/HOUSEHOLD INFO NOT COLLECTED 0.0000000 0.00000000
+## TRUE:cb27ADULT/HOUSEHOLD INFO NOT COLLECTED  0.0000000 0.00000000
+## FALSE:cb27PROXY SKIPPED                      0.0000000 0.00000000
+## TRUE:cb27PROXY SKIPPED                       0.0000000 0.00000000
+## FALSE:cb27INAPPLICABLE                       0.0000000 0.00000000
+## TRUE:cb27INAPPLICABLE                        1.0000000 1.00000000
+## FALSE:cb27YES                                0.0248512 0.06149942
+## TRUE:cb27YES                                 0.0000000 0.00000000
+## FALSE:cb27NO                                 0.9385006 0.97514880
+## TRUE:cb27NO                                  0.0000000 0.00000000</code></pre>
+</div>
+<div id="discussion" class="section level1">
+<h1>Discussion</h1>
+<p>I was able to load the CHIS 2018 child dataset and confirm that I could use the survey methods to replicate the results from the official CHIS web interface. I didn’t do too much with the data, but next time I will pick up with doing some plots and regressions.</p>
+</div>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="//tags/health/">health</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../../2020/01/12/dry-garbanzo-bean-water-absorption/" data-toggle="tooltip" data-placement="top" title="How Much Water Garbanzo Beans Absorb in an Overnight Soak">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/mching" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/mikec2a" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/michael-ching-033a5029" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Mike Ching
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../../">Dripping Data</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.62.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="../../../../js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="../../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

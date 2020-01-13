@@ -6,10 +6,19 @@
     <description>Recent content on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Restarting with California Health Interview Survey</title>
+      <link>/2020/01/13/restarting-with-california-health-interview-survey/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/01/13/restarting-with-california-health-interview-survey/</guid>
+      <description>Lately this blog has had a lot of descriptive posts about my life but not much that stretches my R abilities. Later this year my organization is holding its research day, so I decided to start practicing on a dataset that I last used about 7 years ago. The California Health Interview Survey is a survey of households that is weighted to be representative of the non-institutionalized population of California.</description>
+    </item>
     
     <item>
       <title>How Much Water Garbanzo Beans Absorb in an Overnight Soak</title>
