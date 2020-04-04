@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tidytuesday on Dripping Data</title>
+    <link>/tags/tidytuesday/</link>
+    <description>Recent content in tidytuesday on Dripping Data</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/tidytuesday/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Password Strength and Tidy Tuesday</title>
+      <link>/2020/01/16/password-strength-and-tidy-tuesday/</link>
+      <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/01/16/password-strength-and-tidy-tuesday/</guid>
+      <description>I just found out about Tidy Tuesday, an educational exercise from the R for Data Science folks. The idea is that they publish a dataset every Tuesday for people to play around with. If you make something you’re proud of you can publish it on Twitter and use the hashtag #tidytuesday. I haven’t tried it before, but today’s one was a topic that was of interest to me–computer security and passwords.</description>
+    </item>
+    
+  </channel>
+</rss>
