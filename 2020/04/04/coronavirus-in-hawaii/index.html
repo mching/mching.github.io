@@ -7,8 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Password Strength and Tidy Tuesday - Dripping Data</title>
-  <meta name="description" content="I just found out about Tidy Tuesday, an educational exercise from the R for Data Science folks. The idea is that they publish a dataset every Tuesday for people to play around with. If you make something you’re proud of you can publish it on Twitter and use the hashtag #tidytuesday. I haven’t tried it before, but today’s one was a topic that was of interest to me–computer security and passwords.">
+  <title>Coronavirus in Hawaii - Dripping Data</title>
+  <meta name="description" content="Coronavirus is all anyone can think about these days, and the New York Times has become a repository for USA case data for some reason. They have been publishing the data on Github for now.
+library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(scales) covid &lt;- readr::read_csv(&#39;https://raw.">
   <meta name="author" content="Mike Ching"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -44,8 +45,8 @@
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "\/2020\/01\/16\/password-strength-and-tidy-tuesday\/",
-          "name": "Password strength and tidy tuesday"
+          "@id": "\/2020\/04\/04\/coronavirus-in-hawaii\/",
+          "name": "Coronavirus in hawaii"
         }
     }]
 }
@@ -56,15 +57,15 @@
   "author": {
     "name" : "Mike Ching"
   },
-  "headline": "Password Strength and Tidy Tuesday",
-  "description" : "I just found out about Tidy Tuesday, an educational exercise from the R for Data Science folks. The idea is that they publish a dataset every Tuesday for people to play around with. If you make something you’re proud of you can publish it on Twitter and use the hashtag #tidytuesday. I haven’t tried it before, but today’s one was a topic that was of interest to me–computer security and passwords.",
+  "headline": "Coronavirus in Hawaii",
+  "description" : "Coronavirus is all anyone can think about these days, and the New York Times has become a repository for USA case data for some reason. They have been publishing the data on Github for now.\nlibrary(dplyr) ## ## Attaching package: \x26#39;dplyr\x26#39; ## The following objects are masked from \x26#39;package:stats\x26#39;: ## ## filter, lag ## The following objects are masked from \x26#39;package:base\x26#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(scales) covid \x26lt;- readr::read_csv(\x26#39;https:\/\/raw.",
   "inLanguage" : "en",
-  "wordCount":  523 ,
-  "datePublished" : "2020-01-16T00:00:00",
-  "dateModified" : "2020-01-16T00:00:00",
+  "wordCount":  769 ,
+  "datePublished" : "2020-04-04T00:00:00",
+  "dateModified" : "2020-04-04T00:00:00",
   "image" : "\/img\/IMG_6557.jpg",
-  "keywords" : [ "tidytuesday" ],
-  "mainEntityOfPage" : "\/2020\/01\/16\/password-strength-and-tidy-tuesday\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "\/2020\/04\/04\/coronavirus-in-hawaii\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "\/",
@@ -78,15 +79,16 @@
 }
 </script>
 
-<meta property="og:title" content="Password Strength and Tidy Tuesday" />
-<meta property="og:description" content="I just found out about Tidy Tuesday, an educational exercise from the R for Data Science folks. The idea is that they publish a dataset every Tuesday for people to play around with. If you make something you’re proud of you can publish it on Twitter and use the hashtag #tidytuesday. I haven’t tried it before, but today’s one was a topic that was of interest to me–computer security and passwords.">
+<meta property="og:title" content="Coronavirus in Hawaii" />
+<meta property="og:description" content="Coronavirus is all anyone can think about these days, and the New York Times has become a repository for USA case data for some reason. They have been publishing the data on Github for now.
+library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(scales) covid &lt;- readr::read_csv(&#39;https://raw.">
 <meta property="og:image" content="/img/IMG_6557.jpg" />
-<meta property="og:url" content="/2020/01/16/password-strength-and-tidy-tuesday/" />
+<meta property="og:url" content="/2020/04/04/coronavirus-in-hawaii/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Dripping Data" />
 
-  <meta name="twitter:title" content="Password Strength and Tidy Tuesday" />
-  <meta name="twitter:description" content="I just found out about Tidy Tuesday, an educational exercise from the R for Data Science folks. The idea is that they publish a dataset every Tuesday for people to play around with. If you make …">
+  <meta name="twitter:title" content="Coronavirus in Hawaii" />
+  <meta name="twitter:description" content="Coronavirus is all anyone can think about these days, and the New York Times has become a repository for USA case data for some reason. They have been publishing the data on Github for now. …">
   <meta name="twitter:image" content="/img/IMG_6557.jpg" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@mikec2a" />
@@ -232,7 +234,7 @@
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>Password Strength and Tidy Tuesday</h1>
+                <h1>Coronavirus in Hawaii</h1>
               
               
               
@@ -240,7 +242,7 @@
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on January 16, 2020
+  <i class="fas fa-calendar"></i>&nbsp;Posted on April 4, 2020
   
   
   
@@ -270,96 +272,162 @@
         
 
 
-<p>I just found out about Tidy Tuesday, an educational exercise from the R for Data Science folks. The idea is that they publish a dataset every Tuesday for people to play around with. If you make something you’re proud of you can publish it on Twitter and use the hashtag #tidytuesday. I haven’t tried it before, but today’s one was a topic that was of interest to me–computer security and passwords.</p>
-<div id="data-loading" class="section level1">
-<h1>Data Loading</h1>
-<p>I figured out how to load directly from the online csv.</p>
-<pre class="r"><code>library(dplyr)
-library(ggplot2)
-passwords &lt;- readr::read_csv(&#39;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-01-14/passwords.csv&#39;)</code></pre>
+<p>Coronavirus is all anyone can think about these days, and the New York Times has become a repository for USA case data for some reason. They have been publishing the data on Github for now.</p>
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>library(ggplot2)
+library(scales)
+covid &lt;- readr::read_csv(&#39;https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv&#39;)</code></pre>
 <pre><code>## Parsed with column specification:
 ## cols(
-##   rank = col_double(),
-##   password = col_character(),
-##   category = col_character(),
-##   value = col_double(),
-##   time_unit = col_character(),
-##   offline_crack_sec = col_double(),
-##   rank_alt = col_double(),
-##   strength = col_double(),
-##   font_size = col_double()
+##   date = col_date(format = &quot;&quot;),
+##   county = col_character(),
+##   state = col_character(),
+##   fips = col_character(),
+##   cases = col_double(),
+##   deaths = col_double()
 ## )</code></pre>
-<pre class="r"><code>passwords &lt;- tbl_df(passwords)
+<p>Data pull time</p>
+<pre class="r"><code>timestamp()</code></pre>
+<pre><code>## ##------ Sun Apr  5 21:13:00 2020 ------##</code></pre>
+<pre class="r"><code>glimpse(covid)</code></pre>
+<pre><code>## Observations: 33,251
+## Variables: 6
+## $ date   &lt;date&gt; 2020-01-21, 2020-01-22, 2020-01-23, 2020-01-24, 2020-01-24, 2…
+## $ county &lt;chr&gt; &quot;Snohomish&quot;, &quot;Snohomish&quot;, &quot;Snohomish&quot;, &quot;Cook&quot;, &quot;Snohomish&quot;, &quot;O…
+## $ state  &lt;chr&gt; &quot;Washington&quot;, &quot;Washington&quot;, &quot;Washington&quot;, &quot;Illinois&quot;, &quot;Washing…
+## $ fips   &lt;chr&gt; &quot;53061&quot;, &quot;53061&quot;, &quot;53061&quot;, &quot;17031&quot;, &quot;53061&quot;, &quot;06059&quot;, &quot;17031&quot;,…
+## $ cases  &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
+## $ deaths &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…</code></pre>
+<pre class="r"><code>covid$county &lt;- factor(covid$county)
+covid$state &lt;- factor(covid$state)
+covid$fips &lt;- as.integer(covid$fips)
 
-glimpse(passwords)</code></pre>
-<pre><code>## Observations: 507
-## Variables: 9
-## $ rank              &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, …
-## $ password          &lt;chr&gt; &quot;password&quot;, &quot;123456&quot;, &quot;12345678&quot;, &quot;1234&quot;, &quot;qwerty&quot;,…
-## $ category          &lt;chr&gt; &quot;password-related&quot;, &quot;simple-alphanumeric&quot;, &quot;simple-…
-## $ value             &lt;dbl&gt; 6.91, 18.52, 1.29, 11.11, 3.72, 1.85, 3.72, 6.91, 6…
-## $ time_unit         &lt;chr&gt; &quot;years&quot;, &quot;minutes&quot;, &quot;days&quot;, &quot;seconds&quot;, &quot;days&quot;, &quot;min…
-## $ offline_crack_sec &lt;dbl&gt; 2.170e+00, 1.110e-05, 1.110e-03, 1.110e-07, 3.210e-…
-## $ rank_alt          &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, …
-## $ strength          &lt;dbl&gt; 8, 4, 4, 4, 8, 4, 8, 4, 7, 8, 8, 1, 32, 9, 9, 8, 8,…
-## $ font_size         &lt;dbl&gt; 11, 8, 8, 8, 11, 8, 11, 8, 11, 11, 11, 4, 23, 12, 1…</code></pre>
+covid %&gt;% filter(state == &quot;Hawaii&quot;) %&gt;% glimpse</code></pre>
+<pre><code>## Observations: 105
+## Variables: 6
+## $ date   &lt;date&gt; 2020-03-06, 2020-03-07, 2020-03-08, 2020-03-09, 2020-03-10, 2…
+## $ county &lt;fct&gt; Honolulu, Honolulu, Honolulu, Honolulu, Honolulu, Honolulu, Ho…
+## $ state  &lt;fct&gt; Hawaii, Hawaii, Hawaii, Hawaii, Hawaii, Hawaii, Hawaii, Hawaii…
+## $ fips   &lt;int&gt; 15003, 15003, 15003, 15003, 15003, 15003, 15003, 15003, 15003,…
+## $ cases  &lt;dbl&gt; 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 1, 6, 2, 2, 1, 8, 2, 3, 1,…
+## $ deaths &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…</code></pre>
+<div id="total-cases-in-usa-as-of-2020-04-04" class="section level1">
+<h1>Total Cases in USA as of 2020-04-04</h1>
+<p>Here is the total nationwide cases as of 2020-04-04.</p>
+<pre class="r"><code>x &lt;- covid %&gt;% filter(date == max(date)) %&gt;% select(cases)
+sum(x$cases)</code></pre>
+<pre><code>## [1] 310807</code></pre>
+<div id="total-cases-by-state" class="section level2">
+<h2>Total Cases by State</h2>
+<pre class="r"><code>covid %&gt;% filter(date == max(date)) %&gt;%
+  group_by(state) %&gt;%
+  summarize(total = sum(cases)) %&gt;%
+  arrange(-total)</code></pre>
+<pre><code>## # A tibble: 55 x 2
+##    state          total
+##    &lt;fct&gt;          &lt;dbl&gt;
+##  1 New York      114996
+##  2 New Jersey     34124
+##  3 Michigan       14225
+##  4 California     13796
+##  5 Louisiana      12492
+##  6 Massachusetts  11736
+##  7 Florida        11537
+##  8 Illinois       10358
+##  9 Pennsylvania   10110
+## 10 Washington      6788
+## # … with 45 more rows</code></pre>
+<pre class="r"><code>covid %&gt;% filter(date == max(date)) %&gt;%
+  group_by(state) %&gt;%
+  summarize(total = sum(cases)) %&gt;% 
+  filter(total &gt; median(total)) %&gt;% 
+  arrange(-total) %&gt;%
+  ggplot(aes(x = reorder(state, total), y = total)) + 
+  geom_bar(stat = &#39;identity&#39;) +
+  scale_y_continuous(trans=log10_trans()) +
+  coord_flip()</code></pre>
+<p><img src="../../../../post/2020-04-04-coronavirus-in-hawaii_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<pre class="r"><code>covid %&gt;% filter(date == max(date)) %&gt;%
+  group_by(state) %&gt;%
+  summarize(total = sum(cases)) %&gt;% 
+  filter(total &lt; median(total)) %&gt;% 
+  arrange(-total) %&gt;%
+  ggplot(aes(x = reorder(state, total), y = total)) + 
+  geom_bar(stat = &#39;identity&#39;) +
+  scale_y_continuous(trans=log10_trans()) +
+  coord_flip()</code></pre>
+<p><img src="../../../../post/2020-04-04-coronavirus-in-hawaii_files/figure-html/unnamed-chunk-6-2.png" width="672" /></p>
 </div>
-<div id="data-munging" class="section level1">
-<h1>Data Munging</h1>
-<p>The data variable types were already pretty well auto-classified but the category needed to be made into a factor.</p>
-<pre class="r"><code>passwords$category &lt;- as.factor(passwords$category)</code></pre>
 </div>
-<div id="exploration" class="section level1">
-<h1>Exploration</h1>
-<p>I figured I would look at them by category. Here is the distribution by category. Some had NA category.</p>
-<pre class="r"><code>table(passwords$category, useNA = &quot;ifany&quot;)</code></pre>
-<pre><code>## 
-##              animal          cool-macho              fluffy                food 
-##                  29                  79                  44                  11 
-##                name           nerdy-pop    password-related     rebellious-rude 
-##                 183                  30                  15                  11 
-## simple-alphanumeric               sport                &lt;NA&gt; 
-##                  61                  37                   7</code></pre>
-<pre class="r"><code>prop.table(table(passwords$category, useNA = &quot;ifany&quot;))</code></pre>
-<pre><code>## 
-##              animal          cool-macho              fluffy                food 
-##          0.05719921          0.15581854          0.08678501          0.02169625 
-##                name           nerdy-pop    password-related     rebellious-rude 
-##          0.36094675          0.05917160          0.02958580          0.02169625 
-## simple-alphanumeric               sport                &lt;NA&gt; 
-##          0.12031558          0.07297830          0.01380671</code></pre>
-<pre class="r"><code>passwords &lt;- passwords %&gt;% filter(!is.na(category))</code></pre>
-<p>Here’s how hard the passwords were to crack by category. They were all pretty easy to crack.</p>
-<pre class="r"><code>table(passwords$offline_crack_sec)</code></pre>
-<pre><code>## 
-## 1.11e-07 1.11e-06 4.75e-06 1.11e-05 0.000111 0.000124 0.000622  0.00111 
-##       11        2       31       18        3       39        1        5 
-##  0.00321   0.0111   0.0224   0.0835    0.806     2.17    29.02    29.27 
-##      233        1        4       87        5       56        3        1</code></pre>
-<pre class="r"><code>passwords %&gt;% ggplot(aes(x = category, y = offline_crack_sec)) + 
-  geom_boxplot() + scale_y_log10() + coord_flip()</code></pre>
-<p><img src="../../../../post/2020-01-16-password-strength-and-tidy-tuesday_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<div id="total-cases-in-hawaii" class="section level1">
+<h1>Total Cases in Hawaii</h1>
+<p>In Hawaii, the number of cases has been growing steadily.</p>
+<pre class="r"><code>covid %&gt;% filter(state == &quot;Hawaii&quot;) %&gt;%
+  group_by(date) %&gt;%
+  summarize(total = sum(cases)) %&gt;%
+  arrange(-total)</code></pre>
+<pre><code>## # A tibble: 30 x 2
+##    date       total
+##    &lt;date&gt;     &lt;dbl&gt;
+##  1 2020-04-04   349
+##  2 2020-04-03   317
+##  3 2020-04-02   283
+##  4 2020-04-01   256
+##  5 2020-03-31   224
+##  6 2020-03-30   199
+##  7 2020-03-29   173
+##  8 2020-03-28   150
+##  9 2020-03-27   120
+## 10 2020-03-26   106
+## # … with 20 more rows</code></pre>
+<pre class="r"><code>covid %&gt;% filter(state == &quot;Hawaii&quot;) %&gt;%
+  group_by(date) %&gt;%
+  summarize(total = sum(cases)) %&gt;% 
+  ggplot(aes(x = date, y = total)) +
+  geom_point() +  
+  geom_line()</code></pre>
+<p><img src="../../../../post/2020-04-04-coronavirus-in-hawaii_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 </div>
-<div id="popularity-vs-difficulty-to-crack" class="section level1">
-<h1>Popularity vs Difficulty to Crack</h1>
-<p>Was there a correlation between how popular they were and how easy they were to crack? Not clearly.</p>
-<pre class="r"><code>passwords %&gt;% mutate(rank_crack = min_rank(offline_crack_sec)) %&gt;%
-  ggplot(aes(x = rank, y = rank_crack, color = category)) + 
-  geom_point()</code></pre>
-<p><img src="../../../../post/2020-01-16-password-strength-and-tidy-tuesday_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<div id="cases-by-county-in-hawaii" class="section level1">
+<h1>Cases by County in Hawaii</h1>
+<p>Honolulu county has the most cases by far (as it has by far the largest population).</p>
+<pre class="r"><code>covid %&gt;% filter(state == &quot;Hawaii&quot;) %&gt;%
+  ggplot(aes(x = date, y = cases, color = county)) +
+  geom_point() +  
+  geom_line()</code></pre>
+<p><img src="../../../../post/2020-04-04-coronavirus-in-hawaii_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </div>
-<div id="conclusion" class="section level1">
-<h1>Conclusion</h1>
-<p>I couldn’t figure out much to do with this dataset but at least I got an idea of how to load a raw csv from Github.</p>
+<div id="cases-by-county-other-than-honolulu" class="section level1">
+<h1>Cases by County other than Honolulu</h1>
+<p>To see the trend for the other counties, it is best to remove Honolulu County.</p>
+<pre class="r"><code>covid %&gt;% filter(state == &quot;Hawaii&quot; &amp; county != &quot;Honolulu&quot;) %&gt;%
+  ggplot(aes(x = date, y = cases, color = county)) +
+  geom_point() +  
+  geom_line()</code></pre>
+<p><img src="../../../../post/2020-04-04-coronavirus-in-hawaii_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="change-per-day" class="section level1">
+<h1>Change per Day</h1>
+<p>Here’s the change in our state per day. The growth rate in positive tests may still be accelerating.</p>
+<pre class="r"><code>covid %&gt;% filter(state == &quot;Hawaii&quot;) %&gt;% group_by(date) %&gt;%
+  summarize(total = sum(cases)) %&gt;% mutate(day_before_total = lag(total)) %&gt;%
+  mutate(change = total - day_before_total) %&gt;%
+  filter(!is.na(change)) %&gt;%
+  ggplot(aes(x = date, y = change)) +
+  geom_point() + geom_line() + geom_smooth()</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="../../../../post/2020-04-04-coronavirus-in-hawaii_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </div>
 
 
-        
-          <div class="blog-tags">
-            
-              <a href="//tags/tidytuesday/">tidytuesday</a>&nbsp;
-            
-          </div>
         
 
         
@@ -371,13 +439,9 @@ glimpse(passwords)</code></pre>
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="../../../../2020/01/13/restarting-with-california-health-interview-survey/" data-toggle="tooltip" data-placement="top" title="Restarting with California Health Interview Survey">&larr; Previous Post</a>
+              <a href="../../../../2020/01/16/password-strength-and-tidy-tuesday/" data-toggle="tooltip" data-placement="top" title="Password Strength and Tidy Tuesday">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="../../../../2020/04/04/coronavirus-in-hawaii/" data-toggle="tooltip" data-placement="top" title="Coronavirus in Hawaii">Next Post &rarr;</a>
-            </li>
           
         </ul>
       
