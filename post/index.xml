@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hawaii Coronavirus Update 2020-04-13</title>
+      <link>/2020/04/13/hawaii-coronavirus-update-2020-04-13/</link>
+      <pubDate>Mon, 13 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/04/13/hawaii-coronavirus-update-2020-04-13/</guid>
+      <description>In my last post I used data from the New York Times Github repository. The authors update it within a day or two but I found a new crowdsourced data source from local tech community that is typically updated within minutes.
+library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(lubridate) ## ## Attaching package: &amp;#39;lubridate&amp;#39; ## The following object is masked from &amp;#39;package:base&amp;#39;: ## ## date library(scales) library(tidyr) library(zoo) ## ## Attaching package: &amp;#39;zoo&amp;#39; ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## as.</description>
+    </item>
     
     <item>
       <title>Coronavirus in Hawaii</title>
