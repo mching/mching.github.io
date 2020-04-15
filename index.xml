@@ -12,13 +12,13 @@
     
     
     <item>
-      <title>Hawaii Coronavirus Update 2020-04-13</title>
-      <link>/2020/04/13/hawaii-coronavirus-update-2020-04-13/</link>
-      <pubDate>Mon, 13 Apr 2020 00:00:00 +0000</pubDate>
+      <title>Hawaii Coronavirus Update 2020-04-14</title>
+      <link>/2020/04/14/hawaii-coronavirus-update-2020-04-14/</link>
+      <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/2020/04/13/hawaii-coronavirus-update-2020-04-13/</guid>
-      <description>In my last post I used data from the New York Times Github repository. The authors update it within a day or two but I found a new crowdsourced data source from local tech community that is typically updated within minutes.
-library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(lubridate) ## ## Attaching package: &amp;#39;lubridate&amp;#39; ## The following object is masked from &amp;#39;package:base&amp;#39;: ## ## date library(scales) library(tidyr) library(zoo) ## ## Attaching package: &amp;#39;zoo&amp;#39; ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## as.</description>
+      <guid>/2020/04/14/hawaii-coronavirus-update-2020-04-14/</guid>
+      <description>In my last post I used data from the New York Times Github repository. The authors update it within a day or two but I found a new crowdsourced data source from the local tech community that is typically updated within minutes of the Department of Health data posting.
+Data Loading The Google Sheet is very nice to look at but I’ve had issues recently with loading data directly from Google sheets.</description>
     </item>
     
     <item>
@@ -28,7 +28,7 @@ library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following
       
       <guid>/2020/04/04/coronavirus-in-hawaii/</guid>
       <description>Coronavirus is all anyone can think about these days, and the New York Times has become a repository for USA case data for some reason. They have been publishing the data on Github for now.
-library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(scales) covid &amp;lt;- readr::read_csv(&amp;#39;https://raw.</description>
+Data Loading I loaded the data directly from the NY Times repository. The repository has county and state lists but because I was interested in the different counties in Hawaii, I used the county file.</description>
     </item>
     
     <item>
