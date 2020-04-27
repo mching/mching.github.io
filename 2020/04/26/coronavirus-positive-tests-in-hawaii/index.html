@@ -7,8 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Hawaii Coronavirus Update 2020-04-19 - Dripping Data</title>
-  <meta name="description" content="Here’s some more of my efforts to look at the local coronavirus data. I also thought it would be helpful to update the numbers this weekend since they look to have plateaued a bit this past week. In this post I look at the released cases versus the total to see how many active cases are still being tracked. I also look at the new cases by island since there were a couple of clusters on the Big Island and Maui.">
+  <title>Coronavirus Positive Tests in Hawaii - Dripping Data</title>
+  <meta name="description" content="Today I decided to look at the tests for coronavirus that are being done in Hawaii. It looks like the number of positive tests are slowing down. I had a sense that the population is also probably healthier from social distancing, so I wanted to look at the trend in tests and positive tests.
+library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(lubridate) ## ## Attaching package: &#39;lubridate&#39; ## The following object is masked from &#39;package:base&#39;: ## ## date library(scales) library(tidyr) library(zoo) ## ## Attaching package: &#39;zoo&#39; ## The following objects are masked from &#39;package:base&#39;: ## ## as.">
   <meta name="author" content="Mike Ching"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -44,8 +45,8 @@
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "\/2020\/04\/19\/hawaii-coronavirus-update-2020-04-19\/",
-          "name": "Hawaii coronavirus update 2020 04 19"
+          "@id": "\/2020\/04\/26\/coronavirus-positive-tests-in-hawaii\/",
+          "name": "Coronavirus positive tests in hawaii"
         }
     }]
 }
@@ -56,15 +57,15 @@
   "author": {
     "name" : "Mike Ching"
   },
-  "headline": "Hawaii Coronavirus Update 2020-04-19",
-  "description" : "Here’s some more of my efforts to look at the local coronavirus data. I also thought it would be helpful to update the numbers this weekend since they look to have plateaued a bit this past week. In this post I look at the released cases versus the total to see how many active cases are still being tracked. I also look at the new cases by island since there were a couple of clusters on the Big Island and Maui.",
+  "headline": "Coronavirus Positive Tests in Hawaii",
+  "description" : "Today I decided to look at the tests for coronavirus that are being done in Hawaii. It looks like the number of positive tests are slowing down. I had a sense that the population is also probably healthier from social distancing, so I wanted to look at the trend in tests and positive tests.\nlibrary(dplyr) ## ## Attaching package: \x26#39;dplyr\x26#39; ## The following objects are masked from \x26#39;package:stats\x26#39;: ## ## filter, lag ## The following objects are masked from \x26#39;package:base\x26#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(lubridate) ## ## Attaching package: \x26#39;lubridate\x26#39; ## The following object is masked from \x26#39;package:base\x26#39;: ## ## date library(scales) library(tidyr) library(zoo) ## ## Attaching package: \x26#39;zoo\x26#39; ## The following objects are masked from \x26#39;package:base\x26#39;: ## ## as.",
   "inLanguage" : "en",
-  "wordCount":  972 ,
-  "datePublished" : "2020-04-19T00:00:00",
-  "dateModified" : "2020-04-19T00:00:00",
+  "wordCount":  1102 ,
+  "datePublished" : "2020-04-26T00:00:00",
+  "dateModified" : "2020-04-26T00:00:00",
   "image" : "\/img\/IMG_6557.jpg",
   "keywords" : [ "" ],
-  "mainEntityOfPage" : "\/2020\/04\/19\/hawaii-coronavirus-update-2020-04-19\/",
+  "mainEntityOfPage" : "\/2020\/04\/26\/coronavirus-positive-tests-in-hawaii\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "\/",
@@ -78,15 +79,16 @@
 }
 </script>
 
-<meta property="og:title" content="Hawaii Coronavirus Update 2020-04-19" />
-<meta property="og:description" content="Here’s some more of my efforts to look at the local coronavirus data. I also thought it would be helpful to update the numbers this weekend since they look to have plateaued a bit this past week. In this post I look at the released cases versus the total to see how many active cases are still being tracked. I also look at the new cases by island since there were a couple of clusters on the Big Island and Maui.">
+<meta property="og:title" content="Coronavirus Positive Tests in Hawaii" />
+<meta property="og:description" content="Today I decided to look at the tests for coronavirus that are being done in Hawaii. It looks like the number of positive tests are slowing down. I had a sense that the population is also probably healthier from social distancing, so I wanted to look at the trend in tests and positive tests.
+library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(lubridate) ## ## Attaching package: &#39;lubridate&#39; ## The following object is masked from &#39;package:base&#39;: ## ## date library(scales) library(tidyr) library(zoo) ## ## Attaching package: &#39;zoo&#39; ## The following objects are masked from &#39;package:base&#39;: ## ## as.">
 <meta property="og:image" content="/img/IMG_6557.jpg" />
-<meta property="og:url" content="/2020/04/19/hawaii-coronavirus-update-2020-04-19/" />
+<meta property="og:url" content="/2020/04/26/coronavirus-positive-tests-in-hawaii/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Dripping Data" />
 
-  <meta name="twitter:title" content="Hawaii Coronavirus Update 2020-04-19" />
-  <meta name="twitter:description" content="Here’s some more of my efforts to look at the local coronavirus data. I also thought it would be helpful to update the numbers this weekend since they look to have plateaued a bit this past week. In …">
+  <meta name="twitter:title" content="Coronavirus Positive Tests in Hawaii" />
+  <meta name="twitter:description" content="Today I decided to look at the tests for coronavirus that are being done in Hawaii. It looks like the number of positive tests are slowing down. I had a sense that the population is also probably …">
   <meta name="twitter:image" content="/img/IMG_6557.jpg" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@mikec2a" />
@@ -232,7 +234,7 @@
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>Hawaii Coronavirus Update 2020-04-19</h1>
+                <h1>Coronavirus Positive Tests in Hawaii</h1>
               
               
               
@@ -240,7 +242,7 @@
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 19, 2020
+  <i class="fas fa-calendar"></i>&nbsp;Posted on April 26, 2020
   
   
   
@@ -270,9 +272,7 @@
         
 
 
-<p>Here’s some more of my efforts to look at the local coronavirus data. I also thought it would be helpful to update the numbers this weekend since they look to have plateaued a bit this past week. In this post I look at the released cases versus the total to see how many active cases are still being tracked. I also look at the new cases by island since there were a couple of clusters on the Big Island and Maui.</p>
-<div id="packages" class="section level2">
-<h2>Packages</h2>
+<p>Today I decided to look at the tests for coronavirus that are being done in Hawaii. It looks like the number of positive tests are slowing down. I had a sense that the population is also probably healthier from social distancing, so I wanted to look at the trend in tests and positive tests.</p>
 <pre class="r"><code>library(dplyr)</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;dplyr&#39;</code></pre>
@@ -297,9 +297,6 @@ library(zoo)</code></pre>
 <pre><code>## The following objects are masked from &#39;package:base&#39;:
 ## 
 ##     as.Date, as.Date.numeric</code></pre>
-</div>
-<div id="data-download" class="section level2">
-<h2>Data Download</h2>
 <pre class="r"><code>covid &lt;- readr::read_csv(&#39;https://covid19-hawaii.herokuapp.com/hawaii_daily.sqlite/hawaii_daily?_format=csv&amp;_size=max&#39;)</code></pre>
 <pre><code>## Parsed with column specification:
 ## cols(
@@ -312,60 +309,122 @@ library(zoo)</code></pre>
 ##   `OHCA Licensed Beds` = col_number(),
 ##   `Non-ICU Beds` = col_number(),
 ##   Source = col_character(),
-##   `Unnamed: 40` = col_character()
+##   `Unnamed: 40` = col_character(),
+##   `Unnamed: 41` = col_logical(),
+##   `Unnamed: 42` = col_logical(),
+##   `Unnamed: 43` = col_logical(),
+##   `Unnamed: 44` = col_logical(),
+##   `Unnamed: 45` = col_logical(),
+##   `Unnamed: 46` = col_logical(),
+##   `Unnamed: 47` = col_logical(),
+##   `Unnamed: 48` = col_logical(),
+##   `Unnamed: 49` = col_logical(),
+##   `Unnamed: 50` = col_logical(),
+##   `Unnamed: 51` = col_logical()
+##   # ... with 4 more columns
 ## )</code></pre>
 <pre><code>## See spec(...) for full column specifications.</code></pre>
 <pre class="r"><code>timestamp() # Data pull time</code></pre>
-<pre><code>## ##------ Sat Apr 18 13:33:41 2020 ------##</code></pre>
-</div>
-<div id="data-processing-steps." class="section level2">
-<h2>Data processing steps.</h2>
-<pre class="r"><code>covid$Date &lt;- mdy(covid$Date)</code></pre>
-</div>
-<div id="change-per-day" class="section level1">
-<h1>Change per Day</h1>
-<p>I updated the curves from the last post with both smoothing methods. Here’s the change in our state per day, smoothed with the loess method (regression line fitting).</p>
+<pre><code>## ##------ Sun Apr 26 16:53:35 2020 ------##</code></pre>
+<pre class="r"><code>covid$Date &lt;- mdy(covid$Date)
+
+covid %&gt;% select(Date, test_total = `Total Tests`, test_daily = `Daily Tests`,
+                 test_total_neg = `Negative Tests`, test_total_pos = `Positive Tests`,
+                 test_total_inconcl = `Inconcl Tests`) %&gt;%
+  mutate(daily_positive = test_total_pos - lag(test_total_pos),
+         daily_negative = test_total_neg - lag(test_total_neg),
+         daily_inconcl = test_total_inconcl - lag(test_total_inconcl)) %&gt;%
+  select(Date, test_daily, daily_positive, daily_negative, daily_inconcl)</code></pre>
+<pre><code>## # A tibble: 57 x 5
+##    Date       test_daily daily_positive daily_negative daily_inconcl
+##    &lt;date&gt;          &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt;         &lt;dbl&gt;
+##  1 2020-03-01         NA             NA             NA            NA
+##  2 2020-03-02         NA             NA             NA            NA
+##  3 2020-03-03         NA             NA             NA            NA
+##  4 2020-03-04         NA             NA             NA            NA
+##  5 2020-03-05         NA             NA             NA            NA
+##  6 2020-03-06         NA             NA             NA            NA
+##  7 2020-03-07         NA             NA             NA            NA
+##  8 2020-03-08         NA             NA             NA            NA
+##  9 2020-03-09         NA             NA             NA            NA
+## 10 2020-03-10         NA             NA             NA            NA
+## # … with 47 more rows</code></pre>
+<p>Looking at the data there seems to be a typo for the total negative tests on 4/23. It went down compared to the prior day and the positive, negative, and inconclusive tests columns add up to 1000 less than the total test column for that day. I’ll just clean it for the purposes of this illustration.</p>
+<pre class="r"><code>covid_edit &lt;- covid %&gt;% select(Date, test_total = `Total Tests`, 
+                               test_daily = `Daily Tests`,
+                               test_total_neg = `Negative Tests`, 
+                               test_total_pos = `Positive Tests`,
+                               test_total_inconcl = `Inconcl Tests`)
+
+covid_edit$test_total_neg[which(covid_edit$Date == &quot;2020-04-23&quot;)] &lt;- 26017</code></pre>
+<p>Here’s the curve that we often see on cumulative positive and negative tests.</p>
+<pre class="r"><code># This block uses two new functions to me, starts_with() and pivot_longer(), which is like gather but with different syntax
+
+covid_edit %&gt;% select(Date, test_total_neg, test_total_pos, test_total_inconcl) %&gt;%
+  pivot_longer(starts_with(&quot;test&quot;), names_to = &quot;test_type&quot;,
+               values_to = &quot;tests&quot;) %&gt;%
+  mutate(test_type = factor(test_type, levels = c(&quot;test_total_pos&quot;,
+                                                  &quot;test_total_inconcl&quot;,
+                                                  &quot;test_total_neg&quot;))) %&gt;%
+  ggplot(aes(x = Date, y = tests, fill = test_type)) + geom_bar(stat = &quot;identity&quot;)</code></pre>
+<pre><code>## Warning: Removed 92 rows containing missing values (position_stack).</code></pre>
+<p><img src="../../../../post/2020-04-23-coronavirus-positive-tests-in-hawaii_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>It might be nice to see the positive tests per day compared to the negative tests, inconclusive, etc.</p>
+<pre class="r"><code>covid_edit %&gt;%   
+  mutate(daily_positive = test_total_pos - lag(test_total_pos),
+         daily_negative = test_total_neg - lag(test_total_neg),
+         daily_inconcl = test_total_inconcl - lag(test_total_inconcl)) %&gt;%
+  select(Date, starts_with(&quot;daily&quot;)) %&gt;% 
+  pivot_longer(cols = starts_with(&quot;daily&quot;), names_to = &quot;test_type&quot;,
+               values_to = &quot;tests&quot;) %&gt;%
+  ggplot(aes(x = Date, y = tests, fill = test_type)) + geom_bar(stat = &quot;identity&quot;)</code></pre>
+<pre><code>## Warning: Removed 102 rows containing missing values (position_stack).</code></pre>
+<p><img src="../../../../post/2020-04-23-coronavirus-positive-tests-in-hawaii_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Oh man, what a mess! It’s impossible to see the positives because they are so small as a percentage of the total tests! A better idea might be just to plot the percentage positive anyway.</p>
+<pre class="r"><code>covid_edit %&gt;%   
+  mutate(daily_positive = test_total_pos - lag(test_total_pos),
+         daily_negative = test_total_neg - lag(test_total_neg),
+         daily_inconcl = test_total_inconcl - lag(test_total_inconcl)) %&gt;%
+  select(Date, test_daily, daily_positive) %&gt;%
+  mutate(daily_positive_percentage = daily_positive/test_daily * 100) %&gt;%
+  ggplot(aes(x = Date, y = daily_positive_percentage)) + 
+  geom_point() +
+  geom_smooth(se = F) +
+  ggtitle(&quot;Percent Positive Daily Coronavirus Tests, Hawaii&quot;) +
+  ylab(&quot;Percent Positive&quot;)</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<pre><code>## Warning: Removed 32 rows containing non-finite values (stat_smooth).</code></pre>
+<pre><code>## Warning: Removed 32 rows containing missing values (geom_point).</code></pre>
+<p><img src="../../../../post/2020-04-23-coronavirus-positive-tests-in-hawaii_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>That’s a lot better. We can see that the percentage of positive tests is going down as the total number of cases also declines.</p>
+<div id="running-previous-curves" class="section level1">
+<h1>Running Previous Curves</h1>
+<p>Here I updated all the other coronavirus curves for 4/26/2020.</p>
 <pre class="r"><code>covid %&gt;% filter(!is.na(`New Cases`)) %&gt;%
   ggplot(aes(x = Date, y = `New Cases`)) + 
   geom_point() +
   geom_line() + 
-  geom_smooth() +
+  geom_smooth(se = F) +
   labs(title =&quot;New Coronavirus Positive Tests, Hawaii&quot;,
        subtitle = &quot;With loess smoothing line&quot;) +
   ylab(&quot;Positive Tests&quot;)</code></pre>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
-<p><img src="../../../../post/2020-04-18-hawaii-coronavirus-update-2020-04-18_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p>Here’s the 7 day running average.</p>
+<p><img src="../../../../post/2020-04-23-coronavirus-positive-tests-in-hawaii_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>This loess smoothed curve is a little silly now that the cases are so low since the smoothing makes the curve dip below 0.</p>
+<p>I updated the rolling mean curve to look a little nicer and show the difference between the day’s count and the rolling mean with different shapes.</p>
 <pre class="r"><code>covid %&gt;% select(Date, `New Cases`) %&gt;%
   mutate(rolling_mean_7d = rollmean(`New Cases`, 7, align = &#39;right&#39;, fill = NA)) %&gt;% 
   mutate(newcases = `New Cases`) %&gt;%
   select(Date, newcases, rolling_mean_7d) %&gt;%
-  gather(`rolling_mean_7d`, `newcases`, key = seriesname, value = cases) %&gt;%
-  ggplot(aes(x = Date, y = cases, color = seriesname)) + 
-  geom_point() +
-  geom_line() +
+  ggplot(aes(x = Date)) + 
+  geom_bar(aes(y = newcases), stat = &#39;identity&#39;, fill = &#39;darkolivegreen3&#39;) +
+  geom_line(aes(y = rolling_mean_7d), color = &#39;red&#39;) +
   labs(title =&quot;New Coronavirus Positive Tests, Hawaii&quot;,
        subtitle = &quot;With 7 Day Rolling Mean&quot;) +
   ylab(&quot;Positive Tests&quot;)</code></pre>
-<pre><code>## Warning: Removed 8 rows containing missing values (geom_point).</code></pre>
-<pre><code>## Warning: Removed 8 row(s) containing missing values (geom_path).</code></pre>
-<p><img src="../../../../post/2020-04-18-hawaii-coronavirus-update-2020-04-18_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-</div>
-<div id="recovered-cases" class="section level1">
-<h1>Recovered Cases</h1>
-<p>Quite a few cases have recovered over the course of the pandemic. I thought it might be nice to see how many cases are recovered versus not recovered. To do this I needed to reshape the data into a tidy format.</p>
-<pre class="r"><code>covid %&gt;% 
-  select(Date, total_cases = `Total Cases`, total_released = `Total Released`) %&gt;%
-#  mutate(active_cases = total_cases - total_released) %&gt;%
-  gather(total_cases, total_released, key = &quot;case_type&quot;, value = &quot;cases&quot;) %&gt;%
-  ggplot(aes(x = Date, y = cases, color = case_type)) + 
-  geom_point() +
-  geom_line()</code></pre>
-<pre><code>## Warning: Removed 26 rows containing missing values (geom_point).</code></pre>
-<pre><code>## Warning: Removed 26 row(s) containing missing values (geom_path).</code></pre>
-<p><img src="../../../../post/2020-04-18-hawaii-coronavirus-update-2020-04-18_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-<p>It’s not totally clear why the data in the released cases jumps so much on 4/9/2020.</p>
-<p>Here’s another way of looking at the number of cases that are still active (total cases - total released).</p>
+<pre><code>## Warning: Removed 1 rows containing missing values (position_stack).</code></pre>
+<pre><code>## Warning: Removed 7 row(s) containing missing values (geom_path).</code></pre>
+<p><img src="../../../../post/2020-04-23-coronavirus-positive-tests-in-hawaii_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <pre class="r"><code>covid %&gt;% 
   select(Date, total_cases = `Total Cases`, total_released = `Total Released`) %&gt;%
   mutate(active_cases = total_cases - total_released) %&gt;%
@@ -373,54 +432,15 @@ library(zoo)</code></pre>
   ggplot(aes(x = Date, y = active_cases)) + 
   geom_point() +
   geom_line() +
-  ylim(0, 400) + xlim(ymd(&#39;2020-03-24&#39;), ymd(&#39;2020-04-20&#39;))</code></pre>
+  ylim(0, 400) + xlim(ymd(&#39;2020-03-24&#39;), ymd(&#39;2020-04-30&#39;)) +
+  ggtitle(&quot;Active Cases of Coronavirus, Hawaii&quot;)</code></pre>
 <pre><code>## Warning: Removed 26 rows containing missing values (geom_point).</code></pre>
 <pre><code>## Warning: Removed 26 row(s) containing missing values (geom_path).</code></pre>
-<p><img src="../../../../post/2020-04-18-hawaii-coronavirus-update-2020-04-18_files/figure-html/unnamed-chunk-7-1.png" width="672" />
-This makes it easier to see that as DOH started releasing cases on day 14 of this data collection, there have been between 163 and 189 active cases. Of course this is an underestimate of the true number of contagious people out there.</p>
-<pre class="r"><code>covid %&gt;% filter(Date &gt; mdy(&#39;4-9-2020&#39;)) %&gt;%
-  select(Date, total_cases = `Total Cases`, total_released = `Total Released`) %&gt;%
-  mutate(active_cases = total_cases - total_released) %&gt;% arrange(active_cases)</code></pre>
-<pre><code>## # A tibble: 8 x 4
-##   Date       total_cases total_released active_cases
-##   &lt;date&gt;           &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;
-## 1 2020-04-17         553            390          163
-## 2 2020-04-16         541            374          167
-## 3 2020-04-15         530            359          171
-## 4 2020-04-10         464            284          180
-## 5 2020-04-14         517            333          184
-## 6 2020-04-11         486            300          186
-## 7 2020-04-12         499            310          189
-## 8 2020-04-13         504            315          189</code></pre>
-</div>
-<div id="maui-and-big-island-clusters" class="section level1">
-<h1>Maui and Big Island Clusters</h1>
-<p>There have been two new clusters of cases on Maui and the Big Island. On Maui the cluster was associated with the hospital and on the Big Island it was associated with McDonalds workers. These two clusters throws off the data a bit because the overall total hides these outbreaks. To look at these we can look at new cases by county.</p>
-<pre class="r"><code># str(covid)
-covid %&gt;% select(Date, 
-                 oahu=`New Oahu Res`,
-                 maui=`New Maui Res`,
-                 big_island=`New HIsland Res`,
-                 kauai=`New Kauai Res`,
-                 non_res=`New Non Res`,
-                 `Unclassified`
-                 ) %&gt;%
-  gather(oahu, maui, big_island, kauai, # non_res, Unclassified,
-         key = &quot;location&quot;,
-         value = &quot;new_cases&quot;) %&gt;%
-  ggplot(aes(x = Date, y = new_cases)) + facet_grid(. ~location) +
-  geom_point() +
-  geom_smooth() +
-  theme(axis.text.x  = element_text(angle=90, vjust=0.5))</code></pre>
-<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
-<pre><code>## Warning: Removed 81 rows containing non-finite values (stat_smooth).</code></pre>
-<pre><code>## Warning: Removed 81 rows containing missing values (geom_point).</code></pre>
-<p><img src="../../../../post/2020-04-18-hawaii-coronavirus-update-2020-04-18_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
-<p>Overall you can see the days when those clusters were under serious investigation since the number of positive tests spikes.</p>
+<p><img src="../../../../post/2020-04-23-coronavirus-positive-tests-in-hawaii_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </div>
 <div id="license" class="section level1">
 <h1>License</h1>
-<p>I didn’t mention it last time, but these data are subject to the following restrictions:</p>
+<p>These data are subject to the following license:</p>
 <p>Data license: <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a> · Data source: <a href="https://docs.google.com/spreadsheets/d/1WTUg75_mm35Z2C6PQd5AOKtVeSNfci5Mp0G_pgYTqQI/edit#gid=0">Community Maintained Daily Hawaii COVID-19 Metrics</a> · About: This is a community maintained, unofficial table of COVID-19 stats compiled from DOH and media reports. Accuracy is not guaranteed. Please see the <a href="(https://docs.google.com/spreadsheets/d/1WTUg75_mm35Z2C6PQd5AOKtVeSNfci5Mp0G_pgYTqQI/edit#gid=0)">Data source link</a> to report any errors.</p>
 </div>
 
@@ -436,13 +456,9 @@ covid %&gt;% select(Date,
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="../../../../2020/04/14/hawaii-coronavirus-update-2020-04-14/" data-toggle="tooltip" data-placement="top" title="Hawaii Coronavirus Update 2020-04-14">&larr; Previous Post</a>
+              <a href="../../../../2020/04/19/hawaii-coronavirus-update-2020-04-19/" data-toggle="tooltip" data-placement="top" title="Hawaii Coronavirus Update 2020-04-19">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="../../../../2020/04/26/coronavirus-positive-tests-in-hawaii/" data-toggle="tooltip" data-placement="top" title="Coronavirus Positive Tests in Hawaii">Next Post &rarr;</a>
-            </li>
           
         </ul>
       

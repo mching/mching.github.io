@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Coronavirus Positive Tests in Hawaii</title>
+      <link>/2020/04/26/coronavirus-positive-tests-in-hawaii/</link>
+      <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/04/26/coronavirus-positive-tests-in-hawaii/</guid>
+      <description>Today I decided to look at the tests for coronavirus that are being done in Hawaii. It looks like the number of positive tests are slowing down. I had a sense that the population is also probably healthier from social distancing, so I wanted to look at the trend in tests and positive tests.
+library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(lubridate) ## ## Attaching package: &amp;#39;lubridate&amp;#39; ## The following object is masked from &amp;#39;package:base&amp;#39;: ## ## date library(scales) library(tidyr) library(zoo) ## ## Attaching package: &amp;#39;zoo&amp;#39; ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## as.</description>
+    </item>
+    
+    <item>
       <title>Hawaii Coronavirus Update 2020-04-19</title>
       <link>/2020/04/19/hawaii-coronavirus-update-2020-04-19/</link>
       <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
