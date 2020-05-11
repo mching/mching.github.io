@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Hawaii Coronavirus Update 5/10/2020</title>
+      <link>/2020/05/10/hawaii-coronavirus-update-5-10-2020/</link>
+      <pubDate>Sun, 10 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/05/10/hawaii-coronavirus-update-5-10-2020/</guid>
+      <description>It’s been a couple of weeks since I reran the graphs with new data. Since then there have been thankfully few cases of coronavirus in our state. It’s clearly still circulating at some small level but once we get to this type of number, it becomes possible to track down and isolate the contacts.
+library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(lubridate) ## ## Attaching package: &amp;#39;lubridate&amp;#39; ## The following objects are masked from &amp;#39;package:dplyr&amp;#39;: ## ## intersect, setdiff, union ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## date, intersect, setdiff, union library(scales) library(tidyr) library(zoo) ## ## Attaching package: &amp;#39;zoo&amp;#39; ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## as.</description>
+    </item>
+    
+    <item>
       <title>Coronavirus Positive Tests in Hawaii</title>
       <link>/2020/04/26/coronavirus-positive-tests-in-hawaii/</link>
       <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
