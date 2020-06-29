@@ -210,6 +210,95 @@
           
           
             <article class="post-preview">
+    <a href="../../2016/12/14/pidgey-evolution/">
+        <h2 class="post-title">Pidgey Evolution: Effects on Combat Power and Hit Points</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on December 14, 2016
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Michael Ching
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        I was evolving some Pokemon in Pokemon Go today and wondered how much the Pokemon’s attributes change after evolution. The attributes of interest were combat power (CP) and hit points (HP). I focused my analysis from Pidgeys because I had the most data points for this species.
+I collected data from one day’s evolution, available for viewing here.
+x &lt;- read.csv(&quot;../datasets/evolution.csv&quot;) x &lt;- tbl_df(x) pidgeys &lt;- filter(x, pokemon == &quot;Pidgey&quot;) pidgeys ## # A tibble: 12 × 7 ## pokemon CP_pre HP_pre kg_pre CP_post HP_post kg_post ## &lt;fctr&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; ## 1 Pidgey 270 NA NA 533 NA NA ## 2 Pidgey 267 NA NA 515 NA NA ## 3 Pidgey 259 NA NA 526 NA NA ## 4 Pidgey 212 NA NA 413 NA NA ## 5 Pidgey 209 43 2.
+        <a href="../../2016/12/14/pidgey-evolution/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="//tags/pokemon/">pokemon</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="../../2016/12/09/simple-secret-santa-picker/">
+        <h2 class="post-title">Simple Secret Santa Picker</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on December 9, 2016
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Michael Ching
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        A post about automating Secret Santa assignments popped up in my Facebook feed the other day. This being the Christmas season, I took a look. It seemed a bit complex, and I wondered if I could make it more efficient.
+The original function took in a list of people (e.g., Ann, Bill, Chris). Using a nested while-for loop, it randomly picked a name (Bill), and matched it to the first person in the list (Ann:Bill).
+        <a href="../../2016/12/09/simple-secret-santa-picker/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="//tags/random/">random</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="../../2016/11/30/unlucky-fantasy-football/">
         <h2 class="post-title">An Unlucky Fantasy Football Season Is Over</h2>
         
@@ -557,93 +646,6 @@ First, set up a table of the data. The units for stride length and footprint len
         
     </div>
 
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="../../2016/07/22/flashcard-deck-size-prediction/">
-        <h2 class="post-title">Predicting Flashcard Deck Size Using Linear Regression</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on July 22, 2016
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Michael Ching
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        I’m studying for my pediatric recertification board exam right now, and to help me remember things, I’m making flashcards as I read an exam study book. Lately, I’ve been wondering how many flashcards I will have by the time I reach the end of the book.
-I average about 15 pages a day and about 45 flashcards a day, or 3 flashcards per day. The book itself is 849 pages long, with the real content starting on page 43.
-        <a href="../../2016/07/22/flashcard-deck-size-prediction/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="//tags/prediction/">prediction</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="../../2016/07/14/reverse-parking/">
-        <h2 class="post-title">Reverse-In Parking in Hawaii and California</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on July 14, 2016
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Mike Ching
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        Introduction One of my mainland-born friends is annoyed that Hawaii drivers like to reverse their cars into parking stalls much more than the mainland. My wife, who is also from the mainland, agreed with him enthusiastically. Whether this is appropriate parking behavior or not, I had never noticed it before, so I figured it was something I could test with some observations. I had a trip coming up to the mainland, and I was able to collect some data to test whether the Hawaii drivers were really so different than their California counterparts.
-        <a href="../../2016/07/14/reverse-parking/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="//tags/parking/">parking</a>&nbsp;
-        
-    </div>
     
 
 </article>

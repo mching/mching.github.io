@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>GVRAT and Long Run Days - Dripping Data</title>
+  <meta name="description" content="I do my long run on Saturdays. A couple of friends do theirs on Sundays. I thought with the number of people in the database, it wouldn’t be too hard to see what people use as their long run day. Conceptually it’s just figuring out what is the mean per day of the week and seeing which one is the longest day. There could be some issues with this approach but overall this should return what I’m looking for.">
+  <meta name="author" content="Mike Ching"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Dripping Data",
+    
+    "url": "\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "\/2020\/06\/07\/gvrat-and-long-run-days\/",
+          "name": "G v r a t and long run days"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Mike Ching"
+  },
+  "headline": "GVRAT and Long Run Days",
+  "description" : "I do my long run on Saturdays. A couple of friends do theirs on Sundays. I thought with the number of people in the database, it wouldn’t be too hard to see what people use as their long run day. Conceptually it’s just figuring out what is the mean per day of the week and seeing which one is the longest day. There could be some issues with this approach but overall this should return what I’m looking for.",
+  "inLanguage" : "en",
+  "wordCount":  958 ,
+  "datePublished" : "2020-06-07T00:00:00",
+  "dateModified" : "2020-06-07T00:00:00",
+  "image" : "\/img\/IMG_6557.jpg",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "\/2020\/06\/07\/gvrat-and-long-run-days\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "\/img\/IMG_6557.jpg",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="GVRAT and Long Run Days" />
+<meta property="og:description" content="I do my long run on Saturdays. A couple of friends do theirs on Sundays. I thought with the number of people in the database, it wouldn’t be too hard to see what people use as their long run day. Conceptually it’s just figuring out what is the mean per day of the week and seeing which one is the longest day. There could be some issues with this approach but overall this should return what I’m looking for.">
+<meta property="og:image" content="/img/IMG_6557.jpg" />
+<meta property="og:url" content="/2020/06/07/gvrat-and-long-run-days/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Dripping Data" />
+
+  <meta name="twitter:title" content="GVRAT and Long Run Days" />
+  <meta name="twitter:description" content="I do my long run on Saturdays. A couple of friends do theirs on Sundays. I thought with the number of people in the database, it wouldn’t be too hard to see what people use as their long run day. …">
+  <meta name="twitter:image" content="/img/IMG_6557.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@mikec2a" />
+  <meta name="twitter:creator" content="@mikec2a" />
+  <link href='../../../../img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.68.3" />
+  <link rel="alternate" href="../../../../index.xml" type="application/rss+xml" title="Dripping Data"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="../../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="../../../../css/syntax.css" /><link rel="stylesheet" href="../../../../css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../../">Dripping Data</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../../about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="LinkedIn" href="https://www.linkedin.com/in/michael-ching-033a5029">LinkedIn</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Twitter" href="https://twitter.com/mikec2a">Twitter</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Dripping Data" href="../../../../">
+            <img class="avatar-img" src="../../../../img/IMG_6557.jpg" alt="Dripping Data" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>GVRAT and Long Run Days</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on June 7, 2020
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Mike Ching
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+
+<p>I do my long run on Saturdays. A couple of friends do theirs on Sundays. I thought with the number of people in the database, it wouldn’t be too hard to see what people use as their long run day. Conceptually it’s just figuring out what is the mean per day of the week and seeing which one is the longest day. There could be some issues with this approach but overall this should return what I’m looking for.</p>
+<pre class="r"><code>suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(lubridate))
+gv &lt;- read_csv(&quot;../datasets/GVRAT_May_Summary.csv&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   .default = col_double(),
+##   Name = col_character()
+## )</code></pre>
+<pre><code>## See spec(...) for full column specifications.</code></pre>
+<pre class="r"><code>glimpse(gv)</code></pre>
+<pre><code>## Rows: 19,537
+## Columns: 35
+## $ Bib      &lt;dbl&gt; 17395, 11355, 1074, 743, 6211, 386, 7177, 3117, 4164, 6780, …
+## $ Name     &lt;chr&gt; &quot;Gingerbread Man&quot;, &quot;Matthew Jenkins&quot;, &quot;Terri Biloski&quot;, &quot;John…
+## $ Miles    &lt;dbl&gt; 1395.4, 1394.4, 1303.6, 1289.5, 1277.6, 1243.0, 1131.5, 1097…
+## $ KM       &lt;dbl&gt; 2245.7, 2244.1, 2098.0, 2075.3, 2056.1, 2000.4, 1821.0, 1765…
+## $ `May 1`  &lt;dbl&gt; 83, 32, 63, 34, 6, 35, 6, 50, 24, 21, 35, 40, 5, 62, 25, 31,…
+## $ `May 2`  &lt;dbl&gt; 43, 5, 59, 41, 21, 75, 0, 33, 24, 21, 16, 40, 89, 62, 12, 22…
+## $ `May 3`  &lt;dbl&gt; 49, 30, 52, 46, 35, 63, 2, 32, 24, 21, 14, 40, 47, 5, 9, 12,…
+## $ `May 4`  &lt;dbl&gt; 52, 37, 52, 54, 34, 43, 0, 24, 48, 21, 17, 30, 2, 62, 25, 24…
+## $ `May 5`  &lt;dbl&gt; 49, 38, 49, 60, 32, 10, 10, 25, 25, 22, 18, 41, 9, 63, 29, 1…
+## $ `May 6`  &lt;dbl&gt; 58, 39, 58, 62, 31, 83, 22, 24, 25, 22, 18, 30, 7, 63, 25, 2…
+## $ `May 7`  &lt;dbl&gt; 51, 41, 51, 60, 32, 65, 31, 51, 28, 22, 23, 23, 4, 64, 17, 1…
+## $ `May 8`  &lt;dbl&gt; 61, 43, 49, 55, 37, 28, 37, 25, 28, 22, 18, 40, 10, 63, 22, …
+## $ `May 9`  &lt;dbl&gt; 43, 30, 55, 49, 37, 68, 47, 48, 28, 22, 35, 51, 30, 0, 22, 2…
+## $ `May 10` &lt;dbl&gt; 52, 40, 52, 59, 39, 68, 25, 30, 32, 22, 28, 20, 38, 32, 25, …
+## $ `May 11` &lt;dbl&gt; 94, 45, 52, 59, 43, 48, 43, 26, 28, 34, 24, 44, 17, 31, 22, …
+## $ `May 12` &lt;dbl&gt; 6, 47, 43, 56, 37, 54, 46, 26, 30, 37, 29, 40, 45, 33, 40, 2…
+## $ `May 13` &lt;dbl&gt; 11, 44, 7, 16, 100, 8, 40, 26, 31, 38, 29, 41, 9, 35, 47, 31…
+## $ `May 14` &lt;dbl&gt; 25, 47, 15, 25, 62, 22, 42, 22, 31, 34, 36, 30, 41, 31, 21, …
+## $ `May 15` &lt;dbl&gt; 28, 46, 13, 28, 50, 26, 48, 52, 31, 34, 30, 43, 8, 33, 32, 3…
+## $ `May 16` &lt;dbl&gt; 30, 48, 37, 30, 41, 11, 48, 36, 31, 58, 40, 41, 41, 0, 31, 2…
+## $ `May 17` &lt;dbl&gt; 40, 46, 36, 40, 0, 6, 42, 45, 41, 28, 31, 40, 37, 32, 29, 21…
+## $ `May 18` &lt;dbl&gt; 37, 44, 31, 37, 39, 68, 43, 35, 33, 34, 34, 0, 17, 0, 31, 33…
+## $ `May 19` &lt;dbl&gt; 51, 46, 27, 51, 19, 42, 44, 28, 35, 33, 34, 0, 47, 62, 50, 2…
+## $ `May 20` &lt;dbl&gt; 51, 41, 37, 51, 26, 42, 58, 15, 58, 34, 35, 27, 21, 0, 23, 3…
+## $ `May 21` &lt;dbl&gt; 53, 44, 33, 53, 43, 22, 27, 25, 24, 39, 36, 25, 47, 0, 62, 2…
+## $ `May 22` &lt;dbl&gt; 51, 46, 23, 51, 12, 12, 47, 27, 37, 35, 35, 21, 75, 32, 37, …
+## $ `May 23` &lt;dbl&gt; 50, 42, 54, 50, 40, 6, 39, 33, 41, 0, 41, 21, 13, 0, 0, 34, …
+## $ `May 24` &lt;dbl&gt; 50, 47, 23, 50, 47, 42, 39, 52, 11, 62, 21, 23, 13, 17, 28, …
+## $ `May 25` &lt;dbl&gt; 60, 49, 36, 60, 100, 102, 30, 33, 36, 35, 30, 26, 14, 32, 28…
+## $ `May 26` &lt;dbl&gt; 47, 48, 37, 47, 4, 6, 40, 29, 30, 35, 38, 30, 13, 19, 28, 33…
+## $ `May 27` &lt;dbl&gt; 49, 47, 37, 49, 17, 6, 39, 28, 32, 35, 24, 35, 13, 0, 43, 32…
+## $ `May 28` &lt;dbl&gt; 0, 51, 37, 0, 37, 4, 37, 31, 32, 35, 37, 43, 15, 32, 31, 24,…
+## $ `May 29` &lt;dbl&gt; 0, 53, 42, 0, 37, 12, 37, 27, 32, 35, 32, 31, 19, 0, 31, 36,…
+## $ `May 30` &lt;dbl&gt; 0, 55, 63, 0, 39, 28, 37, 38, 50, 35, 44, 42, 24, 32, 27, 36…
+## $ `May 31` &lt;dbl&gt; 11, 0, 45, 11, 22, 22, 42, 32, 50, 37, 37, 42, 17, 19, 25, 2…</code></pre>
+<p>One way to look at this is to see the mean distance run by day.</p>
+<pre class="r"><code>gv_miles &lt;- gv %&gt;% 
+  select(-c(Name, Miles, KM)) %&gt;%
+  pivot_longer(starts_with(&quot;May&quot;), names_to = &quot;run_date&quot;, 
+               values_to = &quot;miles_day&quot;) %&gt;%
+  mutate(run_date = mdy(paste0(run_date, &quot;, 2020&quot;)))</code></pre>
+<pre class="r"><code>gv_miles %&gt;%
+  group_by(run_date) %&gt;%
+  summarize(miles_mean = mean(miles_day)) %&gt;%
+  ggplot(aes(x = run_date, y = miles_mean)) +
+  geom_line()</code></pre>
+<p><img src="../../../../post/2020-06-07-gvrat-and-long-run-days_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>There’s definitely a peak on Saturdays such as May 2, May 9, etc.</p>
+<p>Here’s the mean for each day of the week:</p>
+<pre class="r"><code>gv_miles %&gt;% group_by(run_date) %&gt;% 
+  mutate(dayofweek = weekdays(run_date)) %&gt;%
+  group_by(dayofweek) %&gt;% 
+  summarize(mean_miles = mean(miles_day)) %&gt;%
+  arrange(-mean_miles)</code></pre>
+<pre><code>## # A tibble: 7 x 2
+##   dayofweek mean_miles
+##   &lt;chr&gt;          &lt;dbl&gt;
+## 1 Saturday        7.82
+## 2 Sunday          6.75
+## 3 Tuesday         5.67
+## 4 Wednesday       5.65
+## 5 Thursday        5.58
+## 6 Monday          5.17
+## 7 Friday          5.16</code></pre>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>Runners put in the most mileage on Saturdays in the GVRAT.</p>
+</div>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../../2020/05/30/finisher-characteristics-and-hawaii-update/" data-toggle="tooltip" data-placement="top" title="Finisher Characteristics and Hawaii Update">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../../2020/06/27/last-day-distance-in-gvrat/" data-toggle="tooltip" data-placement="top" title="Last Day Distance in GVRAT">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/mching" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/mikec2a" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/michael-ching-033a5029" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Mike Ching
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../../">Dripping Data</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="../../../../js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="../../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

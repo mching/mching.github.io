@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Last Day Distance in GVRAT - Dripping Data</title>
+  <meta name="description" content="As people start finishing the race it seems like they really push themselves on the last day. I’ve seen people running 20, 30, 50 miles to reach the final distance. I wondered if there was a difference between what people average and what they do on the last day of the race.
+Data Loading suppressPackageStartupMessages(library(tidyverse)) suppressPackageStartupMessages(library(lubridate)) gv &lt;- read_csv(&quot;../datasets/GVRAT_June_Summary.csv&quot;) ## Parsed with column specification: ## cols( ## .default = col_double(), ## Name = col_character(), ## `28-Jun` = col_logical(), ## `29-Jun` = col_logical(), ## `30-Jun` = col_logical() ## ) ## See spec(.">
+  <meta name="author" content="Mike Ching"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Dripping Data",
+    
+    "url": "\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "\/2020\/06\/27\/last-day-distance-in-gvrat\/",
+          "name": "Last day distance in g v r a t"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Mike Ching"
+  },
+  "headline": "Last Day Distance in GVRAT",
+  "description" : "As people start finishing the race it seems like they really push themselves on the last day. I’ve seen people running 20, 30, 50 miles to reach the final distance. I wondered if there was a difference between what people average and what they do on the last day of the race.\nData Loading suppressPackageStartupMessages(library(tidyverse)) suppressPackageStartupMessages(library(lubridate)) gv \x26lt;- read_csv(\x26quot;..\/datasets\/GVRAT_June_Summary.csv\x26quot;) ## Parsed with column specification: ## cols( ## .default = col_double(), ## Name = col_character(), ## `28-Jun` = col_logical(), ## `29-Jun` = col_logical(), ## `30-Jun` = col_logical() ## ) ## See spec(.",
+  "inLanguage" : "en",
+  "wordCount":  693 ,
+  "datePublished" : "2020-06-27T00:00:00",
+  "dateModified" : "2020-06-27T00:00:00",
+  "image" : "\/img\/IMG_6557.jpg",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "\/2020\/06\/27\/last-day-distance-in-gvrat\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "\/img\/IMG_6557.jpg",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Last Day Distance in GVRAT" />
+<meta property="og:description" content="As people start finishing the race it seems like they really push themselves on the last day. I’ve seen people running 20, 30, 50 miles to reach the final distance. I wondered if there was a difference between what people average and what they do on the last day of the race.
+Data Loading suppressPackageStartupMessages(library(tidyverse)) suppressPackageStartupMessages(library(lubridate)) gv &lt;- read_csv(&quot;../datasets/GVRAT_June_Summary.csv&quot;) ## Parsed with column specification: ## cols( ## .default = col_double(), ## Name = col_character(), ## `28-Jun` = col_logical(), ## `29-Jun` = col_logical(), ## `30-Jun` = col_logical() ## ) ## See spec(.">
+<meta property="og:image" content="/img/IMG_6557.jpg" />
+<meta property="og:url" content="/2020/06/27/last-day-distance-in-gvrat/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Dripping Data" />
+
+  <meta name="twitter:title" content="Last Day Distance in GVRAT" />
+  <meta name="twitter:description" content="As people start finishing the race it seems like they really push themselves on the last day. I’ve seen people running 20, 30, 50 miles to reach the final distance. I wondered if there was a …">
+  <meta name="twitter:image" content="/img/IMG_6557.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@mikec2a" />
+  <meta name="twitter:creator" content="@mikec2a" />
+  <link href='../../../../img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.68.3" />
+  <link rel="alternate" href="../../../../index.xml" type="application/rss+xml" title="Dripping Data"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="../../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="../../../../css/syntax.css" /><link rel="stylesheet" href="../../../../css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../../">Dripping Data</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../../about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="LinkedIn" href="https://www.linkedin.com/in/michael-ching-033a5029">LinkedIn</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Twitter" href="https://twitter.com/mikec2a">Twitter</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Dripping Data" href="../../../../">
+            <img class="avatar-img" src="../../../../img/IMG_6557.jpg" alt="Dripping Data" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Last Day Distance in GVRAT</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on June 27, 2020
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Mike Ching
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+
+<p>As people start finishing the race it seems like they really push themselves on the last day. I’ve seen people running 20, 30, 50 miles to reach the final distance. I wondered if there was a difference between what people average and what they do on the last day of the race.</p>
+<div id="data-loading" class="section level1">
+<h1>Data Loading</h1>
+<pre class="r"><code>suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(lubridate))
+gv &lt;- read_csv(&quot;../datasets/GVRAT_June_Summary.csv&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   .default = col_double(),
+##   Name = col_character(),
+##   `28-Jun` = col_logical(),
+##   `29-Jun` = col_logical(),
+##   `30-Jun` = col_logical()
+## )</code></pre>
+<pre><code>## See spec(...) for full column specifications.</code></pre>
+<p>It took a little effort to reshape the data for manipulation. I wanted to get Bib, date, miles, and cumulative miles.</p>
+<pre class="r"><code>gv_miles &lt;- gv %&gt;% 
+  filter(Bib &gt;= 1) %&gt;% # Bibs between 0 and 1 were buzzards
+  filter(Miles &lt; 684.34) %&gt;% # We want people who hadn&#39;t finished in May
+  mutate(`31-May` = Miles) %&gt;% # Rename Miles to a date for May
+  select(-c(Name, Miles)) %&gt;% # Drop Miles and Name
+  pivot_longer(contains(&quot;-&quot;), names_to = &quot;run_date&quot;, 
+               values_to = &quot;miles_day&quot;) %&gt;% # Convert to long form
+  mutate(run_date = dmy(paste0(run_date, &quot;, 2020&quot;))) %&gt;% 
+  group_by(Bib) %&gt;% 
+  arrange(run_date) %&gt;%
+  mutate(miles_total = cumsum(miles_day)) </code></pre>
+</div>
+<div id="june-finishers" class="section level1">
+<h1>June Finishers</h1>
+<div id="who-finished-in-june" class="section level2">
+<h2>Who finished in June?</h2>
+<p>I found people whose total miles were over the race distance and then took the first run that was over the finish distance.</p>
+<pre class="r"><code>june_finishers &lt;- gv_miles %&gt;% 
+  filter(miles_total &gt; 684.34) %&gt;%
+  group_by(Bib) %&gt;%
+  arrange(miles_total) %&gt;%
+  slice(1)
+
+june_finishers</code></pre>
+<pre><code>## # A tibble: 515 x 4
+## # Groups:   Bib [515]
+##      Bib run_date   miles_day miles_total
+##    &lt;dbl&gt; &lt;date&gt;         &lt;dbl&gt;       &lt;dbl&gt;
+##  1     2 2020-06-09      19.2        701.
+##  2     9 2020-06-08      25          702.
+##  3    68 2020-06-25      10.4        686.
+##  4    72 2020-06-20      13          693.
+##  5    81 2020-06-22      40          718.
+##  6    84 2020-06-17      14.4        690.
+##  7    92 2020-06-16      18.9        686.
+##  8   105 2020-06-01      27          698.
+##  9   115 2020-06-26      12.5        694.
+## 10   142 2020-06-17      10          685 
+## # … with 505 more rows</code></pre>
+</div>
+<div id="how-many-people-finished-each-day-in-june-so-far" class="section level2">
+<h2>How many people finished each day in June so far</h2>
+<p>I constructed a graph to show how more and more people are finishing every day.</p>
+<pre class="r"><code>gv_miles %&gt;% 
+  filter(miles_total &gt; 684.34) %&gt;%
+  group_by(Bib) %&gt;%
+  arrange(miles_total) %&gt;%
+  slice(1) %&gt;%
+  group_by(run_date) %&gt;%
+  filter(run_date &lt; ymd(&#39;2020-06-27&#39;)) %&gt;%
+  summarize(finishers = n()) %&gt;%
+  ggplot(aes(x=run_date, y = finishers)) + geom_line()</code></pre>
+<p><img src="../../../../post/2020-06-27-last-day-distance-in-gvrat_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="june-finishers-mileage-excluding-last-day" class="section level2">
+<h2>June Finishers Mileage Excluding Last Day</h2>
+<p>Here’s the mean miles of people who finished in June (excluding their last day).</p>
+<pre class="r"><code>gv_miles %&gt;% filter(Bib %in% june_finishers$Bib) %&gt;%
+  filter(run_date &gt; ymd(&#39;2020-05-31&#39;)) %&gt;%
+  filter(miles_total &lt; 684.34) %&gt;%
+  group_by(Bib) %&gt;% 
+  summarize(mean_june_miles = mean(miles_day))</code></pre>
+<pre><code>## # A tibble: 512 x 2
+##      Bib mean_june_miles
+##    &lt;dbl&gt;           &lt;dbl&gt;
+##  1     2            20.5
+##  2     9            17.7
+##  3    68            13.7
+##  4    72            15.1
+##  5    81            12.1
+##  6    84            17.2
+##  7    92            16.4
+##  8   115            13.4
+##  9   142            16.2
+## 10   170            13.0
+## # … with 502 more rows</code></pre>
+<pre class="r"><code>gv_miles %&gt;% filter(Bib %in% june_finishers$Bib) %&gt;%
+  filter(run_date &gt; ymd(&#39;2020-05-31&#39;)) %&gt;%
+  filter(miles_total &lt; 684.34) %&gt;%
+  group_by() %&gt;% 
+  summarize(mean_june_miles = mean(miles_day), 
+            median_june_miles = median(miles_day)) </code></pre>
+<pre><code>## # A tibble: 1 x 2
+##   mean_june_miles median_june_miles
+##             &lt;dbl&gt;             &lt;dbl&gt;
+## 1            14.8              14.1</code></pre>
+<p>Among June finishers, the daily mileage excluding the last day was 14.8 miles.</p>
+</div>
+<div id="june-finishers-mileage-on-last-day" class="section level2">
+<h2>June Finishers Mileage on Last Day</h2>
+<pre class="r"><code>gv_miles %&gt;% 
+  filter(miles_total &gt; 684.34) %&gt;%
+  group_by(Bib) %&gt;%
+  arrange(miles_total) %&gt;%
+  slice(1) %&gt;%
+  group_by() %&gt;%
+  summarize(mean(miles_day), median(miles_day), min(miles_day), max(miles_day))</code></pre>
+<pre><code>## # A tibble: 1 x 4
+##   `mean(miles_day)` `median(miles_day)` `min(miles_day)` `max(miles_day)`
+##               &lt;dbl&gt;               &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+## 1              19.9                16.9              3.3             99.4</code></pre>
+<p>Among the 515 finishers in June so far, the mean last day was 19.9 miles. This was skewed quite a bit by some outliers since it was so much higher than the median.</p>
+<p>I compared the two histograms:</p>
+<pre class="r"><code>gv_miles %&gt;% filter(Bib %in% june_finishers$Bib) %&gt;%
+  filter(run_date &gt; ymd(&#39;2020-05-31&#39;)) %&gt;%
+  filter(miles_total &lt; 684.34) %&gt;% 
+  ggplot(aes(miles_day)) + geom_histogram(binwidth = 2) +
+  ggtitle(&quot;Miles per Run before Finishing Date&quot;)</code></pre>
+<p><img src="../../../../post/2020-06-27-last-day-distance-in-gvrat_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<pre class="r"><code>gv_miles %&gt;% 
+  filter(miles_total &gt; 684.34) %&gt;%
+  group_by(Bib) %&gt;%
+  arrange(miles_total) %&gt;%
+  slice(1) %&gt;%
+  ggplot(aes(miles_day)) + geom_histogram(binwidth = 2) +
+  ggtitle(&quot;Miles per Run on Finishing Date&quot;)</code></pre>
+<p><img src="../../../../post/2020-06-27-last-day-distance-in-gvrat_files/figure-html/unnamed-chunk-8-2.png" width="672" /></p>
+<p>They are pretty similar. Note that the height of the bins is greater in the first histogram. It looks like people aren’t really going crazy all out on that last day.</p>
+</div>
+</div>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../../2020/06/07/gvrat-and-long-run-days/" data-toggle="tooltip" data-placement="top" title="GVRAT and Long Run Days">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/mching" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/mikec2a" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/michael-ching-033a5029" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Mike Ching
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../../">Dripping Data</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="../../../../js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="../../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+
