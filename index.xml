@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Mobility in Hawaii</title>
+      <link>/2020/09/07/mobility-in-hawaii/</link>
+      <pubDate>Mon, 07 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/09/07/mobility-in-hawaii/</guid>
+      <description>I was reviewing the coronavirus dashboard for the state of Hawaii. It has mobility data from anonymized cell phone records from Descartes Labs. The chart was so small that I couldn’t really read it, so I went to the source cited to see if I could see this better. At the source, they cite a Hawaii data project that looks at this data but something about the Hawaii data site isn’t working that great for the mobility visualization.</description>
+    </item>
+    
+    <item>
       <title>Last Day Distance in GVRAT</title>
       <link>/2020/06/27/last-day-distance-in-gvrat/</link>
       <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
