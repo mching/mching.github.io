@@ -12,6 +12,25 @@
     
     
     <item>
+      <title>Eighty-five Cent Words</title>
+      <link>/2020/11/19/eighty-five-cent-words/</link>
+      <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/11/19/eighty-five-cent-words/</guid>
+      <description>Tonight my wife came to me with the problem of Dollar Words. The idea is that you can assign a numerical value to each letter of the alphabet (a = 1, b = 2 … z = 26). If you replace each letter of a word with the value and add the values up, you get a sum. If the sum adds up to 100, that’s called a dollar word.</description>
+    </item>
+    
+    <item>
+      <title>Hawaii Counties School Reopening Metrics</title>
+      <link>/2020/09/09/hawaii-counties-school-reopening-metrics/</link>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/09/09/hawaii-counties-school-reopening-metrics/</guid>
+      <description>There are a number of school reopening metrics around the country. They use some figures that are not so easy to gather on existing dashboards. To help visualize how Hawaii stacks up against the suggested metrics, I pulled the data and calculated the metrics for our state.
+The first mainland metric that I used came from Minnesota’s Safe Learning Plan. They use a metric of total cases in the last 14 days per 10,000 population.</description>
+    </item>
+    
+    <item>
       <title>Mobility in Hawaii</title>
       <link>/2020/09/07/mobility-in-hawaii/</link>
       <pubDate>Mon, 07 Sep 2020 00:00:00 +0000</pubDate>
