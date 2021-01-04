@@ -6,11 +6,7 @@
     <description>Recent content in mpg on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Dec 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/mpg/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 19 Dec 2017 00:00:00 +0000</lastBuildDate><atom:link href="/tags/mpg/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Estimated Prius Gas Mileage (December 2017 Update)</title>
       <link>/2017/12/19/estimated-prius-gas-mileage/</link>

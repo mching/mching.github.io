@@ -6,11 +6,7 @@
     <description>Recent content in Tags on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 30 May 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 30 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>exercise</title>
       <link>/tags/exercise/</link>
@@ -174,15 +170,6 @@
     </item>
     
     <item>
-      <title>car</title>
-      <link>/tags/car/</link>
-      <pubDate>Fri, 27 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/car/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>cars</title>
       <link>/tags/cars/</link>
       <pubDate>Fri, 27 Jul 2018 00:00:00 +0000</pubDate>
@@ -233,6 +220,15 @@
       <pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/voting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>car</title>
+      <link>/tags/car/</link>
+      <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/car/</guid>
       <description></description>
     </item>
     
