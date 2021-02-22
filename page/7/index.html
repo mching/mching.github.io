@@ -210,6 +210,95 @@
           
           
             <article class="post-preview">
+    <a href="../../2017/04/18/saves-and-runs-scored/">
+        <h2 class="post-title">Effect of Runs and Other Factors on Team Saves in Major League Baseball</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on April 18, 2017
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Michael Ching
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        From listening to my favorite fantasy baseball podcast it seems that there is a belief that teams that score lots of runs are not likely to produce saves. The idea seems to be that such teams would blow out their competitors and so have less opportunity for games to be saved. While it made sense, I wondered what the data said.
+library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(Lahman) data(&quot;Teams&quot;) Teams &lt;- tbl_df(Teams) Exploration of Saves over Time Saves did not become an official statistic until 1969 (source).
+        <a href="../../2017/04/18/saves-and-runs-scored/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="//tags/baseball/">baseball</a>&nbsp;
+        
+        <a href="//tags/sports/">sports</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="../../2017/04/09/bean-sprout-respiration/">
+        <h2 class="post-title">Graphing Bean Sprout Respiration with the Hadleyverse</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on April 9, 2017
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Michael Ching
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        My wife’s high school biology students did a lab recently and had difficulty graphing the pooled data. One student allegedly took 2 hours to figure out how to do this in Excel. This seemed like it would be a nice exercise to try in the Hadleyverse. To replicate this plot, I had to take her students’ data in wide form, tidy it up, calculate means for each group and time, and then plot these.
+        <a href="../../2017/04/09/bean-sprout-respiration/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="//tags/biology/">biology</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="../../2017/03/31/baseball-team-season-saves/">
         <h2 class="post-title">Baseball Team Season Save Leaders with the Lowest Totals since 2000</h2>
         
@@ -565,94 +654,6 @@ Methods Like last year, I took measurements of the probe thermomenter inserted i
     <div class="blog-tags">
         
         <a href="//tags/prediction/">prediction</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="../../2016/11/15/pass-my-board-exam/">
-        <h2 class="post-title">Will I Pass My Board Exam?</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 15, 2016
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Michael Ching
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        I am in the process of studying for my pediatrics board recertification and the pass rate is rumored to be about 75% of the questions correct. I got 163/199 (82%) of the questions correct on my practice exam. What is the probability that I will get at least 75% on my 200 question board exam based on this performance?
-Here’s the exact binomial way to figure it out.
-The idea is that if my probability of getting any question right is 0.
-        <a href="../../2016/11/15/pass-my-board-exam/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="//tags/probability/">probability</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="../../2016/11/06/scale-model-of-solar-system/">
-        <h2 class="post-title">Scale Model of Solar System</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 6, 2016
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Michael Ching
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        One of my son’s Cub Scout “adventures” requires him to create a scale model of the solar system. We sketched the calculations on the back of a receipt over lunch. We started with the distance we figured that we would use (length of our street, 387 feet) and then calculated the distances to each planet based on this. I figured it would be neat to create a function in R that would return a table of the relative distances based on a given model solar system radius.
-        <a href="../../2016/11/06/scale-model-of-solar-system/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="//tags/astronomy/">astronomy</a>&nbsp;
         
     </div>
     

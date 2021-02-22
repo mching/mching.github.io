@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>New COVID-19 School Indicators - Dripping Data</title>
+  <meta name="description" content="The CDC recently updated its school opening indicators. It’s really just a judgment call on how much transmission is happening in the communities. Since the data presented on the Hawaii DOH website isn’t easy to compare directly to the CDC numbers, I calculated the numbers myself.
+I downloaded the data from the “How is Hawaii Doing at Flattening the Epidemic Curve?” Tableau figure on the Hawaii DOH COVID-19 data site.">
+  <meta name="author" content="Mike Ching"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Dripping Data",
+    
+    "url": "\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "\/2021\/02\/21\/new-covid-19-school-indicatorsrmd\/",
+          "name": "New c o v i d 19 school indicators"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Mike Ching"
+  },
+  "headline": "New COVID-19 School Indicators",
+  "description" : "The CDC recently updated its school opening indicators. It’s really just a judgment call on how much transmission is happening in the communities. Since the data presented on the Hawaii DOH website isn’t easy to compare directly to the CDC numbers, I calculated the numbers myself.\nI downloaded the data from the “How is Hawaii Doing at Flattening the Epidemic Curve?” Tableau figure on the Hawaii DOH COVID-19 data site.",
+  "inLanguage" : "en",
+  "wordCount":  1010 ,
+  "datePublished" : "2021-02-21T00:00:00",
+  "dateModified" : "2021-02-21T00:00:00",
+  "image" : "\/img\/IMG_6557.jpg",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "\/2021\/02\/21\/new-covid-19-school-indicatorsrmd\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "\/img\/IMG_6557.jpg",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="New COVID-19 School Indicators" />
+<meta property="og:description" content="The CDC recently updated its school opening indicators. It’s really just a judgment call on how much transmission is happening in the communities. Since the data presented on the Hawaii DOH website isn’t easy to compare directly to the CDC numbers, I calculated the numbers myself.
+I downloaded the data from the “How is Hawaii Doing at Flattening the Epidemic Curve?” Tableau figure on the Hawaii DOH COVID-19 data site.">
+<meta property="og:image" content="/img/IMG_6557.jpg" />
+<meta property="og:url" content="/2021/02/21/new-covid-19-school-indicatorsrmd/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Dripping Data" />
+
+  <meta name="twitter:title" content="New COVID-19 School Indicators" />
+  <meta name="twitter:description" content="The CDC recently updated its school opening indicators. It’s really just a judgment call on how much transmission is happening in the communities. Since the data presented on the Hawaii DOH website …">
+  <meta name="twitter:image" content="/img/IMG_6557.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@mikec2a" />
+  <meta name="twitter:creator" content="@mikec2a" />
+  <link href='../../../../img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.80.0" />
+  <link rel="alternate" href="../../../../index.xml" type="application/rss+xml" title="Dripping Data"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="../../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="../../../../css/syntax.css" /><link rel="stylesheet" href="../../../../css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../../">Dripping Data</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../../about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="LinkedIn" href="https://www.linkedin.com/in/michael-ching-033a5029">LinkedIn</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Twitter" href="https://twitter.com/mikec2a">Twitter</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Dripping Data" href="../../../../">
+            <img class="avatar-img" src="../../../../img/IMG_6557.jpg" alt="Dripping Data" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>New COVID-19 School Indicators</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on February 21, 2021
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Mike Ching
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+
+<p>The CDC recently updated its <a href="https://www.cdc.gov/coronavirus/2019-ncov/community/schools-childcare/indicators.html">school opening indicators</a>. It’s really just a judgment call on how much transmission is happening in the communities. Since the data presented on the <a href="https://health.hawaii.gov/coronavirusdisease2019/what-you-should-know/current-situation-in-hawaii/">Hawaii DOH website</a> isn’t easy to compare directly to the CDC numbers, I calculated the numbers myself.</p>
+<p>I downloaded the data from the “How is Hawaii Doing at Flattening the Epidemic Curve?” Tableau figure on the <a href="https://health.hawaii.gov/coronavirusdisease2019/what-you-should-know/current-situation-in-hawaii/">Hawaii DOH COVID-19 data site</a>. It has daily counts by county and the positive and total tests.</p>
+<p>I like how this dataset requires pretty minimal processing. I did relabel the variables in Excel just to not have to deal with variables that have spaces in their names.</p>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## ── Attaching packages ────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
+## ✓ tibble  3.0.3     ✓ dplyr   1.0.2
+## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+## ✓ readr   1.3.1     ✓ forcats 0.5.0</code></pre>
+<pre><code>## ── Conflicts ───────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>library(lubridate)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;lubridate&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     date, intersect, setdiff, union</code></pre>
+<pre class="r"><code>dat &lt;- read_csv(&quot;../datasets/hawaiicovid20210221.csv&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   County = col_character(),
+##   Date = col_character(),
+##   NewCases = col_double(),
+##   NewPositiveTests = col_double(),
+##   TotalTestEncounters = col_double()
+## )</code></pre>
+<pre class="r"><code>dat</code></pre>
+<pre><code>## # A tibble: 1,771 x 5
+##    County Date    NewCases NewPositiveTests TotalTestEncounters
+##    &lt;chr&gt;  &lt;chr&gt;      &lt;dbl&gt;            &lt;dbl&gt;               &lt;dbl&gt;
+##  1 Hawaii 2/15/20        0                0                   0
+##  2 Hawaii 2/28/20        0                0                   0
+##  3 Hawaii 3/2/20         0                0                   0
+##  4 Hawaii 3/3/20         0                0                   1
+##  5 Hawaii 3/6/20         0                0                   0
+##  6 Hawaii 3/7/20         0                0                   0
+##  7 Hawaii 3/8/20         0                0                   0
+##  8 Hawaii 3/9/20         0                0                   0
+##  9 Hawaii 3/10/20        0                0                   0
+## 10 Hawaii 3/11/20        0                0                   0
+## # … with 1,761 more rows</code></pre>
+<pre class="r"><code>dat$County &lt;- factor(dat$County)
+dat$Date &lt;- mdy(dat$Date)</code></pre>
+<p>I added in the 2019 census estimates for county population size, with a Missing category since there was one in the dataset.</p>
+<pre class="r"><code>county_pops &lt;- data.frame(County = c(&quot;Hawaii&quot;, &quot;Honolulu&quot;, &quot;Kauai&quot;, &quot;Maui&quot;, &quot;Missing&quot;), 
+                          pops = c(201513, 974563, 72293, 167417, NA))</code></pre>
+<p>Ok, now for the calculation. I first added county population to the dataset. Then I grouped the data by county, calculated a cumulative sum and the cumulative sum from 7 days before. I took the difference to get the 7 day total cases. Then I divided that sum by the population of the county, and multipled by 100,000 to get the CDC metric. To make it easy to see the trends, I plotted the data and added horizontal lines at each threshold value.</p>
+<pre class="r"><code>dat %&gt;% left_join(county_pops, by = &quot;County&quot;) %&gt;%
+  group_by(County) %&gt;%
+  arrange(Date) %&gt;% 
+  mutate(total_cases = cumsum(NewCases)) %&gt;%
+  mutate(cases_7d_ago = lag(total_cases, 7, default = 0)) %&gt;%
+  mutate(cases_7d_sum_per100k = (total_cases-cases_7d_ago)/pops*100000) %&gt;%
+  filter(Date &gt; &quot;2020-12-31&quot;) %&gt;%
+  ggplot(aes(x = Date, y = cases_7d_sum_per100k, color = County)) +
+  geom_line() +
+  labs(title = &quot;Total Cases Per 100,000 in Last 7 Days&quot;, 
+       subtitle = &quot;CDC Indicators to Inform Decision Making&quot;) +
+  ylab(&quot;Total cases over last 7 days per 100,000 population&quot;) +
+  geom_hline(yintercept = 9.5, linetype = &quot;dotted&quot;, color = &quot;blue&quot;) +
+  geom_hline(yintercept = 49.5, linetype = &quot;dotted&quot;, color = &quot;yellow&quot;) +
+  geom_hline(yintercept = 99.5, linetype = &quot;dotted&quot;, color = &quot;orange&quot;)</code></pre>
+<pre><code>## Warning: Removed 49 row(s) containing missing values (geom_path).</code></pre>
+<p><img src="../../../../post/2021-02-21-new-covid-19-school-indicators_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>I also needed the test percentage positive over last 7 days. That one is basically the same method as the one before but instead of just calculating the cumulative sum of the tests, I had to do the positive and total test sums. Then I got the 7 day prior cumulative sum for both and calculated the difference. I divided the 7 day total positives by 7 day total tests and plotted those results.</p>
+<pre class="r"><code>dat %&gt;% 
+  group_by(County) %&gt;%
+  arrange(Date) %&gt;% 
+  mutate(total_tests = cumsum(TotalTestEncounters)) %&gt;%
+  mutate(total_positives = cumsum(NewPositiveTests)) %&gt;%
+  mutate(total_tests_7d_ago = lag(total_tests, 7, default = 0)) %&gt;%
+  mutate(total_positives_7d_ago = lag(total_positives, 7, default = 0)) %&gt;%
+  mutate(test_positive_rate_7d = (total_positives-total_positives_7d_ago) /
+           (total_tests - total_tests_7d_ago)) %&gt;%
+  select(County, Date, test_positive_rate_7d) %&gt;%
+  filter(Date &gt; &quot;2020-12-31&quot;) %&gt;%
+  ggplot(aes(x = Date, y = test_positive_rate_7d*100, color = County)) +
+  geom_line() +
+  labs(title = &quot;Test Positive Rate in Last 7 Days&quot;, 
+       subtitle = &quot;CDC Indicators to Inform Decision Making&quot;) +
+  ylab(&quot;Test positive rate over last 7 days (%) &quot;) +
+  geom_hline(yintercept = 5, linetype = &quot;dotted&quot;, color = &quot;blue&quot;) +
+  geom_hline(yintercept = 7.95, linetype = &quot;dotted&quot;, color = &quot;yellow&quot;) +
+  geom_hline(yintercept = 9.95, linetype = &quot;dotted&quot;, color = &quot;orange&quot;)</code></pre>
+<p><img src="../../../../post/2021-02-21-new-covid-19-school-indicators_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>In retrospect, I think I could have done this without calculating the cumulative sum, just using the lag. I would have to create a function for that…</p>
+<pre class="r"><code>lagsum &lt;- function(x, lag_start, lag_end) {
+  require(dplyr)
+  total = 0
+  for(i in lag_start:lag_end) {
+    total &lt;- total + lag(x, i, default = 0)
+  }
+  return(total)
+}</code></pre>
+<p>And it works!</p>
+<pre class="r"><code>dat %&gt;% 
+  group_by(County) %&gt;%
+  arrange(Date) %&gt;% 
+  
+  # helper function lagsum method
+  mutate(total_cases_7d_lagsum = lagsum(NewCases, 0, 6)) %&gt;%
+  
+  # cumsum method
+  mutate(total_cases = cumsum(NewCases)) %&gt;%
+  mutate(cases_7d_ago = lag(total_cases, 7, default = 0)) %&gt;%
+  mutate(total_cases_7d_cumsum = (total_cases-cases_7d_ago)) %&gt;%
+  
+  # compare results
+  select(County,Date, total_cases_7d_lagsum, total_cases_7d_cumsum) %&gt;%
+  filter(Date &gt; &quot;2021-02-14&quot;)</code></pre>
+<pre><code>## # A tibble: 20 x 4
+## # Groups:   County [5]
+##    County   Date       total_cases_7d_lagsum total_cases_7d_cumsum
+##    &lt;fct&gt;    &lt;date&gt;                     &lt;dbl&gt;                 &lt;dbl&gt;
+##  1 Hawaii   2021-02-15                    14                    14
+##  2 Honolulu 2021-02-15                   232                   232
+##  3 Kauai    2021-02-15                     0                     0
+##  4 Maui     2021-02-15                    79                    79
+##  5 Missing  2021-02-15                     0                     0
+##  6 Hawaii   2021-02-16                    18                    18
+##  7 Honolulu 2021-02-16                   215                   215
+##  8 Kauai    2021-02-16                     1                     1
+##  9 Maui     2021-02-16                    67                    67
+## 10 Missing  2021-02-16                     0                     0
+## 11 Hawaii   2021-02-17                    15                    15
+## 12 Honolulu 2021-02-17                   205                   205
+## 13 Kauai    2021-02-17                     1                     1
+## 14 Maui     2021-02-17                    64                    64
+## 15 Missing  2021-02-17                     0                     0
+## 16 Hawaii   2021-02-18                    15                    15
+## 17 Honolulu 2021-02-18                   193                   193
+## 18 Kauai    2021-02-18                     1                     1
+## 19 Maui     2021-02-18                    65                    65
+## 20 Missing  2021-02-18                     0                     0</code></pre>
+<p>After googling some more, I discovered the RcppRoll::roll_sum function. Anything with Rcpp in its name is intimidating, so for now, I’ll just use my homemade function.</p>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../../2021/02/07/bean-sprout-respiration-update/" data-toggle="tooltip" data-placement="top" title="Bean Sprout Respiration Update">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/mching" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/mikec2a" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/michael-ching-033a5029" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Mike Ching
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2021
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../../">Dripping Data</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.80.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="../../../../js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="../../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+
