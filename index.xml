@@ -6,7 +6,17 @@
     <description>Recent content on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Implementing Elo Ratings for Spikeball</title>
+      <link>/2021/05/23/implementing-elo-ratings-for-spikeball/</link>
+      <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/2021/05/23/implementing-elo-ratings-for-spikeball/</guid>
+      <description>My son’s friends began a spikeball tournament and wanted to determine who would be the best spikeball team. The traditional choice would be a round robin format and/or a tournament. With a few teams, neither would take very long, but my son wanted to know if they could use the chess rating Elo system to determine what team was the best.
+First we had to learn about how the Elo system works.</description>
+    </item>
+    
     <item>
       <title>COVID-19 School Indicators Update 2021-02-27</title>
       <link>/2021/02/27/udpate-covid-19-school-indicators/</link>
