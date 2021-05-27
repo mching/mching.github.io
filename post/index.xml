@@ -18,6 +18,16 @@ First we had to learn about how the Elo system works.</description>
     </item>
     
     <item>
+      <title>Advocacy Survey</title>
+      <link>/2021/05/22/advocacy-survey/</link>
+      <pubDate>Sat, 22 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/2021/05/22/advocacy-survey/</guid>
+      <description>Our pediatric chapter’s advocacy committee asked the chapter members what their priorities are for advocacy issues. We gave them a list of topics to rate as 1-10 and I needed to calculate the mean score then rank them. This is probably doable as a pivot table within the spreadsheet software, but why pivot table when I can practice some data manipulation skills?
+First load tidyverse package and advocacy dataset.</description>
+    </item>
+    
+    <item>
       <title>COVID-19 School Indicators Update 2021-02-27</title>
       <link>/2021/02/27/udpate-covid-19-school-indicators/</link>
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>

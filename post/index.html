@@ -257,6 +257,44 @@ First we had to learn about how the Elo system works.
 </article>
           
             <article class="post-preview">
+    <a href="../2021/05/22/advocacy-survey/">
+        <h2 class="post-title">Advocacy Survey</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on May 22, 2021
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Mike Ching
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Our pediatric chapter’s advocacy committee asked the chapter members what their priorities are for advocacy issues. We gave them a list of topics to rate as 1-10 and I needed to calculate the mean score then rank them. This is probably doable as a pivot table within the spreadsheet software, but why pivot table when I can practice some data manipulation skills?
+First load tidyverse package and advocacy dataset.
+        <a href="../2021/05/22/advocacy-survey/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="../2021/02/27/udpate-covid-19-school-indicators/">
         <h2 class="post-title">COVID-19 School Indicators Update 2021-02-27</h2>
         
@@ -551,43 +589,6 @@ The first mainland metric that I used came from Minnesota’s Safe Learning Plan
         As people start finishing the race it seems like they really push themselves on the last day. I’ve seen people running 20, 30, 50 miles to reach the final distance. I wondered if there was a difference between what people average and what they do on the last day of the race.
 Data Loading suppressPackageStartupMessages(library(tidyverse)) suppressPackageStartupMessages(library(lubridate)) gv &lt;- read_csv(&quot;../datasets/GVRAT_June_Summary.csv&quot;) ## Parsed with column specification: ## cols( ## .default = col_double(), ## Name = col_character(), ## `28-Jun` = col_logical(), ## `29-Jun` = col_logical(), ## `30-Jun` = col_logical() ## ) ## See spec(.
         <a href="../2020/06/27/last-day-distance-in-gvrat/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="../2020/06/07/gvrat-and-long-run-days/">
-        <h2 class="post-title">GVRAT and Long Run Days</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on June 7, 2020
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Mike Ching
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        I do my long run on Saturdays. A couple of friends do theirs on Sundays. I thought with the number of people in the database, it wouldn’t be too hard to see what people use as their long run day. Conceptually it’s just figuring out what is the mean per day of the week and seeing which one is the longest day. There could be some issues with this approach but overall this should return what I’m looking for.
-        <a href="../2020/06/07/gvrat-and-long-run-days/" class="post-read-more">[Read More]</a>
         
     </div>
 
