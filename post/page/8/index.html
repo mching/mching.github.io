@@ -189,7 +189,7 @@
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on May 23, 2021
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 13, 2021
   
   
   
@@ -217,6 +217,51 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+    <a href="../../../2016/12/14/pidgey-evolution/">
+        <h2 class="post-title">Pidgey Evolution: Effects on Combat Power and Hit Points</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on December 14, 2016
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Michael Ching
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        I was evolving some Pokemon in Pokemon Go today and wondered how much the Pokemon’s attributes change after evolution. The attributes of interest were combat power (CP) and hit points (HP). I focused my analysis from Pidgeys because I had the most data points for this species.
+I collected data from one day’s evolution, available for viewing here.
+x &lt;- read.csv(&quot;../datasets/evolution.csv&quot;) x &lt;- tbl_df(x) pidgeys &lt;- filter(x, pokemon == &quot;Pidgey&quot;) pidgeys ## # A tibble: 12 × 7 ## pokemon CP_pre HP_pre kg_pre CP_post HP_post kg_post ## &lt;fctr&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; ## 1 Pidgey 270 NA NA 533 NA NA ## 2 Pidgey 267 NA NA 515 NA NA ## 3 Pidgey 259 NA NA 526 NA NA ## 4 Pidgey 212 NA NA 413 NA NA ## 5 Pidgey 209 43 2.
+        <a href="../../../2016/12/14/pidgey-evolution/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="//tags/pokemon/">pokemon</a>&nbsp;
+        
+    </div>
+    
+
+</article>
           
             <article class="post-preview">
     <a href="../../../2016/12/09/simple-secret-santa-picker/">
@@ -610,50 +655,6 @@ First, set up a table of the data. The units for stride length and footprint len
         
     </div>
 
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="../../../2016/07/22/flashcard-deck-size-prediction/">
-        <h2 class="post-title">Predicting Flashcard Deck Size Using Linear Regression</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on July 22, 2016
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Michael Ching
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        I’m studying for my pediatric recertification board exam right now, and to help me remember things, I’m making flashcards as I read an exam study book. Lately, I’ve been wondering how many flashcards I will have by the time I reach the end of the book.
-I average about 15 pages a day and about 45 flashcards a day, or 3 flashcards per day. The book itself is 849 pages long, with the real content starting on page 43.
-        <a href="../../../2016/07/22/flashcard-deck-size-prediction/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="//tags/prediction/">prediction</a>&nbsp;
-        
-    </div>
     
 
 </article>
