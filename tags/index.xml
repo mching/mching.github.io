@@ -170,56 +170,11 @@
     </item>
     
     <item>
-      <title>cars</title>
-      <link>/tags/cars/</link>
-      <pubDate>Fri, 27 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/cars/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>traffic</title>
-      <link>/tags/traffic/</link>
-      <pubDate>Fri, 27 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/traffic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>twitter</title>
-      <link>/tags/twitter/</link>
-      <pubDate>Fri, 27 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/twitter/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>weights</title>
       <link>/tags/weights/</link>
       <pubDate>Sun, 03 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/weights/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AAP</title>
-      <link>/tags/aap/</link>
-      <pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/aap/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>voting</title>
-      <link>/tags/voting/</link>
-      <pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/voting/</guid>
       <description></description>
     </item>
     
@@ -359,20 +314,20 @@
     </item>
     
     <item>
-      <title>GIS</title>
-      <link>/tags/gis/</link>
-      <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/gis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>calculation</title>
       <link>/tags/calculation/</link>
       <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/calculation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AAP</title>
+      <link>/tags/aap/</link>
+      <pubDate>Thu, 20 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/aap/</guid>
       <description></description>
     </item>
     
@@ -391,6 +346,15 @@
       <pubDate>Sun, 08 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/pokemon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cars</title>
+      <link>/tags/cars/</link>
+      <pubDate>Thu, 29 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/cars/</guid>
       <description></description>
     </item>
     

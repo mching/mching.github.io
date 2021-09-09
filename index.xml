@@ -13,7 +13,7 @@
       <pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>/2021/09/07/set-simulation/</guid>
-      <description></description>
+      <description>My son and I were playing the card game Set this weekend. It’s a fun pattern matching game, and if you don’t know the rules, they’re available online here. Basically you deal out 12 cards and look for a set of 3 cards that fit a certain pattern. Each time a set is removed, 3 more cards are dealt to return the number of face up cards to 12.</description>
     </item>
     
     <item>
@@ -355,15 +355,6 @@ The inspiration for this activity came from the NASA website.</description>
     </item>
     
     <item>
-      <title>Honolulu Traffic Tweets</title>
-      <link>/2018/07/27/honolulu-traffic-tweets/</link>
-      <pubDate>Fri, 27 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/07/27/honolulu-traffic-tweets/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Fluid Management for Running</title>
       <link>/2018/06/23/fluid-management-for-running/</link>
       <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
@@ -399,16 +390,6 @@ I’ve been having a hard time with my long runs now that the weather is getting
       <guid>/2018/06/03/weight-training-data/</guid>
       <description>I lifted weights regularly for two years but stopped recently because I decided to run more instead. I tracked my weight lifting using an app called Strong, and since it seemed that I had reached my peak of weight lifting I figured I would look back on my exercise over this time.
 library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(lubridate) ## ## Attaching package: &amp;#39;lubridate&amp;#39; ## The following object is masked from &amp;#39;package:base&amp;#39;: ## ## date dat &amp;lt;- read.</description>
-    </item>
-    
-    <item>
-      <title>Annual Leadership Forum Voting</title>
-      <link>/2018/03/18/alf-voting/</link>
-      <pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/03/18/alf-voting/</guid>
-      <description>It’s been a while since I posted, but this weekend I returned to the American Academy of Pediatrics Annual Leadership Forum and I was able to cite my analysis on the top 10 resolutions.
-In the spirit of looking further at the ALF data I decided to look at the voting records from this year. It seemed that most votes pass by at least 80% if not more. This includes the amendment votes.</description>
     </item>
     
     <item>
@@ -559,17 +540,6 @@ I used the tidyverse packages and tidytext by David Robinson. He and Julia Silge
     </item>
     
     <item>
-      <title>Justin Smoak and BABIP Trends</title>
-      <link>/2017/06/26/justin-smoak-and-babip-trends/</link>
-      <pubDate>Mon, 26 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/2017/06/26/justin-smoak-and-babip-trends/</guid>
-      <description>The podcast I listen to said something like, “I bet Justin Smoak must have one of the lowest BABIPs of anyone to this point in his career.” I thought it might be a good chance to explore this nebulous BABIP a little, what are the historical league and career trends in BABIP. Maybe 3 sentences are needed.
-Or maybe a second paragraph. Or 2.
-library(Lahman) library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(hrbrthemes) BABIP is calculated as balls in play (hits minus home runs) divided by total at bats that caused these balls in play (at bats minus strikeouts minus home runs plus sacrifice flies).</description>
-    </item>
-    
-    <item>
       <title>Goodreads Analysis</title>
       <link>/2017/06/19/goodreads-analysis/</link>
       <pubDate>Mon, 19 Jun 2017 00:00:00 +0000</pubDate>
@@ -596,15 +566,6 @@ Dataset library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The f
       <guid>/2017/05/30/years-at-private-school-and-academic-achievement/</guid>
       <description>The kids brought home their yearbooks this past week, and it was time to settle a question that I have had for a long time. Do kids who enter their private school at kindergarten do better or worse than the kids who enter later?
 Methods At this school there are two honor rolls (Headmaster’s List and Honor Roll). To get Headmaster’s List, a student must achieve a 3.5 grade point average with no grade below a B-.</description>
-    </item>
-    
-    <item>
-      <title>King Tides Citizen Science Project</title>
-      <link>/2017/05/26/king-tides-gis/</link>
-      <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/2017/05/26/king-tides-gis/</guid>
-      <description>I read in the newspaper that the University of Hawaii was recruiting &amp;ldquo;citizen scientists&amp;rdquo; to help document the impact of this week&amp;rsquo;s &amp;ldquo;king tides&amp;rdquo; on our coastline. I uploaded some photos to the website but also found that we could download the dataset. I took this as an opportunity to learn something about geographic information systems (GIS) and R, and the end result was a pretty nice map of all the places that were photographed this week.</description>
     </item>
     
     <item>

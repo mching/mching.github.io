@@ -94,7 +94,7 @@ I had my pictures organized into about 300-400 directories by event.">
   <meta name="twitter:site" content="@mikec2a" />
   <meta name="twitter:creator" content="@mikec2a" />
   <link href='../../../../img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
   <link rel="alternate" href="../../../../index.xml" type="application/rss+xml" title="Dripping Data"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="../../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -271,7 +271,7 @@ I had my pictures organized into about 300-400 directories by event.">
       <article role="main" class="blog-post">
         <p>We were fans of Google&rsquo;s Picasa photo organization software, but when it was discontinued, I decided that I would like to transfer all my digital photos onto an external drive and then into Adobe Lightroom. To do so, however, my &ldquo;research&rdquo; told me that it would be best to group them into catalogs based on year, mainly because I have on the order of 10^5 photos.</p>
 <p>I had my pictures organized into about 300-400 directories by event. I decided I wanted to organize all of my folders as directories within year directories. So all the 2016 folders would need to be sorted into a 2016 directory, all the 2015 folders would go into a 2015 directory, etc. I wanted it to look something like this:</p>
-<pre><code>-2016
+<pre tabindex="0"><code>-2016
 --Mom's birthday
 --Valentine's Day
 --Big Island Trip
@@ -287,26 +287,26 @@ I had my pictures organized into about 300-400 directories by event.">
 <p>&ldquo;&hellip; it is total f***ing gibberish to me.&rdquo; - <a href="https://www.reddit.com/r/linuxquestions/comments/2yiked/i_want_to_batch_extract_the_exif_datetime_from_10/">Reddit Linux Questions</a></p>
 </blockquote>
 <p>After some fooling around, I discovered that I could extract the date at the command line and send it to a .csv (in Mac OS X). Adding other EXIF attributes allows you to extract more data, but since I didn&rsquo;t really want anything else, I just pulled the <code>filename</code> and the <code>DateTimeOriginal</code> attributes.</p>
-<pre><code>&gt; exiftool -DateTimeOriginal -S -s -csv ./*/ &gt; all_photos_dates.csv
+<pre tabindex="0"><code>&gt; exiftool -DateTimeOriginal -S -s -csv ./*/ &gt; all_photos_dates.csv
 </code></pre><p>Sweet! Now that was something I could work with!</p>
 <h1 id="back-to-r-cleaning-and-formatting-the-raw-data">Back to R: Cleaning and Formatting the Raw Data</h1>
 <p>First, I needed to read in the data.</p>
-<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
-</code></pre></div><pre><code>## 
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+</code></pre></div><pre tabindex="0"><code>## 
 ## Attaching package: 'dplyr'
-</code></pre><pre><code>## The following objects are masked from 'package:stats':
+</code></pre><pre tabindex="0"><code>## The following objects are masked from 'package:stats':
 ## 
 ##     filter, lag
-</code></pre><pre><code>## The following objects are masked from 'package:base':
+</code></pre><pre tabindex="0"><code>## The following objects are masked from 'package:base':
 ## 
 ##     intersect, setdiff, setequal, union
-</code></pre><div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">stringr</span><span class="p">)</span>
+</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">stringr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">tidyr</span><span class="p">)</span>
 <span class="n">photos</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#34;~/Dropbox/Mike/photo_analysis/all_photo_dates.csv&#34;</span><span class="p">)</span>
 <span class="n">photos</span> <span class="o">&lt;-</span> <span class="nf">tbl_df</span><span class="p">(</span><span class="n">photos</span><span class="p">)</span>
 </code></pre></div><p>Here&rsquo;s what the first 10 rows look like.</p>
-<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="n">photos</span>
-</code></pre></div><pre><code>## Source: local data frame [24,129 x 2]
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="n">photos</span>
+</code></pre></div><pre tabindex="0"><code>## Source: local data frame [24,129 x 2]
 ## 
 ##                           SourceFile     DateTimeOriginal
 ##                               &lt;fctr&gt;               &lt;fctr&gt;
@@ -323,10 +323,10 @@ I had my pictures organized into about 300-400 directories by event.">
 ## ..                               ...                  ...
 </code></pre><h1 id="reformatting-the-directory-and-file-name-structure">Reformatting the Directory and File Name Structure</h1>
 <p>The <code>exiftool</code> command read in the file names in the format <code>./directoryname/filename</code>. I needed to split out that directory name and the component files. After trying <code>strsplit</code> and its <code>stringr</code> cousins, I found that it was easiest to do this using the <code>separate</code> function from the <code>tidyr</code> package.</p>
-<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="n">photos</span> <span class="o">&lt;-</span> <span class="n">photos</span> <span class="o">%&gt;%</span> <span class="nf">separate</span><span class="p">(</span><span class="n">SourceFile</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;dot&#34;</span><span class="p">,</span> <span class="s">&#34;dname&#34;</span><span class="p">,</span> <span class="s">&#34;fname&#34;</span><span class="p">),</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&#34;/&#34;</span><span class="p">,</span> <span class="n">remove</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="n">photos</span> <span class="o">&lt;-</span> <span class="n">photos</span> <span class="o">%&gt;%</span> <span class="nf">separate</span><span class="p">(</span><span class="n">SourceFile</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;dot&#34;</span><span class="p">,</span> <span class="s">&#34;dname&#34;</span><span class="p">,</span> <span class="s">&#34;fname&#34;</span><span class="p">),</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&#34;/&#34;</span><span class="p">,</span> <span class="n">remove</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
 <span class="n">photos</span> <span class="o">&lt;-</span> <span class="n">photos[</span><span class="p">,</span><span class="m">2</span><span class="o">:</span><span class="m">4</span><span class="n">]</span> <span class="c1"># drop the first column of dots</span>
 <span class="n">photos</span>
-</code></pre></div><pre><code>## Source: local data frame [24,129 x 3]
+</code></pre></div><pre tabindex="0"><code>## Source: local data frame [24,129 x 3]
 ## 
 ##                 dname                   fname     DateTimeOriginal
 ##                 &lt;chr&gt;                   &lt;chr&gt;               &lt;fctr&gt;
@@ -343,11 +343,11 @@ I had my pictures organized into about 300-400 directories by event.">
 ## ..                ...                     ...                  ...
 </code></pre><h1 id="formatting-the-date-column">Formatting the Date Column</h1>
 <p>The next thing I needed to do was to put the date column into a form that R could work with. I used POSIXct because POSIXlt caused problems when trying to add it to the data frame. The reason was because POSIXlt-class objects are lists, and POSIXct objects represens the number of seconds since the beginning of 1970.</p>
-<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="n">photos</span><span class="o">$</span><span class="n">DateTimeOriginal</span> <span class="o">&lt;-</span> <span class="nf">as.POSIXct</span><span class="p">(</span><span class="nf">strptime</span><span class="p">(</span><span class="n">photos</span><span class="o">$</span><span class="n">DateTimeOriginal</span><span class="p">,</span> <span class="n">format</span> <span class="o">=</span> <span class="s">&#34;%Y:%m:%d %H:%M:%S&#34;</span><span class="p">))</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="n">photos</span><span class="o">$</span><span class="n">DateTimeOriginal</span> <span class="o">&lt;-</span> <span class="nf">as.POSIXct</span><span class="p">(</span><span class="nf">strptime</span><span class="p">(</span><span class="n">photos</span><span class="o">$</span><span class="n">DateTimeOriginal</span><span class="p">,</span> <span class="n">format</span> <span class="o">=</span> <span class="s">&#34;%Y:%m:%d %H:%M:%S&#34;</span><span class="p">))</span>
 </code></pre></div><p>One of the problems with POSIXct is that it&rsquo;s not as easy to get the year out compared to POSIXlt. No problem, I just temporarily converted to POSIXlt and add 1900 (the start date of POSIXlt years).</p>
-<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="n">photos</span> <span class="o">&lt;-</span> <span class="n">photos</span> <span class="o">%&gt;%</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="nf">as.POSIXlt</span><span class="p">(</span><span class="n">DateTimeOriginal</span><span class="p">)</span><span class="o">$</span><span class="n">year</span> <span class="o">+</span> <span class="m">1900</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="n">photos</span> <span class="o">&lt;-</span> <span class="n">photos</span> <span class="o">%&gt;%</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="nf">as.POSIXlt</span><span class="p">(</span><span class="n">DateTimeOriginal</span><span class="p">)</span><span class="o">$</span><span class="n">year</span> <span class="o">+</span> <span class="m">1900</span><span class="p">)</span>
 <span class="n">photos</span>
-</code></pre></div><pre><code>## Source: local data frame [24,129 x 4]
+</code></pre></div><pre tabindex="0"><code>## Source: local data frame [24,129 x 4]
 ## 
 ##                 dname                   fname    DateTimeOriginal  year
 ##                 &lt;chr&gt;                   &lt;chr&gt;              &lt;time&gt; &lt;dbl&gt;
@@ -364,14 +364,14 @@ I had my pictures organized into about 300-400 directories by event.">
 ## ..                ...                     ...                 ...   ...
 </code></pre><h1 id="summarizing-the-years-in-each-folder">Summarizing the Years in Each Folder</h1>
 <p>I needed now to figure out the best way to describe the year of each folder. I used the <code>Mode</code> function from <a href="http://stackoverflow.com/questions/2547402/is-there-a-built-in-function-for-finding-the-mode">here</a> to find out what was the most common year in each folder.</p>
-<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="n">Mode</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="n">Mode</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">ux</span> <span class="o">&lt;-</span> <span class="nf">unique</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
   <span class="n">ux</span><span class="nf">[which.max</span><span class="p">(</span><span class="nf">tabulate</span><span class="p">(</span><span class="nf">match</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ux</span><span class="p">)))</span><span class="n">]</span>
 <span class="p">}</span>
 
 <span class="n">folder_years</span> <span class="o">&lt;-</span> <span class="n">photos</span> <span class="o">%&gt;%</span> <span class="nf">group_by</span><span class="p">(</span><span class="n">dname</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">summarize</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="nf">Mode</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>
 <span class="n">folder_years</span>
-</code></pre></div><pre><code>## Source: local data frame [332 x 2]
+</code></pre></div><pre tabindex="0"><code>## Source: local data frame [332 x 2]
 ## 
 ##                      dname  year
 ##                      &lt;chr&gt; &lt;dbl&gt;
@@ -387,15 +387,15 @@ I had my pictures organized into about 300-400 directories by event.">
 ## 10             Camp Milken  2005
 ## ..                     ...   ...
 </code></pre><p>Finally I needed to group the folders by year. To do this, I created an empty list then populated it based on the most common year of the photos in each folder.</p>
-<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="n">folder_output</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="n">folder_output</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">()</span>
 
 <span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">sort</span><span class="p">(</span><span class="nf">unique</span><span class="p">(</span><span class="n">folder_years</span><span class="o">$</span><span class="n">year</span><span class="p">)))</span> <span class="p">{</span>
   <span class="n">x</span> <span class="o">&lt;-</span> <span class="n">folder_years</span> <span class="o">%&gt;%</span> <span class="nf">filter</span><span class="p">(</span><span class="n">year</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span>
   <span class="n">folder_output</span><span class="nf">[as.character</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="n">][1]</span> <span class="o">&lt;-</span> <span class="n">x[</span><span class="p">,</span><span class="m">1</span><span class="n">]</span>
 <span class="p">}</span>
 </code></pre></div><p>It worked great, and here&rsquo;s a sampling:</p>
-<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="n">folder_output[[</span><span class="s">&#34;2010&#34;</span><span class="n">]]</span>
-</code></pre></div><pre><code>##  [1] &quot;2010a&quot;                          &quot;Dayton's 5th birthday&quot;         
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="n">folder_output[[</span><span class="s">&#34;2010&#34;</span><span class="n">]]</span>
+</code></pre></div><pre tabindex="0"><code>##  [1] &quot;2010a&quot;                          &quot;Dayton's 5th birthday&quot;         
 ##  [3] &quot;Gus Ryan Phillip Visit&quot;         &quot;Hannah's Birthday&quot;             
 ##  [5] &quot;Ihilani&quot;                        &quot;Jeff and Lynne Wedding Weekend&quot;
 ##  [7] &quot;Jenica's 4th birthday&quot;          &quot;Kathy Photos&quot;                  
@@ -408,7 +408,7 @@ I had my pictures organized into about 300-400 directories by event.">
 </code></pre><h1 id="putting-the-lists-by-year-into-a-convenient-format">Putting the Lists by Year into a Convenient Format</h1>
 <p>To actually move the directories, I wanted to get a string of the directory names with quotes around the names. The quotes were needed because of the spaces in most of the names (e.g., &ldquo;Dayton&rsquo;s 5th birthday&rdquo; &ldquo;Gus Ryan Phillip Visit&rdquo; etc).</p>
 <p>To do this I created a helper function that takes the contents of a character vector, put quotes around them, and then writes it out.</p>
-<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="n">format_dir_list</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="n">format_dir_list</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">z</span> <span class="o">&lt;-</span> <span class="kc">NA</span>
   <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="p">{</span>
     <span class="n">z[i]</span> <span class="o">&lt;-</span> <span class="nf">paste0</span><span class="p">(</span><span class="s">&#34;\&#39;&#34;</span><span class="p">,</span> <span class="n">x[i]</span><span class="p">,</span> <span class="s">&#34;\&#39;&#34;</span><span class="p">)</span>
@@ -416,7 +416,7 @@ I had my pictures organized into about 300-400 directories by event.">
   <span class="nf">return</span><span class="p">(</span><span class="nf">cat</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
 <span class="p">}</span>
 </code></pre></div><p>Here&rsquo;s the code to print out the lists of folder names. I didn&rsquo;t run it because again, there&rsquo;s soooo many folders.</p>
-<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">16</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">16</span><span class="p">)</span> <span class="p">{</span>
   <span class="nf">cat</span><span class="p">(</span><span class="s">&#34;\n&#34;</span><span class="p">)</span>
   <span class="nf">print</span><span class="p">(</span><span class="nf">names</span><span class="p">(</span><span class="n">folder_output</span><span class="p">)</span><span class="n">[i]</span><span class="p">)</span>
   <span class="nf">cat</span><span class="p">(</span><span class="s">&#34;\n&#34;</span><span class="p">)</span>
@@ -523,7 +523,7 @@ I had my pictures organized into about 300-400 directories by event.">
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.80.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.88.1</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>
