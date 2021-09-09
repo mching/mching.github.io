@@ -92,7 +92,7 @@
   <meta name="twitter:site" content="@mikec2a" />
   <meta name="twitter:creator" content="@mikec2a" />
   <link href='../../../../img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
   <link rel="alternate" href="../../../../index.xml" type="application/rss+xml" title="Dripping Data"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="../../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -273,7 +273,7 @@
 <p>The hardest part was all the installation requirements, specifically GDAL. There&rsquo;s a lot of information on the web on how to install this, but it was a lot of googling that finally got it to work on Fedora. MacOS GDAL requires you to use packages available <a href="http://www.kyngchaos.com/software/frameworks">here</a>.</p>
 <h2 id="making-a-map-of-oahu">Making a Map of Oahu</h2>
 <p>First I wanted a map of Oahu. This couldn&rsquo;t be easier using <code>ggmap</code>. This produces a pretty watercolor looking map from <a href="https://stamen.com">Stamen.com</a>.</p>
-<pre><code class="language-{r}" data-lang="{r}">library(tidyverse)
+<pre tabindex="0"><code class="language-{r}" data-lang="{r}">library(tidyverse)
 library(ggmap)
 myLocation &lt;- &quot;Oahu&quot;
 myMap &lt;- get_map(location = myLocation,
@@ -284,12 +284,12 @@ myMap &lt;- get_map(location = myLocation,
 
 ggmap(myMap)
 </code></pre><p>Then I wanted to put the points on the map. The dataset was in comma separated values format (albeit with this <code>latin1</code> file encoding when I did this post first in Fedora). It was easy to load the dataset.</p>
-<pre><code class="language-{r}" data-lang="{r}">dat &lt;- read.csv(&quot;../datasets/tides_20170526.csv&quot;, 
+<pre tabindex="0"><code class="language-{r}" data-lang="{r}">dat &lt;- read.csv(&quot;../datasets/tides_20170526.csv&quot;, 
                 # fileEncoding = &quot;latin1&quot;, 
                 colClasses = &quot;character&quot;)
 dat &lt;- tbl_df(dat)
 </code></pre><p>The file needed some cleaning for convenient use in the <code>ggmap</code> package.</p>
-<pre><code class="language-{r}" data-lang="{r}">dat
+<pre tabindex="0"><code class="language-{r}" data-lang="{r}">dat
 
 # Rename latitute and longitude columns for more convenient reference
 names(dat)[9] &lt;- &quot;latitude&quot;
@@ -305,18 +305,18 @@ dat$date_time &lt;- strptime(dat$date_time, &quot;%m/%d/%y %H:%M&quot;)
 dat$date_time &lt;- as.POSIXct(dat$date_time)
 dat$LatLong &lt;- paste0(dat$latitude, &quot;:&quot;, dat$longitude)
 </code></pre><p>I just wanted to see where people had been active in the last two days so I filtered the dataset by date.</p>
-<pre><code class="language-{r}" data-lang="{r}">minidat &lt;- dat %&gt;% filter(date_time &gt; as.POSIXct(&quot;2017-05-25&quot;)) %&gt;% 
+<pre tabindex="0"><code class="language-{r}" data-lang="{r}">minidat &lt;- dat %&gt;% filter(date_time &gt; as.POSIXct(&quot;2017-05-25&quot;)) %&gt;% 
   select(latitude, longitude, date_time, LatLong)
 </code></pre><p>The resulting map was pretty sweet.</p>
-<pre><code class="language-{r}" data-lang="{r}">ggmap(myMap) + geom_point(aes(x = longitude, y = latitude), data = minidat, color = &quot;black&quot;, alpha = 0.3)
+<pre tabindex="0"><code class="language-{r}" data-lang="{r}">ggmap(myMap) + geom_point(aes(x = longitude, y = latitude), data = minidat, color = &quot;black&quot;, alpha = 0.3)
 </code></pre><p>I got virtually the same map using the <code>qmap</code> function. This function uses a Google Maps terrain map to create its base image.</p>
-<pre><code class="language-{r}" data-lang="{r}">qmap(&quot;Oahu&quot;) + geom_point(aes(x = longitude, y = latitude), data = minidat, color = &quot;red&quot;, alpha = 0.3)
+<pre tabindex="0"><code class="language-{r}" data-lang="{r}">qmap(&quot;Oahu&quot;) + geom_point(aes(x = longitude, y = latitude), data = minidat, color = &quot;red&quot;, alpha = 0.3)
 </code></pre><p>The resulting images from <code>ggmap</code> were pretty nice but I wanted more. Nowadays it&rsquo;s customary to be able to pan and zoom like in Google Maps. The <code>ggmap</code> method produces a static map which is nice to look at, but it would be nice to see what points were taken on other islands. Or how about that blob of points on the south shore. Could we zoom in to see more readily where those points are?</p>
 <h2 id="googlevis-version"><code>googleVis</code> version</h2>
 <p>I did some more research and found the <code>gvisMap</code> function from the <code>googleVis</code> package could provide a solution to this problem. Inspiration for how to do this came from <a href="https://pakillo.github.io/R-GIS-tutorial/#googlevis">this tutorial</a>.</p>
 <p>The special thing about <code>gvisMap</code> is that it requires you to feed it a variable containing latitude and longitude values in a specific latitude:longitude format. That&rsquo;s why I did this above in the data cleaning steps.</p>
 <p>It also allows you to write a label for each point. I just used the date and time label but if I were to spend a little more time on this, it would be simple to write a label that gave the record number, the time, and some brief description.</p>
-<pre><code class="language-{r}" data-lang="{r}">library(googleVis)
+<pre tabindex="0"><code class="language-{r}" data-lang="{r}">library(googleVis)
 M1 &lt;- gvisMap(minidat, &quot;LatLong&quot;, tipvar = &quot;date_time&quot;, 
               options=list(showTip=TRUE, showLine=F, enableScrollWheel=TRUE, 
                            mapType='satellite', useMapTypeControl=TRUE, width=800,height=800))
@@ -428,7 +428,7 @@ M1 &lt;- gvisMap(minidat, &quot;LatLong&quot;, tipvar = &quot;date_time&quot;,
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.80.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.88.1</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>
