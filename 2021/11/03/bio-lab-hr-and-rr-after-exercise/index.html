@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Bio Lab: HR and RR after Exercise - Dripping Data</title>
+  <meta name="description" content="Introduction Students in Biology classes at Iolani School collected data on heart rate and respiratory rate before, during, and after exercise. We describe the results below.
+ Methods library(&quot;tidyverse&quot;) # Software library used for data cleaning and analysis. ## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ── ## ✓ ggplot2 3.3.5 ✓ purrr 0.3.4 ## ✓ tibble 3.1.4 ✓ dplyr 1.0.7 ## ✓ tidyr 1.1.3 ✓ stringr 1.4.0 ## ✓ readr 2.">
+  <meta name="author" content="Mike Ching"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Dripping Data",
+    
+    "url": "\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "\/2021\/11\/03\/bio-lab-hr-and-rr-after-exercise\/",
+          "name": "Bio lab hr and rr after exercise"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Mike Ching"
+  },
+  "headline": "Bio Lab: HR and RR after Exercise",
+  "description" : "Introduction Students in Biology classes at Iolani School collected data on heart rate and respiratory rate before, during, and after exercise. We describe the results below.\n Methods library(\u0026quot;tidyverse\u0026quot;) # Software library used for data cleaning and analysis. ## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ── ## ✓ ggplot2 3.3.5 ✓ purrr 0.3.4 ## ✓ tibble 3.1.4 ✓ dplyr 1.0.7 ## ✓ tidyr 1.1.3 ✓ stringr 1.4.0 ## ✓ readr 2.",
+  "inLanguage" : "en",
+  "wordCount":  1096 ,
+  "datePublished" : "2021-11-03T00:00:00",
+  "dateModified" : "2021-11-03T00:00:00",
+  "image" : "\/img\/IMG_6557.jpg",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "\/2021\/11\/03\/bio-lab-hr-and-rr-after-exercise\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "\/img\/IMG_6557.jpg",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Bio Lab: HR and RR after Exercise" />
+<meta property="og:description" content="Introduction Students in Biology classes at Iolani School collected data on heart rate and respiratory rate before, during, and after exercise. We describe the results below.
+ Methods library(&quot;tidyverse&quot;) # Software library used for data cleaning and analysis. ## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ── ## ✓ ggplot2 3.3.5 ✓ purrr 0.3.4 ## ✓ tibble 3.1.4 ✓ dplyr 1.0.7 ## ✓ tidyr 1.1.3 ✓ stringr 1.4.0 ## ✓ readr 2.">
+<meta property="og:image" content="/img/IMG_6557.jpg" />
+<meta property="og:url" content="/2021/11/03/bio-lab-hr-and-rr-after-exercise/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Dripping Data" />
+
+  <meta name="twitter:title" content="Bio Lab: HR and RR after Exercise" />
+  <meta name="twitter:description" content="Introduction Students in Biology classes at Iolani School collected data on heart rate and respiratory rate before, during, and after exercise. We describe the results below.
+ Methods …">
+  <meta name="twitter:image" content="/img/IMG_6557.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@mikec2a" />
+  <meta name="twitter:creator" content="@mikec2a" />
+  <link href='../../../../img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.88.1" />
+  <link rel="alternate" href="../../../../index.xml" type="application/rss+xml" title="Dripping Data"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="../../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="../../../../css/syntax.css" /><link rel="stylesheet" href="../../../../css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../../">Dripping Data</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../../about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="LinkedIn" href="https://www.linkedin.com/in/michael-ching-033a5029">LinkedIn</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Twitter" href="https://twitter.com/mikec2a">Twitter</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Dripping Data" href="../../../../">
+            <img class="avatar-img" src="../../../../img/IMG_6557.jpg" alt="Dripping Data" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Bio Lab: HR and RR after Exercise</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on November 3, 2021
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Mike Ching
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+<script src="../../../../2021/11/03/bio-lab-hr-and-rr-after-exercise/index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>Students in Biology classes at Iolani School collected data on heart rate and respiratory rate before, during, and after exercise. We describe the results below.</p>
+</div>
+<div id="methods" class="section level1">
+<h1>Methods</h1>
+<pre class="r"><code>library(&quot;tidyverse&quot;) # Software library used for data cleaning and analysis.</code></pre>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
+## ✓ tibble  3.1.4     ✓ dplyr   1.0.7
+## ✓ tidyr   1.1.3     ✓ stringr 1.4.0
+## ✓ readr   2.0.1     ✓ forcats 0.5.1</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<p>I received a spreadsheet with two types of data, both in wide format. I separated these into separate tables in the spreadsheet software.</p>
+<pre class="r"><code>hr &lt;- read_csv(&quot;/Users/mching/Documents/miniature-journey/content/datasets/bio_hr.csv&quot;)</code></pre>
+<pre><code>## Rows: 176 Columns: 9</code></pre>
+<pre><code>## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (2): Period, initials
+## dbl (7): t0, t1, t2, t3, t4, t5, t9</code></pre>
+<pre><code>## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>rr &lt;- read_csv(&quot;/Users/mching/Documents/miniature-journey/content/datasets/bio_rr.csv&quot;)</code></pre>
+<pre><code>## Rows: 176 Columns: 9</code></pre>
+<pre><code>## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (2): Period, initials
+## dbl (7): t0, t1, t2, t3, t4, t5, t9</code></pre>
+<pre><code>## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<p>I first checked for students with the same initials within the same class (teacher and period).</p>
+<pre class="r"><code>hr %&gt;% mutate(pdinit = paste(Period, initials)) %&gt;% 
+  group_by(pdinit) %&gt;%
+  summarize(npdinit = n()) %&gt;% arrange(-npdinit)</code></pre>
+<pre><code>## # A tibble: 139 × 2
+##    pdinit     npdinit
+##    &lt;chr&gt;        &lt;int&gt;
+##  1 Allan 6 NA      10
+##  2 Allan 5 NA       7
+##  3 Allan 3 NA       5
+##  4 Allan 4 NA       5
+##  5 Lee 8 NA         5
+##  6 Ching 1 NA       4
+##  7 Lee 2 NA         4
+##  8 Adams 5 NA       3
+##  9 Adams 6 NA       2
+## 10 Lee 1 NA         2
+## # … with 129 more rows</code></pre>
+<p>Since there were none (other than blank rows of NAs), I made the wide data into long data so they could be joined.</p>
+<pre class="r"><code>hr &lt;- hr %&gt;% pivot_longer(cols = starts_with(&quot;t&quot;), names_to = &quot;minutes&quot;, 
+                          names_prefix = &quot;t&quot;,
+                          values_to = &quot;HR&quot;)
+
+rr &lt;- rr %&gt;% pivot_longer(cols = starts_with(&quot;t&quot;), names_to = &quot;minutes&quot;, 
+                          names_prefix = &quot;t&quot;,
+                          values_to = &quot;RR&quot;)
+
+dat &lt;- full_join(rr, hr, by = c(&quot;Period&quot;, &quot;initials&quot;, &quot;minutes&quot;))
+glimpse(dat)</code></pre>
+<pre><code>## Rows: 2,814
+## Columns: 5
+## $ Period   &lt;chr&gt; &quot;Ching 1&quot;, &quot;Ching 1&quot;, &quot;Ching 1&quot;, &quot;Ching 1&quot;, &quot;Ching 1&quot;, &quot;Ching…
+## $ initials &lt;chr&gt; &quot;JO&quot;, &quot;JO&quot;, &quot;JO&quot;, &quot;JO&quot;, &quot;JO&quot;, &quot;JO&quot;, &quot;JO&quot;, &quot;MT&quot;, &quot;MT&quot;, &quot;MT&quot;, &quot;…
+## $ minutes  &lt;chr&gt; &quot;0&quot;, &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;9&quot;, &quot;0&quot;, &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;…
+## $ RR       &lt;dbl&gt; 15, 32, 40, 32, 40, 24, 28, 12, 20, 24, 24, 28, 20, 16, 28, 3…
+## $ HR       &lt;dbl&gt; 66, 88, 162, 100, 132, 88, 80, 88, 120, 140, 152, 152, 107, 8…</code></pre>
+<pre class="r"><code>dat$minutes &lt;- as.integer(dat$minutes)</code></pre>
+<p>I separated the Period column into teacher and period</p>
+<pre class="r"><code>dat &lt;- dat %&gt;% separate(Period, c(&quot;teacher&quot;, &quot;period&quot;))</code></pre>
+</div>
+<div id="results" class="section level1">
+<h1>Results</h1>
+<div id="all-data" class="section level2">
+<h2>All data</h2>
+<p>Since there are probably no differences between students in each class, I reported the combined data first.</p>
+<p>There are quite a few outliers when we plot every data point.</p>
+<pre class="r"><code>dat %&gt;% group_by(minutes) %&gt;%
+  ggplot(aes(x = minutes, y = HR, color = teacher)) +
+  geom_point(alpha = 0.2, position = position_jitter(width = 0.2, height = 1)) +
+    scale_x_continuous(breaks = seq(0,10,1))</code></pre>
+<pre><code>## Warning: Removed 1970 rows containing missing values (geom_point).</code></pre>
+<p><img src="../../../../2021/11/03/bio-lab-hr-and-rr-after-exercise/index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<pre class="r"><code>dat %&gt;% group_by(minutes) %&gt;%
+  ggplot(aes(x = minutes, y = RR, color = teacher)) +
+  geom_point(alpha = 0.2, position = position_jitter(width = 0.2, height = 1)) +
+    scale_x_continuous(breaks = seq(0,10,1))</code></pre>
+<pre><code>## Warning: Removed 2009 rows containing missing values (geom_point).</code></pre>
+<p><img src="../../../../2021/11/03/bio-lab-hr-and-rr-after-exercise/index_files/figure-html/unnamed-chunk-6-2.png" width="672" /></p>
+<p>When we look at means however, the outliers disappear and we are left with pretty nice results.</p>
+<pre class="r"><code>dat %&gt;% group_by(minutes) %&gt;%
+  summarize(meanHR = mean(HR, na.rm = T),
+            sdHR = sd(HR, na.rm = T),
+            meanRR = mean(RR, na.rm = T),
+            sdRR = sd(RR, na.rm = T))</code></pre>
+<pre><code>## # A tibble: 7 × 5
+##   minutes meanHR  sdHR meanRR  sdRR
+##     &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+## 1       0   70.7  11.4   19.1  5.74
+## 2       1  106.   30.8   30.0 11.1 
+## 3       2  121.   29.0   32.2 10.6 
+## 4       3  124.   30.6   34.3 12.8 
+## 5       4  132.   33.9   35.6 11.9 
+## 6       5   86.6  23.5   27.6 10.5 
+## 7       9   73.1  18.6   22.4 12.4</code></pre>
+<pre class="r"><code>dat %&gt;% group_by(minutes) %&gt;%
+  summarize(meanHR = mean(HR, na.rm = T)) %&gt;%
+  ggplot(aes(x = minutes, y = meanHR)) +
+  geom_point()</code></pre>
+<p><img src="../../../../2021/11/03/bio-lab-hr-and-rr-after-exercise/index_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre class="r"><code>dat %&gt;% group_by(minutes) %&gt;%
+  summarize(meanRR = mean(RR, na.rm = T)) %&gt;%
+  ggplot(aes(x = minutes, y = meanRR)) +
+  geom_point()</code></pre>
+<p><img src="../../../../2021/11/03/bio-lab-hr-and-rr-after-exercise/index_files/figure-html/unnamed-chunk-7-2.png" width="672" /></p>
+</div>
+<div id="data-grouped-by-teacher-and-period" class="section level2">
+<h2>Data grouped by Teacher and Period</h2>
+<p>Grouping data by teacher and period was one way to see if there were differences among these groups. It wasn’t obvious whether there were any differences.</p>
+<pre class="r"><code>dat %&gt;% group_by(teacher, minutes) %&gt;% 
+  summarize(meanHR = mean(HR, na.rm = T),
+            meanRR = mean(RR, na.rm = T)) %&gt;%
+  arrange(minutes, teacher)</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;teacher&#39;. You can override using the `.groups` argument.</code></pre>
+<pre><code>## # A tibble: 28 × 4
+## # Groups:   teacher [4]
+##    teacher minutes meanHR meanRR
+##    &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+##  1 Adams         0   70.3   20.3
+##  2 Allan         0   71.2   18.4
+##  3 Ching         0   72.6   18.7
+##  4 Lee           0   69.6   19.2
+##  5 Adams         1  116.    29.9
+##  6 Allan         1  106.    31.3
+##  7 Ching         1  107.    29.5
+##  8 Lee           1   96.6   29.2
+##  9 Adams         2  128.    31.9
+## 10 Allan         2  119.    32.9
+## # … with 18 more rows</code></pre>
+<p>I plotted the means by classes for heart rate…</p>
+<pre class="r"><code>dat %&gt;% group_by(teacher, period, minutes) %&gt;% 
+  summarize(meanHR = mean(HR, na.rm = T)) %&gt;%
+  ggplot(aes(x = minutes, y = meanHR, color = period, shape = teacher)) +
+  geom_point(position=position_jitter(width=.1)) + 
+  scale_x_continuous(breaks = seq(0,10,1)) +
+  scale_color_brewer(palette = &quot;Dark2&quot;)</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;teacher&#39;, &#39;period&#39;. You can override using the `.groups` argument.</code></pre>
+<p><img src="../../../../2021/11/03/bio-lab-hr-and-rr-after-exercise/index_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>…and respiratory rate.</p>
+<pre class="r"><code>dat %&gt;% group_by(teacher, period, minutes) %&gt;% 
+  summarize(meanRR = mean(RR, na.rm = T)) %&gt;%
+  ggplot(aes(x = minutes, y = meanRR, color = period, shape = teacher)) +
+  geom_point(position=position_jitter(width=.1)) + 
+  scale_x_continuous(breaks = seq(0,10,1)) +
+  scale_color_brewer(palette = &quot;Dark2&quot;)</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;teacher&#39;, &#39;period&#39;. You can override using the `.groups` argument.</code></pre>
+<p><img src="../../../../2021/11/03/bio-lab-hr-and-rr-after-exercise/index_files/figure-html/unnamed-chunk-10-1.png" width="672" />
+# Discussion</p>
+<p>Not much eye opening in these analyses. Kids started exercising and their heart and respiratory rates went up (and became more variable with a greater standard deviation). When they stopped exercising, the heart and respiratory rates went down but not all the way back to baseline by 5 minute post exercise.</p>
+</div>
+</div>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../../2021/09/30/hundred-game-division-winners/" data-toggle="tooltip" data-placement="top" title="Hundred Game Division Winners">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/mching" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/mikec2a" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/michael-ching-033a5029" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Mike Ching
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2021
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../../">Dripping Data</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.88.1</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="../../../../js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="../../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

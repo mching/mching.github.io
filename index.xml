@@ -6,7 +6,17 @@
     <description>Recent content on Dripping Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bio Lab: HR and RR after Exercise</title>
+      <link>/2021/11/03/bio-lab-hr-and-rr-after-exercise/</link>
+      <pubDate>Wed, 03 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/2021/11/03/bio-lab-hr-and-rr-after-exercise/</guid>
+      <description>Introduction Students in Biology classes at Iolani School collected data on heart rate and respiratory rate before, during, and after exercise. We describe the results below.
+ Methods library(&amp;quot;tidyverse&amp;quot;) # Software library used for data cleaning and analysis. ## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ── ## ✓ ggplot2 3.3.5 ✓ purrr 0.3.4 ## ✓ tibble 3.1.4 ✓ dplyr 1.0.7 ## ✓ tidyr 1.1.3 ✓ stringr 1.4.0 ## ✓ readr 2.</description>
+    </item>
+    
     <item>
       <title>Hundred Game Division Winners</title>
       <link>/2021/09/30/hundred-game-division-winners/</link>
